@@ -7,20 +7,29 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --navy:    #0f1f3d;
-  --navy2:   #152540;
-  --navy3:   #1c3258;
+  --navy:    #0d1929;
+  --navy2:   #111f33;
+  --navy3:   #172843;
+  --navy4:   #1c3055;
   --accent:  #2f72c4;
   --accent2: #4a8fd6;
+  --teal:    #2ec4b6;
+  --teal2:   #3dd9c9;
   --gold:    #c9a84c;
+  --gold2:   #e2c06e;
   --white:   #ffffff;
-  --offwhite:#f4f6f9;
-  --muted:   #8a96a8;
-  --border:  rgba(255,255,255,0.09);
-  --green:   #2e9e70;
-  --amber:   #c9873a;
-  --red:     #c94040;
-  --r: 5px;
+  --muted:   #7a8fa8;
+  --muted2:  #5a6e84;
+  --border:  rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.04);
+  --green:   #2ecc8e;
+  --green2:  #25a872;
+  --amber:   #e09b45;
+  --red:     #e05555;
+  --blue-h:  #2f72c4;
+  --blue-m:  #5a9fd6;
+  --blue-l:  #8dc3e8;
+  --r: 6px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -33,286 +42,358 @@ body{
   min-height:100vh;
 }
 
-/* HEADER */
+/* ── HEADER ── */
 .header{
   background:var(--navy2);
   border-bottom:1px solid var(--border);
-  padding:20px 32px;
+  padding:18px 40px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:16px;
-  position:sticky;top:0;z-index:100;
 }
-.header-left{display:flex;align-items:center;gap:16px;}
+.header-left{display:flex;align-items:center;gap:14px;}
 .logo{
-  width:40px;height:40px;
-  background:var(--accent);
+  width:44px;height:44px;
+  background:var(--gold);
   border-radius:8px;
   display:flex;align-items:center;justify-content:center;
   font-family:'DM Serif Display',serif;
-  font-size:18px;color:#fff;
+  font-size:18px;font-weight:700;
+  color:var(--navy);
   flex-shrink:0;
 }
-.header-title{font-size:15px;font-weight:600;color:var(--white);}
-.header-sub{font-size:11px;color:var(--muted);margin-top:1px;}
-.header-badge{
-  background:rgba(47,114,196,0.18);
-  border:1px solid rgba(47,114,196,0.35);
-  color:var(--accent2);
-  padding:4px 10px;
-  border-radius:20px;
-  font-size:11px;font-weight:500;
+.header-org{font-size:16px;font-weight:600;color:var(--white);}
+.header-sub{font-size:11px;color:var(--muted);margin-top:2px;letter-spacing:.04em;text-transform:uppercase;}
+.header-right{text-align:right;}
+.header-tag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:4px;}
+.header-project{font-family:'DM Serif Display',serif;font-size:22px;color:var(--white);}
+.header-meta{font-size:11px;color:var(--muted);margin-top:3px;}
+
+/* ── STAT STRIP ── */
+.stat-strip{
+  background:var(--navy2);
+  border-bottom:1px solid var(--border);
+  padding:20px 40px;
+  display:flex;
+  align-items:center;
+  gap:40px;
+}
+.stat{text-align:left;}
+.stat-val{font-size:28px;font-weight:600;color:var(--teal);line-height:1;}
+.stat-label{font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+.stat-divider{width:1px;height:44px;background:var(--border);}
+.stat-desc{
+  flex:1;
+  font-size:12px;color:var(--muted);
+  line-height:1.7;
+  border-left:3px solid var(--accent);
+  padding-left:16px;
+  max-width:700px;
 }
 
-/* MAIN */
-.main{padding:24px 32px;max-width:1400px;margin:0 auto;}
+/* ── MAIN ── */
+.main{padding:28px 40px;max-width:1400px;margin:0 auto;}
 
-/* SUMMARY STRIP */
-.summary-strip{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  margin-bottom:24px;
-}
-.summary-card{
+/* ── CONTRACT CARD ── */
+.contract-card{
   background:var(--navy2);
   border:1px solid var(--border);
   border-radius:var(--r);
-  padding:14px 18px;
-}
-.sc-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
-.sc-value{font-size:22px;font-weight:600;color:var(--white);}
-.sc-sub{font-size:11px;color:var(--muted);margin-top:2px;}
-
-/* LEGEND */
-.legend{
-  display:flex;gap:20px;align-items:center;
+  padding:20px 24px;
   margin-bottom:20px;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:repeat(4,1fr) 1.2fr;
+  gap:20px;
+}
+.cc-field{}
+.cc-label{font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.cc-value{font-size:13px;font-weight:500;color:var(--white);}
+
+/* ── SITE SUMMARY CARDS ── */
+.site-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-bottom:28px;
+}
+.site-card{
+  background:var(--navy2);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:16px 18px;
+}
+.sc-addr{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.sc-type{font-size:12px;color:var(--muted);margin-bottom:8px;}
+.sc-target{font-size:13px;font-weight:500;color:var(--teal);margin-bottom:10px;}
+.sc-bar-track{height:4px;background:rgba(255,255,255,.08);border-radius:2px;margin-bottom:7px;}
+.sc-bar-fill{height:100%;border-radius:2px;background:var(--teal);}
+.sc-pct{font-size:11px;color:var(--muted);}
+
+/* ── LEGEND ── */
+.legend{
+  display:flex;gap:18px;align-items:center;
+  margin-bottom:24px;flex-wrap:wrap;
 }
 .legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);}
-.legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
-.legend-dot.done{background:var(--green);}
-.legend-dot.active{background:var(--accent);}
-.legend-dot.upcoming{background:var(--navy3);border:1px solid rgba(255,255,255,0.15);}
-.legend-dot.delayed{background:var(--amber);}
-.legend-dot.today-line{width:2px;height:14px;background:var(--gold);border-radius:1px;}
+.li-box{width:12px;height:10px;border-radius:2px;flex-shrink:0;}
+.li-done{background:var(--green);}
+.li-active{background:var(--accent2);border:1px dashed rgba(255,255,255,.3);}
+.li-high{background:var(--blue-h);}
+.li-med{background:var(--blue-m);}
+.li-low{background:var(--blue-l);}
+.li-permit{background:transparent;border:1px solid var(--amber);width:20px;}
+.li-today{width:3px;height:12px;border-radius:1px;background:var(--red);}
 
-/* SITE BLOCK */
-.site-block{
+/* ── GANTT SECTION ── */
+.gantt-section{
   background:var(--navy2);
   border:1px solid var(--border);
   border-radius:var(--r);
-  margin-bottom:20px;
+  margin-bottom:16px;
   overflow:hidden;
 }
-.site-header{
-  padding:14px 20px;
-  border-bottom:1px solid var(--border);
+
+/* site header row */
+.gs-header{
+  padding:16px 20px;
   display:flex;align-items:center;justify-content:space-between;
-  gap:12px;
-}
-.site-name{font-size:14px;font-weight:600;color:var(--white);}
-.site-meta{font-size:11px;color:var(--muted);}
-.site-status{
-  font-size:11px;font-weight:500;
-  padding:3px 10px;border-radius:20px;
-}
-.status-active{background:rgba(46,158,112,.15);color:var(--green);border:1px solid rgba(46,158,112,.3);}
-.status-delayed{background:rgba(201,135,58,.15);color:var(--amber);border:1px solid rgba(201,135,58,.3);}
-.status-pending{background:rgba(201,64,64,.12);color:#e07a7a;border:1px solid rgba(201,64,64,.25);}
-
-/* GANTT TABLE */
-.gantt-wrap{overflow-x:auto;}
-.gantt-table{
-  width:100%;
-  border-collapse:collapse;
-  min-width:900px;
-}
-.gantt-table th{
-  background:var(--navy3);
-  padding:7px 10px;
-  font-size:10px;
-  font-weight:500;
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:.05em;
-  white-space:nowrap;
+  cursor:pointer;
+  user-select:none;
   border-bottom:1px solid var(--border);
 }
-.gantt-table th.col-task{text-align:left;width:140px;}
-.gantt-table th.col-trade{text-align:left;width:110px;}
-.gantt-table th.col-date{text-align:center;width:72px;}
-.gantt-table th.col-bar{text-align:left;min-width:400px;}
-.gantt-table td{
-  padding:5px 10px;
-  border-bottom:1px solid rgba(255,255,255,0.04);
-  vertical-align:middle;
+.gs-header:hover{background:rgba(255,255,255,.02);}
+.gs-num{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--navy4);
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:600;color:var(--teal);
+  flex-shrink:0;margin-right:12px;
 }
-.gantt-table tr:last-child td{border-bottom:none;}
-.gantt-table tr:hover td{background:rgba(255,255,255,.03);}
+.gs-title-wrap{flex:1;}
+.gs-name{font-size:15px;font-weight:600;color:var(--white);}
+.gs-sub{font-size:11px;color:var(--muted);margin-top:2px;}
+.gs-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.gs-target{font-size:12px;color:var(--teal);}
+.gs-badge{
+  font-size:10px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:3px 9px;border-radius:3px;
+}
+.badge-permit{background:rgba(224,155,69,.15);color:var(--amber);border:1px solid rgba(224,155,69,.3);}
+.badge-delayed{background:rgba(224,85,85,.12);color:#e07a7a;border:1px solid rgba(224,85,85,.25);}
+.badge-active{background:rgba(46,196,142,.1);color:var(--green);border:1px solid rgba(46,196,142,.25);}
+.chevron{font-size:13px;color:var(--muted);transition:transform .2s;margin-left:4px;}
+.chevron.open{transform:rotate(180deg);}
 
-.task-label{font-size:12px;color:var(--white);font-weight:500;}
-.trade-label{font-size:11px;color:var(--muted);}
-.date-cell{font-size:11px;color:var(--muted);text-align:center;white-space:nowrap;}
-.date-cell.done-date{color:var(--green);}
-.date-cell.today-past{color:var(--amber);}
+/* status note */
+.gs-note{
+  margin:0 20px 16px;
+  border-left:3px solid var(--accent);
+  padding:8px 14px;
+  font-size:11px;color:var(--muted);
+  line-height:1.7;
+  background:rgba(47,114,196,.06);
+  border-radius:0 4px 4px 0;
+}
+.gs-note strong{color:var(--white);}
 
-/* GANTT BAR CONTAINER */
-.bar-cell{position:relative;padding:8px 0;}
-.bar-track{
+/* gantt body */
+.gs-body{}
+.gs-body.collapsed{display:none;}
+
+/* month ruler */
+.month-ruler{
+  display:flex;
+  border-bottom:1px solid var(--border2);
+  padding:0 20px 0 280px;
+}
+.month-cell{
+  flex:1;
+  font-size:10px;font-weight:500;
+  color:var(--muted2);
+  text-transform:uppercase;letter-spacing:.05em;
+  padding:6px 0;
+  text-align:center;
+  border-right:1px solid var(--border2);
+}
+.month-cell:last-child{border-right:none;}
+
+/* gantt rows */
+.gantt-row{
+  display:flex;
+  align-items:center;
+  padding:0 20px;
+  border-bottom:1px solid var(--border2);
+  min-height:32px;
+}
+.gantt-row:last-child{border-bottom:none;}
+.gantt-row:hover{background:rgba(255,255,255,.02);}
+.gr-label{
+  width:170px;flex-shrink:0;
+  font-size:12px;color:var(--white);
+  display:flex;align-items:center;gap:7px;
+}
+.gr-trade{
+  width:110px;flex-shrink:0;
+  font-size:11px;color:var(--muted);
+}
+.gr-bar-wrap{
+  flex:1;
   position:relative;
-  height:18px;
-  background:rgba(255,255,255,.04);
-  border-radius:3px;
-  overflow:visible;
+  height:32px;
+  display:flex;align-items:center;
 }
-/* Today line */
-.today-line{
+/* today line inside bar area */
+.gr-today{
   position:absolute;
-  top:-4px;bottom:-4px;
-  width:2px;
-  background:var(--gold);
-  z-index:10;
-  border-radius:1px;
+  top:4px;bottom:4px;width:2px;
+  background:var(--red);
+  z-index:10;border-radius:1px;
+  pointer-events:none;
 }
-.bar{
+.gr-bar{
   position:absolute;
-  top:0;height:100%;
+  height:14px;top:50%;transform:translateY(-50%);
   border-radius:3px;
   transition:opacity .15s;
 }
-.bar:hover{opacity:.85;}
-.bar.done{background:var(--green);}
-.bar.active{
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-}
-.bar.upcoming{
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.18);
-}
-.bar.delayed{
-  background:var(--amber);
-}
-.bar.critical{
-  background:var(--red);
+.gr-bar:hover{opacity:.8;cursor:default;}
+.bar-done{background:var(--green);}
+.bar-active{background:var(--accent2);}
+.bar-high{background:var(--blue-h);}
+.bar-med{background:var(--blue-m);}
+.bar-low{background:var(--blue-l);}
+.bar-delayed{background:var(--amber);}
+.bar-permit{
+  background:transparent;
+  border:1.5px solid var(--amber);
+  border-radius:3px;
 }
 
-/* STATUS DOT */
-.status-dot{
-  display:inline-block;
-  width:7px;height:7px;
-  border-radius:50%;
-  margin-right:5px;
-  flex-shrink:0;
-}
+/* dot */
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 .dot-done{background:var(--green);}
-.dot-active{background:var(--accent2);}
 .dot-delayed{background:var(--amber);}
-.dot-upcoming{background:rgba(255,255,255,.3);}
+.dot-upcoming{background:rgba(255,255,255,.2);}
 
-/* SECTION DIVIDER */
-.section-title{
-  font-size:11px;font-weight:600;
-  text-transform:uppercase;
-  letter-spacing:.07em;
+/* save btn */
+.save-btn{
+  background:transparent;
+  border:1px solid var(--border);
   color:var(--muted);
-  padding:20px 0 10px;
+  padding:6px 14px;border-radius:4px;
+  font-size:11px;cursor:pointer;
+  display:flex;align-items:center;gap:6px;
+  transition:border-color .15s,color .15s;
 }
+.save-btn:hover{border-color:var(--accent2);color:var(--accent2);}
 
-/* NOTES */
-.notes-strip{
-  background:rgba(201,168,76,.07);
-  border:1px solid rgba(201,168,76,.2);
-  border-radius:var(--r);
-  padding:12px 16px;
-  margin-bottom:24px;
-  font-size:12px;
-  color:rgba(201,168,76,.9);
-  line-height:1.6;
-}
-.notes-strip strong{color:var(--gold);}
-
-/* FOOTER */
+/* ── FOOTER ── */
 .footer{
-  padding:24px 32px;
+  padding:20px 40px;
   border-top:1px solid var(--border);
-  display:flex;justify-content:space-between;align-items:center;
+  display:flex;justify-content:space-between;
   color:var(--muted);font-size:11px;
-  margin-top:32px;
+  margin-top:8px;
 }
 
 @media print{
   .no-print{display:none!important;}
   body{background:#fff;color:#111;}
-  .site-block,.summary-card{background:#f7f8fa;border-color:#ddd;}
-  .gantt-table th{background:#e8edf4;}
-  .bar.done{background:#2e9e70!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-  .bar.active{background:#2f72c4!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-  .bar.upcoming{background:#ddd!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-  .bar.delayed{background:#c9873a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-  .today-line{background:#c9a84c!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .header,.stat-strip{background:#0d1929!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .gantt-section,.contract-card,.site-card{background:#f5f7fa;border-color:#ddd;}
+  .gs-body.collapsed{display:block!important;}
 }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <div class="header">
   <div class="header-left">
     <div class="logo">GG</div>
     <div>
-      <div class="header-title">Kiwanis Homes — Project Schedule</div>
-      <div class="header-sub">Hamilton East Kiwanis Non-Profit Homes Inc. &mdash; Three New Fourplexes</div>
+      <div class="header-org">Gateway Investment Group</div>
+      <div class="header-sub">Construction &amp; Development &middot; Hamilton, ON</div>
     </div>
   </div>
-  <div style="display:flex;gap:10px;align-items:center;">
-    <span class="header-badge">Updated Jun 4, 2026</span>
-    <button class="no-print" onclick="window.print()" style="background:var(--accent);border:none;color:#fff;padding:6px 14px;border-radius:4px;cursor:pointer;font-size:12px;font-weight:500;">Print / PDF</button>
+  <div class="header-right">
+    <div class="header-tag">Project Schedule Report</div>
+    <div class="header-project">Kiwanis Homes</div>
+    <div class="header-meta">As of June 4, 2026 &middot; Confidential</div>
   </div>
 </div>
 
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat">
+    <div class="stat-val">3</div>
+    <div class="stat-label">Active Sites</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat">
+    <div class="stat-val">12</div>
+    <div class="stat-label">Total Units</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat">
+    <div class="stat-val">~$2.5M</div>
+    <div class="stat-label">Project Value</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat">
+    <div class="stat-val">Oct '26</div>
+    <div class="stat-label">First Completion</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-desc">
+    Three new fourplex builds (138 Paling Ave, 97 Garside Ave N, 53 Fraser Ave) for Hamilton East Kiwanis Non-Profit Homes Inc. New construction to OBC standards. All sites permit-gated; Paling demo complete Apr 17. Garside and Fraser awaiting permits.
+  </div>
+</div>
+
+<!-- MAIN -->
 <div class="main">
 
-  <!-- NOTES STRIP -->
-  <div class="notes-strip">
-    <strong>Schedule note:</strong> Paling schedule last updated May 26 (reflects permit delay — excavation slipped ~6 weeks from original Apr 29 target). Garside and Fraser last fully updated Apr 28. All three sites are behind the original April schedule. Today's line (gold) reflects Jun 4, 2026. Milestones shown are target completion dates per the most recent update for each site.
+  <!-- CONTRACT CARD -->
+  <div class="contract-card">
+    <div class="cc-field">
+      <div class="cc-label">Owner</div>
+      <div class="cc-value">Hamilton East Kiwanis Non-Profit Homes Inc.</div>
+    </div>
+    <div class="cc-field">
+      <div class="cc-label">Project No.</div>
+      <div class="cc-value">24044</div>
+    </div>
+    <div class="cc-field">
+      <div class="cc-label">Architect</div>
+      <div class="cc-value">SRM Architects + Urban Designers</div>
+    </div>
+    <div class="cc-field">
+      <div class="cc-label">Occupancy Target</div>
+      <div class="cc-value">Q4 2026</div>
+    </div>
+    <div class="cc-field">
+      <div class="cc-label">General Contractor</div>
+      <div class="cc-value">Gateway Investment Group Inc.</div>
+    </div>
   </div>
 
-  <!-- SUMMARY -->
-  <div class="summary-strip">
-    <div class="summary-card">
-      <div class="sc-label">Sites</div>
-      <div class="sc-value">3</div>
-      <div class="sc-sub">Paling &middot; Garside &middot; Fraser</div>
-    </div>
-    <div class="summary-card">
-      <div class="sc-label">Milestones Complete</div>
-      <div class="sc-value" id="ms-complete">—</div>
-      <div class="sc-sub">of 60 total (20 per site)</div>
-    </div>
-    <div class="summary-card">
-      <div class="sc-label">Paling Completion</div>
-      <div class="sc-value">Oct 7</div>
-      <div class="sc-sub">2026 (last schedule update)</div>
-    </div>
-    <div class="summary-card">
-      <div class="sc-label">Garside / Fraser</div>
-      <div class="sc-value">Sep 4</div>
-      <div class="sc-sub">2026 target (Apr 28 schedule)</div>
-    </div>
-  </div>
+  <!-- SITE SUMMARY CARDS -->
+  <div class="site-cards" id="site-cards"></div>
 
   <!-- LEGEND -->
-  <div class="legend">
-    <div class="legend-item"><div class="legend-dot done"></div> Complete</div>
-    <div class="legend-item"><div class="legend-dot active"></div> In progress / current</div>
-    <div class="legend-item"><div class="legend-dot delayed"></div> Delayed / behind today</div>
-    <div class="legend-item"><div class="legend-dot upcoming"></div> Upcoming</div>
-    <div class="legend-item"><div class="legend-dot today-line"></div> Today (Jun 4)</div>
+  <div class="legend no-print">
+    <div class="legend-item"><div class="li-box li-done"></div> Confirmed complete</div>
+    <div class="legend-item"><div class="li-box li-active"></div> In progress now</div>
+    <div class="legend-item"><div class="li-box li-high"></div> Forecast &mdash; high complexity</div>
+    <div class="legend-item"><div class="li-box li-med"></div> Forecast &mdash; medium complexity</div>
+    <div class="legend-item"><div class="li-box li-low"></div> Forecast &mdash; low complexity</div>
+    <div class="legend-item"><div class="li-box li-permit"></div> Permit / inspection gate</div>
+    <div class="legend-item"><div class="li-today"></div> Today &mdash; Jun 4, 2026</div>
   </div>
 
-  <!-- SITES -->
+  <!-- GANTT SECTIONS -->
   <div id="gantt-container"></div>
 
 </div>
@@ -323,247 +404,254 @@ body{
 </div>
 
 <script>
-// ── DATA ──────────────────────────────────────────────────────────────────
-// All dates as ISO strings. Milestone dates = target completion date from schedule.
-// "done" = completed before today (Jun 4 2026)
-// "active" = in progress (started but not yet at target)
-// "delayed" = target date was in the past, not yet complete
-// "upcoming" = target date in the future
-
 const TODAY = new Date('2026-06-04');
+const GANTT_START = new Date('2026-03-01');
+const GANTT_END   = new Date('2027-01-01');
+const TOTAL_DAYS  = (GANTT_END - GANTT_START) / 86400000;
+
+// Complexity classification for bar colouring
+const COMPLEXITY = {
+  'Servicing':'done', 'Demo':'done',
+  'Excavation':'high','Footing':'high','Foundation':'high','Backfill':'high',
+  'Framing':'high','Roof':'med',
+  'Brick veneer':'high',
+  'HVAC':'high','Plumbing':'high','Electrical':'high',
+  'Exterior metal':'med',
+  'Insulation':'med','Drywall':'med',
+  'Paint':'low','Flooring':'low','Kitchen':'med','Millwork':'low','Tile':'low'
+};
 
 const TRADES = {
-  'Servicing':      'Silverline',
-  'Demo':           'Chad/Crew',
-  'Excavation':     'Silverline',
-  'Footing':        'Silverline',
-  'Foundation':     'Silverline',
-  'Backfill':       'Silverline',
-  'Framing':        'Brian',
-  'Roof':           'Fix My Roof',
-  'Brick veneer':   'Mason (TBD)',
-  'HVAC':           'Dynamic Heating',
-  'Plumbing':       'Complete Plumbing',
-  'Electrical':     'Amp Electrical',
-  'Exterior metal': 'Med Siding',
-  'Insulation':     'Maxum',
-  'Drywall':        'Maxum',
-  'Paint':          '—',
-  'Flooring':       '—',
-  'Kitchen':        '—',
-  'Millwork':       '—',
-  'Tile':           '—',
+  'Servicing':'Silverline','Demo':'Chad / Crew',
+  'Excavation':'Silverline','Footing':'Silverline',
+  'Foundation':'Silverline','Backfill':'Silverline',
+  'Framing':'Brian','Roof':'Fix My Roof',
+  'Brick veneer':'Mason (TBD)',
+  'HVAC':'Dynamic Heating','Plumbing':'Complete Plumbing',
+  'Electrical':'Amp Electrical','Exterior metal':'Med Siding',
+  'Insulation':'Maxum','Drywall':'Maxum',
+  'Paint':'—','Flooring':'—','Kitchen':'—','Millwork':'—','Tile':'—'
 };
 
 const SITES = [
   {
-    name: '138 Paling Ave',
-    updated: 'May 26, 2026',
-    note: 'Permit delay — excavation slipped ~6 weeks. Demo complete Apr 17. Permits still pending as of Apr 21.',
-    milestones: [
-      { task:'Servicing',      date:'2026-03-24', done:true  },
-      { task:'Demo',           date:'2026-04-17', done:true  },
-      { task:'Excavation',     date:'2026-05-13', done:false },
-      { task:'Footing',        date:'2026-05-20', done:false },
-      { task:'Foundation',     date:'2026-06-02', done:false },
-      { task:'Backfill',       date:'2026-06-08', done:false },
-      { task:'Framing',        date:'2026-06-29', done:false },
-      { task:'Roof',           date:'2026-06-30', done:false },
-      { task:'Brick veneer',   date:'2026-07-06', done:false },
-      { task:'HVAC',           date:'2026-07-13', done:false },
-      { task:'Plumbing',       date:'2026-07-27', done:false },
-      { task:'Electrical',     date:'2026-08-03', done:false },
-      { task:'Exterior metal', date:'2026-08-03', done:false },
-      { task:'Insulation',     date:'2026-08-10', done:false },
-      { task:'Drywall',        date:'2026-08-24', done:false },
-      { task:'Paint',          date:'2026-09-07', done:false },
-      { task:'Flooring',       date:'2026-09-14', done:false },
-      { task:'Kitchen',        date:'2026-09-28', done:false },
-      { task:'Millwork',       date:'2026-10-07', done:false },
-      { task:'Tile',           date:null,         done:false },
+    name:'138 Paling Ave', addr:'138 PALING AVE',
+    type:'New fourplex &middot; 4 units',
+    updated:'May 26, 2026',
+    targetDate:'Oct 7, 2026',
+    targetISO:'2026-10-07',
+    badge:'permit',badgeText:'Permit Pending',
+    note:'<strong>Demo complete Apr 17.</strong> Excavation slipped ~6 weeks from original target (Apr 29 &rarr; May 13) due to city hall permit delay. Permits paid Apr 21; awaiting issuance. All civil and framing trades confirmed.',
+    pct:10,
+    milestones:[
+      {task:'Servicing',      date:'2026-03-24', done:true},
+      {task:'Demo',           date:'2026-04-17', done:true},
+      {task:'Excavation',     date:'2026-05-13', done:false},
+      {task:'Footing',        date:'2026-05-20', done:false},
+      {task:'Foundation',     date:'2026-06-02', done:false},
+      {task:'Backfill',       date:'2026-06-08', done:false},
+      {task:'Framing',        date:'2026-06-29', done:false},
+      {task:'Roof',           date:'2026-06-30', done:false},
+      {task:'Brick veneer',   date:'2026-07-06', done:false},
+      {task:'HVAC',           date:'2026-07-13', done:false},
+      {task:'Plumbing',       date:'2026-07-27', done:false},
+      {task:'Electrical',     date:'2026-08-03', done:false},
+      {task:'Exterior metal', date:'2026-08-03', done:false},
+      {task:'Insulation',     date:'2026-08-10', done:false},
+      {task:'Drywall',        date:'2026-08-24', done:false},
+      {task:'Paint',          date:'2026-09-07', done:false},
+      {task:'Flooring',       date:'2026-09-14', done:false},
+      {task:'Kitchen',        date:'2026-09-28', done:false},
+      {task:'Millwork',       date:'2026-10-07', done:false},
+      {task:'Tile',           date:null,         done:false},
     ]
   },
   {
-    name: '97 Garside Ave N',
-    updated: 'Apr 28, 2026',
-    note: 'Demo still pending as of Apr 28 (scheduled Jun 2). Permit-gated. Schedule not updated since Apr 28.',
-    milestones: [
-      { task:'Servicing',      date:'2026-03-27', done:true  },
-      { task:'Demo',           date:'2026-06-02', done:false },
-      { task:'Excavation',     date:'2026-05-20', done:false },
-      { task:'Footing',        date:'2026-05-21', done:false },
-      { task:'Foundation',     date:'2026-06-01', done:false },
-      { task:'Backfill',       date:null,         done:false },
-      { task:'Framing',        date:'2026-06-15', done:false },
-      { task:'Roof',           date:'2026-06-26', done:false },
-      { task:'Brick veneer',   date:'2026-06-19', done:false },
-      { task:'HVAC',           date:'2026-07-03', done:false },
-      { task:'Plumbing',       date:'2026-07-17', done:false },
-      { task:'Electrical',     date:'2026-06-22', done:false },
-      { task:'Exterior metal', date:'2026-07-24', done:false },
-      { task:'Insulation',     date:'2026-07-31', done:false },
-      { task:'Drywall',        date:'2026-08-21', done:false },
-      { task:'Paint',          date:'2026-08-14', done:false },
-      { task:'Flooring',       date:'2026-08-21', done:false },
-      { task:'Kitchen',        date:'2026-09-04', done:false },
-      { task:'Millwork',       date:'2026-09-04', done:false },
-      { task:'Tile',           date:'2026-07-27', done:false },
+    name:'97 Garside Ave N', addr:'97 GARSIDE AVE N',
+    type:'New fourplex &middot; 4 units',
+    updated:'Apr 28, 2026',
+    targetDate:'Sep 4, 2026',
+    targetISO:'2026-09-04',
+    badge:'permit',badgeText:'Permit Pending',
+    note:'<strong>Servicing complete Mar 27.</strong> Demo scheduled Jun 2, pending permit issuance. Excavation and footing targets (May 20/21) are already past &mdash; schedule will need to be refreshed once permit is received. Last full schedule update Apr 28.',
+    pct:5,
+    milestones:[
+      {task:'Servicing',      date:'2026-03-27', done:true},
+      {task:'Demo',           date:'2026-06-02', done:false},
+      {task:'Excavation',     date:'2026-05-20', done:false},
+      {task:'Footing',        date:'2026-05-21', done:false},
+      {task:'Foundation',     date:'2026-06-01', done:false},
+      {task:'Backfill',       date:null,         done:false},
+      {task:'Framing',        date:'2026-06-15', done:false},
+      {task:'Roof',           date:'2026-06-26', done:false},
+      {task:'Brick veneer',   date:'2026-06-19', done:false},
+      {task:'HVAC',           date:'2026-07-03', done:false},
+      {task:'Plumbing',       date:'2026-07-17', done:false},
+      {task:'Electrical',     date:'2026-06-22', done:false},
+      {task:'Exterior metal', date:'2026-07-24', done:false},
+      {task:'Insulation',     date:'2026-07-31', done:false},
+      {task:'Drywall',        date:'2026-08-21', done:false},
+      {task:'Paint',          date:'2026-08-14', done:false},
+      {task:'Flooring',       date:'2026-08-21', done:false},
+      {task:'Kitchen',        date:'2026-09-04', done:false},
+      {task:'Millwork',       date:'2026-09-04', done:false},
+      {task:'Tile',           date:'2026-07-27', done:false},
     ]
   },
   {
-    name: '53 Fraser Ave',
-    updated: 'Apr 28, 2026',
-    note: 'Demo scheduled May 21. Behind Garside by ~1 week. Schedule not updated since Apr 28.',
-    milestones: [
-      { task:'Servicing',      date:'2026-03-31', done:true  },
-      { task:'Demo',           date:'2026-05-21', done:false },
-      { task:'Excavation',     date:'2026-05-27', done:false },
-      { task:'Footing',        date:'2026-05-28', done:false },
-      { task:'Foundation',     date:'2026-06-08', done:false },
-      { task:'Backfill',       date:null,         done:false },
-      { task:'Framing',        date:'2026-06-22', done:false },
-      { task:'Roof',           date:'2026-07-03', done:false },
-      { task:'Brick veneer',   date:'2026-06-26', done:false },
-      { task:'HVAC',           date:'2026-07-10', done:false },
-      { task:'Plumbing',       date:'2026-07-24', done:false },
-      { task:'Electrical',     date:'2026-06-29', done:false },
-      { task:'Exterior metal', date:'2026-07-31', done:false },
-      { task:'Insulation',     date:'2026-08-07', done:false },
-      { task:'Drywall',        date:'2026-08-28', done:false },
-      { task:'Paint',          date:'2026-08-21', done:false },
-      { task:'Flooring',       date:'2026-08-28', done:false },
-      { task:'Kitchen',        date:'2026-09-11', done:false },
-      { task:'Millwork',       date:'2026-09-11', done:false },
-      { task:'Tile',           date:'2026-08-03', done:false },
+    name:'53 Fraser Ave', addr:'53 FRASER AVE',
+    type:'New fourplex &middot; 4 units',
+    updated:'Apr 28, 2026',
+    targetDate:'Sep 11, 2026',
+    targetISO:'2026-09-11',
+    badge:'permit',badgeText:'Permit Pending',
+    note:'<strong>Servicing complete Mar 31.</strong> Demo targeted May 21, permit-gated. Runs approximately 1 week behind Garside. Excavation and footing targets already past &mdash; schedule requires refresh after permit. Last full update Apr 28.',
+    pct:5,
+    milestones:[
+      {task:'Servicing',      date:'2026-03-31', done:true},
+      {task:'Demo',           date:'2026-05-21', done:false},
+      {task:'Excavation',     date:'2026-05-27', done:false},
+      {task:'Footing',        date:'2026-05-28', done:false},
+      {task:'Foundation',     date:'2026-06-08', done:false},
+      {task:'Backfill',       date:null,         done:false},
+      {task:'Framing',        date:'2026-06-22', done:false},
+      {task:'Roof',           date:'2026-07-03', done:false},
+      {task:'Brick veneer',   date:'2026-06-26', done:false},
+      {task:'HVAC',           date:'2026-07-10', done:false},
+      {task:'Plumbing',       date:'2026-07-24', done:false},
+      {task:'Electrical',     date:'2026-06-29', done:false},
+      {task:'Exterior metal', date:'2026-07-31', done:false},
+      {task:'Insulation',     date:'2026-08-07', done:false},
+      {task:'Drywall',        date:'2026-08-28', done:false},
+      {task:'Paint',          date:'2026-08-21', done:false},
+      {task:'Flooring',       date:'2026-08-28', done:false},
+      {task:'Kitchen',        date:'2026-09-11', done:false},
+      {task:'Millwork',       date:'2026-09-11', done:false},
+      {task:'Tile',           date:'2026-08-03', done:false},
     ]
   }
 ];
 
-// ── GANTT RENDER ─────────────────────────────────────────────────────────
-// Timeline: Mar 1 to Nov 1, 2026
-const GANTT_START = new Date('2026-03-01');
-const GANTT_END   = new Date('2026-11-01');
-const TOTAL_DAYS  = (GANTT_END - GANTT_START) / 86400000;
-
-function dayOffset(d){ return Math.max(0,(d-GANTT_START)/86400000); }
-function pct(d){ return (dayOffset(d)/TOTAL_DAYS*100).toFixed(2)+'%'; }
-function todayPct(){ return ((dayOffset(TODAY)/TOTAL_DAYS)*100).toFixed(2)+'%'; }
-
-function barClass(m){
-  if(m.done) return 'done';
-  if(!m.date) return 'upcoming';
-  const d = new Date(m.date);
-  if(d < TODAY) return 'delayed';
-  // "active" if the previous milestone was done and this is next
-  return 'upcoming';
-}
-
-function formatDate(iso){
+// ── HELPERS ──────────────────────────────────────────────────────────────
+function dayOff(d){ return Math.max(0,(d - GANTT_START)/86400000); }
+function toPct(d){ return (dayOff(d)/TOTAL_DAYS*100).toFixed(3)+'%'; }
+function todayLeft(){ return (dayOff(TODAY)/TOTAL_DAYS*100).toFixed(3)+'%'; }
+function fmtDate(iso){
   if(!iso) return '—';
   const d = new Date(iso);
   return d.toLocaleDateString('en-CA',{month:'short',day:'numeric'});
 }
-
-function statusDotClass(m){
-  if(m.done) return 'dot-done';
-  if(!m.date) return 'dot-upcoming';
+function barCls(m){
+  if(m.done) return 'bar-done';
+  if(!m.date) return 'bar-low';
   const d = new Date(m.date);
-  if(d < TODAY) return 'dot-delayed';
+  if(d < TODAY) return 'bar-delayed';
+  const c = COMPLEXITY[m.task] || 'med';
+  if(c==='done') return 'bar-active';
+  return 'bar-'+c;
+}
+function dotCls(m){
+  if(m.done) return 'dot-done';
+  if(m.date && new Date(m.date) < TODAY) return 'dot-delayed';
   return 'dot-upcoming';
 }
 
-// Build month header labels
-function buildMonthHeaders(){
-  const months = [];
+// ── MONTH RULER ──────────────────────────────────────────────────────────
+function buildRuler(){
+  let html = '<div class="month-ruler">';
   let cur = new Date(GANTT_START);
   while(cur < GANTT_END){
-    const label = cur.toLocaleDateString('en-CA',{month:'short'});
-    const pctPos = pct(cur);
-    const nextMonth = new Date(cur.getFullYear(), cur.getMonth()+1, 1);
-    const width = ((Math.min(nextMonth,GANTT_END)-cur)/86400000/TOTAL_DAYS*100).toFixed(2)+'%';
-    months.push(`<th style="width:${width};text-align:center;font-size:10px;color:var(--muted);padding:5px 0;">${label}</th>`);
-    cur = nextMonth;
+    const label = cur.toLocaleDateString('en-CA',{month:'short',year:'2-digit'})
+                     .replace(', ',"'").toUpperCase();
+    html += `<div class="month-cell">${label}</div>`;
+    cur = new Date(cur.getFullYear(), cur.getMonth()+1, 1);
   }
-  return months.join('');
+  return html + '</div>';
 }
 
-let totalComplete = 0;
+// ── SITE SUMMARY CARDS ────────────────────────────────────────────────────
+function buildCards(){
+  return SITES.map(s => {
+    const done = s.milestones.filter(m=>m.done).length;
+    const pct  = Math.round(done/s.milestones.length*100);
+    return `
+    <div class="site-card">
+      <div class="sc-addr">${s.addr}</div>
+      <div class="sc-type">${s.type}</div>
+      <div class="sc-target">Target: ${s.targetDate}</div>
+      <div class="sc-bar-track"><div class="sc-bar-fill" style="width:${pct}%"></div></div>
+      <div class="sc-pct">${pct}% complete (confirmed milestones)</div>
+    </div>`;
+  }).join('');
+}
 
-function buildSite(site, siteIdx){
-  const statusText = site.milestones.some(m => !m.done && m.date && new Date(m.date) < TODAY)
-    ? 'Delayed' : 'Active';
-  const statusClass = statusText === 'Delayed' ? 'status-delayed' : 'status-active';
+// ── GANTT SECTIONS ────────────────────────────────────────────────────────
+function buildGantt(){
+  return SITES.map((s,i) => {
+    const badgeHtml = s.badge === 'permit'
+      ? `<span class="gs-badge badge-permit">${s.badgeText}</span>`
+      : `<span class="gs-badge badge-active">${s.badgeText}</span>`;
 
-  const doneCount = site.milestones.filter(m=>m.done).length;
-  totalComplete += doneCount;
-  const completionPct = Math.round(doneCount/site.milestones.length*100);
+    // rows
+    const rows = s.milestones.map(m => {
+      let barHtml = '';
+      if(m.date){
+        const endD   = new Date(m.date);
+        const startD = new Date(endD - 14*86400000);
+        const left   = (dayOff(startD)/TOTAL_DAYS*100).toFixed(3)+'%';
+        const width  = (14/TOTAL_DAYS*100).toFixed(3)+'%';
+        const cls    = barCls(m);
+        barHtml = `<div class="gr-bar ${cls}" style="left:${left};width:${width};" title="${m.task} &mdash; ${fmtDate(m.date)}"></div>`;
+      }
+      return `
+      <div class="gantt-row">
+        <div class="gr-label">
+          <div class="dot ${dotCls(m)}"></div>
+          ${m.task}
+        </div>
+        <div class="gr-trade">${TRADES[m.task]||'—'}</div>
+        <div class="gr-bar-wrap">
+          <div class="gr-today" style="left:${todayLeft()}"></div>
+          ${barHtml}
+        </div>
+      </div>`;
+    }).join('');
 
-  let rows = '';
-  site.milestones.forEach((m,i) => {
-    const bc = barClass(m);
-    const trade = TRADES[m.task] || '—';
-
-    // Bar: for done/complete tasks, draw from some start to the date
-    // For Gantt, we show a 2-week bar ending at the milestone target date
-    let barHtml = '';
-    if(m.date){
-      const endD   = new Date(m.date);
-      const startD = new Date(endD - 14*86400000); // 2-week bar
-      const left   = (dayOffset(startD)/TOTAL_DAYS*100).toFixed(2)+'%';
-      const width  = (14/TOTAL_DAYS*100).toFixed(2)+'%';
-      barHtml = `<div class="bar ${bc}" style="left:${left};width:${width};" title="${m.task}: ${formatDate(m.date)}"></div>`;
-    }
-
-    const dotClass = statusDotClass(m);
-    rows += `
-      <tr>
-        <td class="task-label">
-          <span class="status-dot ${dotClass}"></span>${m.task}
-        </td>
-        <td class="trade-label">${trade}</td>
-        <td class="date-cell ${m.done?'done-date':(m.date&&new Date(m.date)<TODAY?'today-past':'')}">${formatDate(m.date)}</td>
-        <td class="bar-cell">
-          <div class="bar-track">
-            <div class="today-line" style="left:${todayPct()}"></div>
-            ${barHtml}
-          </div>
-        </td>
-      </tr>`;
-  });
-
-  return `
-  <div class="site-block">
-    <div class="site-header">
-      <div>
-        <div class="site-name">${site.name}</div>
-        <div class="site-meta">Schedule as of ${site.updated} &middot; ${doneCount}/20 milestones complete (${completionPct}%) &middot; ${site.note}</div>
+    return `
+    <div class="gantt-section">
+      <div class="gs-header" onclick="toggle(this)">
+        <div class="gs-num">${i+1}</div>
+        <div class="gs-title-wrap">
+          <div class="gs-name">${s.name}</div>
+          <div class="gs-sub">${s.type}</div>
+        </div>
+        <div class="gs-right">
+          <span class="gs-target">Target completion: ${s.targetDate}</span>
+          ${badgeHtml}
+          <span class="chevron open">&#9660;</span>
+        </div>
       </div>
-      <span class="site-status ${statusClass}">${statusText}</span>
-    </div>
-    <div class="gantt-wrap">
-      <table class="gantt-table">
-        <thead>
-          <tr>
-            <th class="col-task">Milestone</th>
-            <th class="col-trade">Trade</th>
-            <th class="col-date">Target Date</th>
-            <th class="col-bar">
-              <div style="position:relative;">
-                <table style="width:100%;border-collapse:collapse;"><tr>${buildMonthHeaders()}</tr></table>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>
-  </div>`;
+      <div class="gs-body">
+        <div class="gs-note">${s.note}</div>
+        ${buildRuler()}
+        ${rows}
+      </div>
+    </div>`;
+  }).join('');
 }
 
-// RENDER
-const container = document.getElementById('gantt-container');
-container.innerHTML = SITES.map((s,i)=>buildSite(s,i)).join('');
-document.getElementById('ms-complete').textContent = totalComplete;
+// ── RENDER ────────────────────────────────────────────────────────────────
+document.getElementById('site-cards').innerHTML   = buildCards();
+document.getElementById('gantt-container').innerHTML = buildGantt();
+
+function toggle(header){
+  const body    = header.nextElementSibling;
+  const chevron = header.querySelector('.chevron');
+  const isOpen  = !body.classList.contains('collapsed');
+  body.classList.toggle('collapsed', isOpen);
+  chevron.classList.toggle('open', !isOpen);
+  header.style.borderBottom = isOpen ? 'none' : '';
+}
 </script>
 </body>
 </html>
