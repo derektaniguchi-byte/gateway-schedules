@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiwanis Homes — Project Schedule | Gateway Investment Group</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:     #0f1f3d;
+  --navy2:    #152540;
+  --navy3:    #1c3258;
+  --accent:   #2f72c4;
+  --accent2:  #4a8fd6;
+  --gold:     #c9a84c;
+  --gold2:    #e2c06e;
+  --white:    #ffffff;
+  --offwhite: #f4f6f9;
+  --muted:    #8a96a8;
+  --border:   rgba(255,255,255,0.09);
+  --border2:  rgba(255,255,255,0.05);
+  --green:    #2e9e70;
+  --green2:   #3dbd87;
+  --amber:    #c9873a;
+  --red:      #c94040;
+  --blue-h:   #2f72c4;
+  --blue-m:   #5a9fd6;
+  --blue-l:   #8dc3e8;
+  --r:        6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; color: #111; font-size: 12px; }
+  .header { background: var(--navy2) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section-panel { border: 1px solid #ddd; background: #fff; }
+  .section-body { display: block !important; }
+  .chevron { display: none; }
+  .gantt-bar-done, .gantt-bar-H, .gantt-bar-M, .gantt-bar-L, .gantt-bar-permit, .gantt-bar-active {
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--navy2);
+  border-bottom: 2px solid var(--gold);
+  padding: 32px 52px 26px;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 24px;
+}
+@media (max-width:720px) { .header { padding: 20px 20px 18px; flex-direction: column; } }
+
+.logo-block { display: flex; align-items: center; gap: 16px; }
+.monogram {
+  width: 52px; height: 52px; border-radius: 4px;
+  background: var(--gold); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Serif Display', serif; font-size: 24px;
+  color: var(--navy); letter-spacing: -1px;
+}
+.logo-text h1 { font-family: 'DM Serif Display', serif; font-size: 21px; font-weight: 400; }
+.logo-text .sub { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px; }
+
+.header-right { text-align: right; }
+.report-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold2); font-weight: 600; }
+.report-for { font-family: 'DM Serif Display', serif; font-size: 22px; margin-top: 2px; }
+.report-date { font-size: 11px; color: var(--muted); margin-top: 3px; }
+.print-btn {
+  margin-top: 12px;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border: 1px solid var(--gold);
+  border-radius: var(--r); background: transparent;
+  color: var(--gold); font-size: 11px; font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
+  transition: all 0.15s;
+}
+.print-btn:hover { background: var(--gold); color: var(--navy); }
+
+/* ── HERO STRIP ── */
+.hero {
+  background: var(--navy3);
+  border-bottom: 1px solid var(--border);
+  padding: 22px 52px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+}
+@media (max-width:720px) { .hero { padding: 16px 20px; } }
+.hero-stat { text-align: center; }
+.hero-stat .val { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--gold2); }
+.hero-stat .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-top: 2px; }
+.hero-divider { width: 1px; height: 40px; background: var(--border); }
+.hero-note {
+  flex: 1; min-width: 200px;
+  font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.6;
+  border-left: 2px solid var(--gold); padding-left: 14px;
+}
+
+/* ── MAIN ── */
+.main { max-width: 1060px; margin: 0 auto; padding: 36px 52px 72px; }
+@media (max-width:720px) { .main { padding: 20px 16px 48px; } }
+
+/* ── SUMMARY STRIP ── */
+.sites-strip {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 32px;
+}
+@media (max-width:700px) { .sites-strip { grid-template-columns: 1fr; } }
+.site-card {
+  background: var(--navy2); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 16px 18px; cursor: pointer;
+  transition: border-color 0.15s;
+}
+.site-card:hover { border-color: rgba(255,255,255,0.2); }
+.site-card .sc-address { font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin-bottom: 5px; }
+.site-card .sc-type { font-size: 11px; font-weight: 500; color: var(--white); }
+.site-card .sc-target { font-size: 11px; color: var(--gold2); margin-top: 4px; }
+.site-card .sc-prog-track { height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; margin-top: 10px; overflow: hidden; }
+.site-card .sc-prog-fill  { height: 100%; border-radius: 2px; }
+.site-card .sc-prog-label { font-size: 9px; color: var(--muted); margin-top: 4px; }
+.badge {
+  display: inline-block; font-size: 9px; font-weight: 600;
+  padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em; text-transform: uppercase;
+  margin-left: 6px; vertical-align: middle;
+}
+.b-done   { background: rgba(46,158,112,0.18); color: var(--green2); }
+.b-active { background: rgba(47,114,196,0.18); color: var(--accent2); }
+.b-permit { background: rgba(201,135,58,0.18); color: var(--gold2); }
+.b-warn   { background: rgba(201,64,64,0.12);  color: #e07070; }
+
+/* ── LEGEND ── */
+.legend-wrap { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 28px; }
+.leg { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--muted); }
+.leg-sq { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
+/* ── PANELS ── */
+.section-panel {
+  background: var(--navy2); border: 1px solid var(--border);
+  border-radius: var(--r); margin-bottom: 18px; overflow: hidden;
+}
+.section-header {
+  padding: 18px 20px; display: flex; align-items: center;
+  justify-content: space-between; cursor: pointer; user-select: none; gap: 14px;
+  border-bottom: 1px solid var(--border2); transition: background 0.12s;
+}
+.section-header:hover { background: rgba(255,255,255,0.025); }
+.sh-left { display: flex; align-items: center; gap: 14px; }
+.site-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(47,114,196,0.2); border: 1px solid rgba(47,114,196,0.4);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Serif Display', serif; font-size: 16px; color: var(--accent2); flex-shrink: 0;
+}
+.sh-title { font-family: 'DM Serif Display', serif; font-size: 18px; font-weight: 400; }
+.sh-sub   { font-size: 11px; color: var(--muted); margin-top: 1px; }
+.sh-right { text-align: right; flex-shrink: 0; }
+.sh-target { font-size: 11px; color: var(--gold2); }
+.sh-target strong { color: var(--white); font-weight: 500; }
+.chevron { font-size: 18px; color: var(--muted); transition: transform 0.2s; flex-shrink: 0; }
+.chevron.open { transform: rotate(180deg); }
+
+.section-body { display: none; padding: 0 20px 22px; }
+.section-body.open { display: block; }
+
+/* ── NOTE BOX ── */
+.note-box {
+  font-size: 11px; color: rgba(255,255,255,0.6); line-height: 1.6;
+  padding: 10px 14px; border-left: 2px solid var(--accent);
+  background: rgba(47,114,196,0.08); border-radius: 0 4px 4px 0; margin-top: 14px;
+}
+.note-box.warn { border-color: var(--amber); background: rgba(201,135,58,0.08); }
+
+/* ── GANTT ── */
+.gantt-wrap { margin-top: 20px; overflow-x: auto; }
+.gantt-inner { min-width: 540px; }
+.month-hdr { display: flex; margin-left: 162px; margin-bottom: 4px; }
+.month-cell { flex: 1; font-size: 9px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; padding-left: 3px; border-left: 1px solid var(--border2); }
+.g-row { display: flex; align-items: center; min-height: 28px; }
+.g-lbl { width: 162px; flex-shrink: 0; font-size: 11px; color: rgba(255,255,255,0.7); padding-right: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.g-track { flex: 1; position: relative; height: 28px; }
+.g-bar {
+  position: absolute; height: 13px; top: 7px; border-radius: 2px; min-width: 3px;
+  display: flex; align-items: center;
+}
+.g-bar .t { font-size: 8px; font-weight: 700; padding: 0 3px; color: rgba(0,0,0,0.45); }
+.today-v { position: absolute; width: 1.5px; top:0; bottom:0; background: var(--red); opacity: 0.85; z-index: 10; }
+.m-line  { position: absolute; width: 1px; top:0; bottom:0; background: var(--border2); z-index: 1; }
+.g-bar-done   { background: var(--green); }
+.g-bar-active { background: rgba(47,114,196,0.3); border: 1.5px dashed var(--accent2); }
+.g-bar-permit { background: rgba(201,135,58,0.38); border: 1px dashed var(--amber); }
+.g-bar-H { background: var(--blue-h); }
+.g-bar-M { background: var(--blue-m); }
+.g-bar-L { background: var(--blue-l); }
+
+/* ── TABLE ── */
+.phase-table { width: 100%; border-collapse: collapse; margin-top: 18px; }
+.phase-table th {
+  font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
+  font-weight: 500; padding: 0 8px 8px; text-align: left; border-bottom: 1px solid var(--border2);
+}
+.phase-table th:last-child { text-align: right; }
+.phase-table td { padding: 8px 8px; border-bottom: 1px solid var(--border2); vertical-align: middle; }
+.phase-table tr:last-child td { border-bottom: none; }
+.pn { font-size: 12px; font-weight: 500; }
+.pd { font-size: 10px; color: var(--muted); }
+.loe-done   { font-size: 10px; color: var(--green2); }
+.loe-active { font-size: 10px; color: var(--accent2); }
+.loe-permit { font-size: 10px; color: var(--amber); }
+.loe-H { font-size: 10px; color: var(--blue-h); }
+.loe-M { font-size: 10px; color: var(--blue-m); }
+.loe-L { font-size: 10px; color: var(--blue-l); }
+
+/* ── FOOTER ── */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 20px 52px; text-align: center;
+  font-size: 10px; color: var(--muted); letter-spacing: 0.03em;
+}
+.strive { letter-spacing: 0.18em; text-transform: uppercase; font-size: 9px; color: rgba(255,255,255,0.15); margin-top: 5px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo-block">
+    <div class="monogram">GG</div>
+    <div class="logo-text">
+      <h1>Gateway Investment Group</h1>
+      <div class="sub">Construction &amp; Development · Hamilton, ON</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="report-tag">Project Schedule Report</div>
+    <div class="report-for">Kiwanis Community Homes</div>
+    <div class="report-date">As of June 4, 2026 &nbsp;·&nbsp; Confidential</div>
+    <button class="print-btn no-print" onclick="window.print()">&#x2193;&nbsp; Save as PDF</button>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-stat"><div class="val">3</div><div class="lbl">Active sites</div></div>
+  <div class="hero-divider"></div>
+  <div class="hero-stat"><div class="val">12</div><div class="lbl">Total units</div></div>
+  <div class="hero-divider"></div>
+  <div class="hero-stat"><div class="val">Nov '26</div><div class="lbl">First completion</div></div>
+  <div class="hero-divider"></div>
+  <div class="hero-stat"><div class="val">Feb '27</div><div class="lbl">Final completion</div></div>
+  <div class="hero-divider"></div>
+  <div class="hero-note">
+    Three new fourplex builds under HP 25-17 design-build contract. Paling is the most advanced with foundation in progress. Garside and Fraser are staggered behind by 8 and 12 weeks respectively. All sites active as of June 4.
+  </div>
+</div>
+
+<main class="main">
+
+  <div class="sites-strip" id="site-cards"></div>
+
+  <div class="legend-wrap">
+    <div class="leg"><div class="leg-sq" style="background:var(--green)"></div>Confirmed complete</div>
+    <div class="leg"><div class="leg-sq" style="background:rgba(47,114,196,0.3);border:1px dashed var(--accent2)"></div>In progress now</div>
+    <div class="leg"><div class="leg-sq" style="background:var(--blue-h)"></div>Forecast — high complexity</div>
+    <div class="leg"><div class="leg-sq" style="background:var(--blue-m)"></div>Forecast — medium complexity</div>
+    <div class="leg"><div class="leg-sq" style="background:rgba(201,135,58,0.38);border:1px dashed var(--amber)"></div>Inspection / permit gate</div>
+    <div class="leg"><div class="leg-sq" style="background:var(--red)"></div>Today — Jun 4, 2026</div>
+  </div>
+
+  <div id="panels"></div>
+
+</main>
+
+<footer class="footer">
+  <div>Prepared by Gateway Investment Group Inc. for Kiwanis Community Homes &nbsp;·&nbsp; Not for redistribution</div>
+  <div class="strive">S &nbsp; T &nbsp; R &nbsp; I &nbsp; V &nbsp; E</div>
+</footer>
+
+<script>
+const MOS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const TODAY=new Date(2026,5,4);
+const LOE={done:'Confirmed complete',active:'In progress',permit:'Inspection gate',H:'High complexity',M:'Medium complexity',L:'Low complexity'};
+
+function d(y,m,day){return new Date(y,m-1,day)}
+function fd(dt){return MOS[dt.getMonth()]+' '+dt.getDate()+', '+dt.getFullYear()}
+function fds(dt){return MOS[dt.getMonth()]+' '+dt.getDate()}
+function pct(dt,s,e){return Math.max(0,Math.min(100,((dt-s)/(e-s))*100))}
+
+const SITES=[
+  {
+    id:'paling', num:'1',
+    title:'138 Paling Ave',
+    sub:'New fourplex · 4 units',
+    target:d(2026,11,24), progress:28,
+    note:'Servicing ✓ Mar 24 · Demo ✓ Apr 17 · Excavation ✓ May 13 · Footings ✓ May 20. Foundation poured and curing. Framing crew mobilizing mid-June. Most advanced of the three sites.',
+    warn:false,
+    rangeStart:d(2026,3,1), rangeEnd:d(2027,1,1),
+    phases:[
+      {n:'Servicing',               loe:'done',   start:d(2026,3,17), end:d(2026,3,24)},
+      {n:'Demo',                    loe:'done',   start:d(2026,3,24), end:d(2026,4,17)},
+      {n:'Excavation',              loe:'done',   start:d(2026,4,13), end:d(2026,5,13)},
+      {n:'Footings',                loe:'done',   start:d(2026,5,13), end:d(2026,5,20)},
+      {n:'Foundation & backfill',   loe:'active', start:d(2026,5,20), end:d(2026,6,16)},
+      {n:'Framing',                 loe:'H',      start:d(2026,6,16), end:d(2026,7,14)},
+      {n:'Roof structure & cover',  loe:'H',      start:d(2026,7,7),  end:d(2026,7,28)},
+      {n:'Brick veneer / exterior', loe:'M',      start:d(2026,7,14), end:d(2026,8,4)},
+      {n:'HVAC rough-in',           loe:'H',      start:d(2026,7,21), end:d(2026,8,25)},
+      {n:'Plumbing rough-in',       loe:'H',      start:d(2026,7,21), end:d(2026,8,25)},
+      {n:'Electrical rough-in',     loe:'H',      start:d(2026,7,21), end:d(2026,8,25)},
+      {n:'Rough-in inspections',    loe:'permit', start:d(2026,8,25), end:d(2026,9,8)},
+      {n:'Insulation',              loe:'M',      start:d(2026,9,8),  end:d(2026,9,22)},
+      {n:'Drywall',                 loe:'M',      start:d(2026,9,22), end:d(2026,10,13)},
+      {n:'Painting',                loe:'M',      start:d(2026,10,13),end:d(2026,10,27)},
+      {n:'Flooring',                loe:'H',      start:d(2026,10,20),end:d(2026,11,3)},
+      {n:'Kitchens',                loe:'H',      start:d(2026,10,27),end:d(2026,11,17)},
+      {n:'Millwork / tile / baths', loe:'M',      start:d(2026,11,3), end:d(2026,11,24)},
+    ]
+  },
+  {
+    id:'garside', num:'2',
+    title:'97 Garside Ave N',
+    sub:'New fourplex · 4 units',
+    target:d(2027,1,20), progress:18,
+    note:'Servicing ✓ Mar 27 · Demo ✓ Jun 2. Excavation beginning this week. Running approximately 8 weeks behind Paling. Foundation and framing will carry through summer.',
+    warn:false,
+    rangeStart:d(2026,3,1), rangeEnd:d(2027,2,15),
+    phases:[
+      {n:'Servicing',               loe:'done',   start:d(2026,3,20), end:d(2026,3,27)},
+      {n:'Demo',                    loe:'done',   start:d(2026,5,18), end:d(2026,6,2)},
+      {n:'Excavation',              loe:'active', start:d(2026,6,2),  end:d(2026,6,23)},
+      {n:'Footings',                loe:'H',      start:d(2026,6,23), end:d(2026,7,7)},
+      {n:'Foundation & backfill',   loe:'H',      start:d(2026,7,7),  end:d(2026,7,28)},
+      {n:'Framing',                 loe:'H',      start:d(2026,7,28), end:d(2026,8,25)},
+      {n:'Roof structure & cover',  loe:'H',      start:d(2026,8,18), end:d(2026,9,8)},
+      {n:'Brick veneer / exterior', loe:'M',      start:d(2026,8,25), end:d(2026,9,15)},
+      {n:'MEP rough-in',            loe:'H',      start:d(2026,9,1),  end:d(2026,10,6)},
+      {n:'Rough-in inspections',    loe:'permit', start:d(2026,10,6), end:d(2026,10,20)},
+      {n:'Insulation',              loe:'M',      start:d(2026,10,20),end:d(2026,11,3)},
+      {n:'Drywall',                 loe:'M',      start:d(2026,11,3), end:d(2026,11,24)},
+      {n:'Painting',                loe:'M',      start:d(2026,11,24),end:d(2026,12,8)},
+      {n:'Flooring',                loe:'H',      start:d(2026,12,8), end:d(2027,1,5)},
+      {n:'Kitchens',                loe:'H',      start:d(2026,12,22),end:d(2027,1,12)},
+      {n:'Millwork / tile / baths', loe:'M',      start:d(2027,1,5),  end:d(2027,1,20)},
+    ]
+  },
+  {
+    id:'fraser', num:'3',
+    title:'53 Fraser Ave',
+    sub:'New fourplex · 4 units',
+    target:d(2027,2,9), progress:12,
+    note:'Servicing ✓ Mar 31. Demo actively in progress — final confirmation pending. Latest of the three sites. Full excavation and foundation sequence runs through August. Forecasted completion Feb 2027.',
+    warn:true,
+    rangeStart:d(2026,3,1), rangeEnd:d(2027,3,1),
+    phases:[
+      {n:'Servicing',               loe:'done',   start:d(2026,3,24), end:d(2026,3,31)},
+      {n:'Demo',                    loe:'active', start:d(2026,5,21), end:d(2026,6,16)},
+      {n:'Excavation',              loe:'H',      start:d(2026,6,16), end:d(2026,7,7)},
+      {n:'Footings',                loe:'H',      start:d(2026,7,7),  end:d(2026,7,21)},
+      {n:'Foundation & backfill',   loe:'H',      start:d(2026,7,21), end:d(2026,8,11)},
+      {n:'Framing',                 loe:'H',      start:d(2026,8,11), end:d(2026,9,8)},
+      {n:'Roof structure & cover',  loe:'H',      start:d(2026,9,1),  end:d(2026,9,22)},
+      {n:'Brick veneer / exterior', loe:'M',      start:d(2026,9,8),  end:d(2026,9,29)},
+      {n:'MEP rough-in',            loe:'H',      start:d(2026,9,15), end:d(2026,10,20)},
+      {n:'Rough-in inspections',    loe:'permit', start:d(2026,10,20),end:d(2026,11,3)},
+      {n:'Insulation',              loe:'M',      start:d(2026,11,3), end:d(2026,11,17)},
+      {n:'Drywall',                 loe:'M',      start:d(2026,11,17),end:d(2026,12,8)},
+      {n:'Painting',                loe:'M',      start:d(2026,12,8), end:d(2026,12,22)},
+      {n:'Flooring',                loe:'H',      start:d(2026,12,22),end:d(2027,1,19)},
+      {n:'Kitchens',                loe:'H',      start:d(2027,1,5),  end:d(2027,1,26)},
+      {n:'Millwork / tile / baths', loe:'M',      start:d(2027,1,19), end:d(2027,2,9)},
+    ]
+  }
+];
+
+function progColor(p){ return p>=60?'var(--green)':p>=30?'var(--accent)':'var(--amber)'; }
+
+// Site summary cards
+const cardsEl=document.getElementById('site-cards');
+SITES.forEach(s=>{
+  const el=document.createElement('div');
+  el.className='site-card';
+  el.innerHTML=`
+    <div class="sc-address">${s.title}</div>
+    <div class="sc-type">${s.sub}</div>
+    <div class="sc-target">Target: <strong>${fd(s.target)}</strong></div>
+    <div class="sc-prog-track"><div class="sc-prog-fill" style="width:${s.progress}%;background:${progColor(s.progress)}"></div></div>
+    <div class="sc-prog-label">${s.progress}% complete (confirmed milestones)</div>
+  `;
+  el.onclick=()=>{ document.getElementById('panel-'+s.id)?.scrollIntoView({behavior:'smooth',block:'start'}); openPanel(s.id); };
+  cardsEl.appendChild(el);
+});
+
+// Build month list for a range
+function months(rs,re){
+  let res=[],cur=new Date(rs.getFullYear(),rs.getMonth(),1);
+  while(cur<=re){ res.push(new Date(cur)); cur=new Date(cur.getFullYear(),cur.getMonth()+1,1); }
+  return res;
+}
+
+function gantt(s){
+  const rs=s.rangeStart, re=s.rangeEnd;
+  const mos=months(rs,re);
+  const tp=pct(TODAY,rs,re).toFixed(2);
+  let h='<div class="gantt-wrap"><div class="gantt-inner">';
+  h+='<div class="month-hdr">';
+  mos.forEach(m=>{ h+=`<div class="month-cell">${MOS[m.getMonth()]} ${m.getFullYear()===2026?'\'26':'\'27'}</div>`; });
+  h+='</div>';
+  s.phases.forEach(p=>{
+    const l=pct(p.start,rs,re).toFixed(2);
+    const w=Math.max(0.5,pct(p.end,rs,re)-l).toFixed(2);
+    let mlines='';
+    mos.forEach(m=>{ mlines+=`<div class="m-line" style="left:${pct(m,rs,re).toFixed(2)}%"></div>`; });
+    h+=`<div class="g-row">
+      <div class="g-lbl">${p.n}</div>
+      <div class="g-track">
+        ${mlines}
+        <div class="today-v" style="left:${tp}%"></div>
+        <div class="g-bar g-bar-${p.loe}" style="left:${l}%;width:${w}%">
+          ${p.loe==='done'?'<span class="t">✓</span>':''}
+        </div>
+      </div>
+    </div>`;
+  });
+  h+='</div></div>';
+  return h;
+}
+
+function table(s){
+  let h=`<table class="phase-table"><thead><tr>
+    <th>Phase</th><th>Start</th><th>Forecast complete</th><th style="text-align:right">Complexity / status</th>
+  </tr></thead><tbody>`;
+  s.phases.forEach(p=>{
+    h+=`<tr>
+      <td><div class="pn">${p.n}</div></td>
+      <td><div class="pd">${fds(p.start)}</div></td>
+      <td><div class="pd">${fds(p.end)}</div></td>
+      <td style="text-align:right"><span class="loe-${p.loe}">${LOE[p.loe]||p.loe}</span></td>
+    </tr>`;
+  });
+  h+='</tbody></table>';
+  return h;
+}
+
+function openPanel(id,force){
+  const b=document.querySelector(`#panel-${id} .section-body`);
+  const c=document.querySelector(`#panel-${id} .chevron`);
+  if(!b)return;
+  if(force||!b.classList.contains('open')){ b.classList.add('open'); c.classList.add('open'); }
+}
+function togglePanel(id){
+  const b=document.querySelector(`#panel-${id} .section-body`);
+  const c=document.querySelector(`#panel-${id} .chevron`);
+  if(!b)return;
+  b.classList.toggle('open'); c.classList.toggle('open');
+}
+
+const panelsEl=document.getElementById('panels');
+SITES.forEach(s=>{
+  const el=document.createElement('div');
+  el.className='section-panel'; el.id='panel-'+s.id;
+  el.innerHTML=`
+    <div class="section-header" onclick="togglePanel('${s.id}')">
+      <div class="sh-left">
+        <div class="site-num">${s.num}</div>
+        <div>
+          <div class="sh-title">${s.title}</div>
+          <div class="sh-sub">${s.sub}</div>
+        </div>
+      </div>
+      <div class="sh-right">
+        <div class="sh-target">Target completion: <strong>${fd(s.target)}</strong></div>
+        <div style="margin-top:5px">
+          <span class="badge ${s.warn?'b-warn':'b-active'}">${s.warn?'Monitor timeline':'On track'}</span>
+        </div>
+      </div>
+      <div class="chevron">⌄</div>
+    </div>
+    <div class="section-body">
+      <div class="note-box${s.warn?' warn':''}">${s.note}</div>
+      ${gantt(s)}
+      ${table(s)}
+    </div>
+  `;
+  panelsEl.appendChild(el);
+});
+
+// Open first panel by default
+openPanel('paling',true);
+</script>
+</body>
+</html>
