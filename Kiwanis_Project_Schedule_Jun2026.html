@@ -6,310 +6,129 @@
 <title>Kiwanis Homes — Project Schedule | Gateway Investment Group</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy:    #0d1929;
-  --navy2:   #111f33;
-  --navy3:   #172843;
-  --navy4:   #1c3055;
-  --accent:  #2f72c4;
-  --accent2: #4a8fd6;
-  --teal:    #2ec4b6;
-  --teal2:   #3dd9c9;
-  --gold:    #c9a84c;
-  --gold2:   #e2c06e;
-  --white:   #ffffff;
-  --muted:   #7a8fa8;
-  --muted2:  #5a6e84;
-  --border:  rgba(255,255,255,0.07);
-  --border2: rgba(255,255,255,0.04);
-  --green:   #2ecc8e;
-  --green2:  #25a872;
-  --amber:   #e09b45;
-  --red:     #e05555;
-  --blue-h:  #2f72c4;
-  --blue-m:  #5a9fd6;
-  --blue-l:  #8dc3e8;
-  --r: 6px;
+:root{
+  --navy:#0d1929;--navy2:#111f33;--navy3:#172843;--navy4:#1c3055;
+  --accent:#2f72c4;--accent2:#4a8fd6;--teal:#2ec4b6;--gold:#c9a84c;
+  --white:#fff;--muted:#7a8fa8;--muted2:#5a6e84;
+  --border:rgba(255,255,255,.07);--border2:rgba(255,255,255,.04);
+  --complete:#e09b45;--red:#e05555;
+  --blue-h:#2f72c4;--blue-m:#5a9fd6;--blue-l:#8dc3e8;--r:6px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{
-  font-family:'DM Sans',sans-serif;
-  background:var(--navy);
-  color:var(--white);
-  font-size:13px;
-  line-height:1.5;
-  min-height:100vh;
-}
-
-/* ── HEADER ── */
-.header{
-  background:var(--navy2);
-  border-bottom:1px solid var(--border);
-  padding:18px 40px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);font-size:13px;line-height:1.5;min-height:100vh;}
+.header{background:var(--navy2);border-bottom:1px solid var(--border);padding:18px 40px;display:flex;align-items:center;justify-content:space-between;}
 .header-left{display:flex;align-items:center;gap:14px;}
-.logo{
-  width:44px;height:44px;
-  background:var(--gold);
-  border-radius:8px;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'DM Serif Display',serif;
-  font-size:18px;font-weight:700;
-  color:var(--navy);
-  flex-shrink:0;
-}
-.header-org{font-size:16px;font-weight:600;color:var(--white);}
+.logo{width:44px;height:44px;background:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:18px;font-weight:700;color:var(--navy);flex-shrink:0;}
+.header-org{font-size:16px;font-weight:600;}
 .header-sub{font-size:11px;color:var(--muted);margin-top:2px;letter-spacing:.04em;text-transform:uppercase;}
 .header-right{text-align:right;}
 .header-tag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:4px;}
-.header-project{font-family:'DM Serif Display',serif;font-size:22px;color:var(--white);}
+.header-project{font-family:'DM Serif Display',serif;font-size:22px;}
 .header-meta{font-size:11px;color:var(--muted);margin-top:3px;}
-
-/* ── STAT STRIP ── */
-.stat-strip{
-  background:var(--navy2);
-  border-bottom:1px solid var(--border);
-  padding:20px 40px;
-  display:flex;
-  align-items:center;
-  gap:40px;
-}
-.stat{text-align:left;}
-.stat-val{font-size:28px;font-weight:600;color:var(--teal);line-height:1;}
-.stat-label{font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:4px;}
-.stat-divider{width:1px;height:44px;background:var(--border);}
-.stat-desc{
-  flex:1;
-  font-size:12px;color:var(--muted);
-  line-height:1.7;
-  border-left:3px solid var(--accent);
-  padding-left:16px;
-  max-width:700px;
-}
-
-/* ── MAIN ── */
-.main{padding:28px 40px;max-width:1400px;margin:0 auto;}
-
-/* ── CONTRACT CARD ── */
-.contract-card{
-  background:var(--navy2);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  padding:20px 24px;
-  margin-bottom:20px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr) 1.2fr;
-  gap:20px;
-}
-.cc-field{}
-.cc-label{font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
-.cc-value{font-size:13px;font-weight:500;color:var(--white);}
-
-/* ── SITE SUMMARY CARDS ── */
-.site-cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-  margin-bottom:28px;
-}
-.site-card{
-  background:var(--navy2);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  padding:16px 18px;
-}
-.sc-addr{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
-.sc-type{font-size:12px;color:var(--muted);margin-bottom:8px;}
-.sc-target{font-size:13px;font-weight:500;color:var(--teal);margin-bottom:10px;}
-.sc-bar-track{height:4px;background:rgba(255,255,255,.08);border-radius:2px;margin-bottom:7px;}
+.stat-strip{background:var(--navy2);border-bottom:1px solid var(--border);padding:20px 40px;display:flex;align-items:center;gap:36px;flex-wrap:wrap;}
+.stat-val{font-size:26px;font-weight:600;color:var(--teal);line-height:1;}
+.stat-label{font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+.stat-divider{width:1px;height:40px;background:var(--border);}
+.stat-desc{flex:1;min-width:200px;font-size:12px;color:var(--muted);line-height:1.7;border-left:3px solid var(--accent);padding-left:16px;}
+.main{padding:28px 40px;max-width:1600px;margin:0 auto;}
+.contract-card{background:var(--navy2);border:1px solid var(--border);border-radius:var(--r);padding:18px 24px;margin-bottom:20px;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+.cc-label{font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+.cc-value{font-size:13px;font-weight:500;}
+.site-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
+.site-card{background:var(--navy2);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;}
+.site-card.winter-risk{border-color:rgba(224,155,69,.35);}
+.sc-addr{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.sc-type{font-size:12px;color:var(--muted);margin-bottom:7px;}
+.sc-target{font-size:13px;font-weight:500;color:var(--teal);margin-bottom:9px;}
+.sc-bar-track{height:4px;background:rgba(255,255,255,.08);border-radius:2px;margin-bottom:6px;}
 .sc-bar-fill{height:100%;border-radius:2px;background:var(--teal);}
 .sc-pct{font-size:11px;color:var(--muted);}
-
-/* ── LEGEND ── */
-.legend{
-  display:flex;gap:18px;align-items:center;
-  margin-bottom:24px;flex-wrap:wrap;
-}
-.legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);}
-.li-box{width:12px;height:10px;border-radius:2px;flex-shrink:0;}
-.li-done{background:var(--green);}
-.li-active{background:var(--accent2);border:1px dashed rgba(255,255,255,.3);}
+.sc-winter{font-size:10px;color:var(--complete);margin-top:6px;display:flex;align-items:center;gap:5px;}
+.winter-banner{background:rgba(224,155,69,.08);border:1px solid rgba(224,155,69,.25);border-radius:var(--r);padding:12px 18px;margin-bottom:20px;font-size:12px;color:rgba(255,255,255,.75);line-height:1.7;display:flex;gap:14px;align-items:flex-start;}
+.wb-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.wb-body strong{color:var(--white);}
+.legend{display:flex;gap:16px;align-items:center;margin-bottom:20px;flex-wrap:wrap;}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);}
+.li-box{width:11px;height:9px;border-radius:2px;flex-shrink:0;}
+.li-complete{background:var(--complete);}
+.li-inprog{background:var(--accent2);}
 .li-high{background:var(--blue-h);}
 .li-med{background:var(--blue-m);}
 .li-low{background:var(--blue-l);}
-.li-permit{background:transparent;border:1px solid var(--amber);width:20px;}
-.li-today{width:3px;height:12px;border-radius:1px;background:var(--red);}
-
-/* ── GANTT SECTION ── */
-.gantt-section{
-  background:var(--navy2);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  margin-bottom:16px;
-  overflow:hidden;
-}
-
-/* site header row */
-.gs-header{
-  padding:16px 20px;
-  display:flex;align-items:center;justify-content:space-between;
-  cursor:pointer;
-  user-select:none;
-  border-bottom:1px solid var(--border);
-}
+.li-projected{background:rgba(255,255,255,.12);border:1px dashed rgba(255,255,255,.3);}
+.li-today{width:2px;height:12px;border-radius:1px;background:var(--red);}
+.li-winter{width:2px;height:12px;border-radius:1px;background:rgba(141,195,232,.4);}
+.gantt-section{background:var(--navy2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:16px;overflow:hidden;}
+.gantt-section.winter-risk{border-color:rgba(224,155,69,.3);}
+.gs-header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;border-bottom:1px solid var(--border);}
 .gs-header:hover{background:rgba(255,255,255,.02);}
-.gs-num{
-  width:28px;height:28px;border-radius:50%;
-  background:var(--navy4);
-  border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  font-size:12px;font-weight:600;color:var(--teal);
-  flex-shrink:0;margin-right:12px;
-}
+.gs-num{width:26px;height:26px;border-radius:50%;background:var(--navy4);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--teal);flex-shrink:0;margin-right:11px;}
 .gs-title-wrap{flex:1;}
-.gs-name{font-size:15px;font-weight:600;color:var(--white);}
-.gs-sub{font-size:11px;color:var(--muted);margin-top:2px;}
+.gs-name{font-size:15px;font-weight:600;}
+.gs-sub{font-size:11px;color:var(--muted);margin-top:1px;}
 .gs-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
 .gs-target{font-size:12px;color:var(--teal);}
-.gs-badge{
-  font-size:10px;font-weight:600;letter-spacing:.06em;
-  text-transform:uppercase;
-  padding:3px 9px;border-radius:3px;
-}
-.badge-permit{background:rgba(224,155,69,.15);color:var(--amber);border:1px solid rgba(224,155,69,.3);}
-.badge-delayed{background:rgba(224,85,85,.12);color:#e07a7a;border:1px solid rgba(224,85,85,.25);}
-.badge-active{background:rgba(46,196,142,.1);color:var(--green);border:1px solid rgba(46,196,142,.25);}
-.chevron{font-size:13px;color:var(--muted);transition:transform .2s;margin-left:4px;}
+.gs-badge{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:3px;}
+.badge-permit{background:rgba(224,155,69,.15);color:var(--complete);border:1px solid rgba(224,155,69,.3);}
+.badge-active{background:rgba(46,204,142,.1);color:#2ecc8e;border:1px solid rgba(46,204,142,.25);}
+.badge-projected{background:rgba(90,159,214,.12);color:var(--accent2);border:1px solid rgba(90,159,214,.3);}
+.badge-winter{background:rgba(141,195,232,.1);color:var(--blue-l);border:1px solid rgba(141,195,232,.25);}
+.chevron{font-size:12px;color:var(--muted);transition:transform .2s;margin-left:4px;}
 .chevron.open{transform:rotate(180deg);}
-
-/* status note */
-.gs-note{
-  margin:0 20px 16px;
-  border-left:3px solid var(--accent);
-  padding:8px 14px;
-  font-size:11px;color:var(--muted);
-  line-height:1.7;
-  background:rgba(47,114,196,.06);
-  border-radius:0 4px 4px 0;
-}
+.gs-note{margin:0 20px 14px;border-left:3px solid var(--accent);padding:7px 12px;font-size:11px;color:var(--muted);line-height:1.7;background:rgba(47,114,196,.06);border-radius:0 4px 4px 0;}
+.gs-note.warn{border-left-color:var(--complete);background:rgba(224,155,69,.06);}
 .gs-note strong{color:var(--white);}
-
-/* gantt body */
-.gs-body{}
 .gs-body.collapsed{display:none;}
-
-/* month ruler */
-.month-ruler{
-  display:flex;
-  border-bottom:1px solid var(--border2);
-  padding:0 20px 0 280px;
-}
-.month-cell{
-  flex:1;
-  font-size:10px;font-weight:500;
-  color:var(--muted2);
-  text-transform:uppercase;letter-spacing:.05em;
-  padding:6px 0;
-  text-align:center;
-  border-right:1px solid var(--border2);
-}
-.month-cell:last-child{border-right:none;}
-
-/* gantt rows */
-.gantt-row{
-  display:flex;
-  align-items:center;
-  padding:0 20px;
-  border-bottom:1px solid var(--border2);
-  min-height:32px;
-}
-.gantt-row:last-child{border-bottom:none;}
-.gantt-row:hover{background:rgba(255,255,255,.02);}
-.gr-label{
-  width:170px;flex-shrink:0;
-  font-size:12px;color:var(--white);
-  display:flex;align-items:center;gap:7px;
-}
-.gr-trade{
-  width:110px;flex-shrink:0;
-  font-size:11px;color:var(--muted);
-}
-.gr-bar-wrap{
-  flex:1;
-  position:relative;
-  height:32px;
-  display:flex;align-items:center;
-}
-/* today line inside bar area */
-.gr-today{
-  position:absolute;
-  top:4px;bottom:4px;width:2px;
-  background:var(--red);
-  z-index:10;border-radius:1px;
-  pointer-events:none;
-}
-.gr-bar{
-  position:absolute;
-  height:14px;top:50%;transform:translateY(-50%);
-  border-radius:3px;
-  transition:opacity .15s;
-}
-.gr-bar:hover{opacity:.8;cursor:default;}
-.bar-done{background:var(--green);}
-.bar-active{background:var(--accent2);}
+.gantt-table{width:100%;border-collapse:collapse;}
+.gantt-table thead th{background:var(--navy3);padding:7px 10px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap;}
+.gantt-table thead th.th-task{text-align:left;width:160px;}
+.gantt-table thead th.th-trade{text-align:left;width:120px;}
+.gantt-table thead th.th-cx{text-align:center;width:80px;}
+.gantt-table thead th.th-date{text-align:center;width:78px;}
+.gantt-table tbody tr{border-bottom:1px solid var(--border2);}
+.gantt-table tbody tr:last-child{border-bottom:none;}
+.gantt-table tbody tr:hover td{background:rgba(255,255,255,.02);}
+.gantt-table tbody td{padding:5px 10px;vertical-align:middle;}
+.td-task{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;}
+.td-trade{font-size:11px;color:var(--muted);}
+.td-date{font-size:11px;color:var(--muted);text-align:center;white-space:nowrap;}
+.td-date.done{color:var(--complete);}
+.td-cx{text-align:center;}
+.cx-badge{font-size:9px;font-weight:600;padding:2px 6px;border-radius:3px;letter-spacing:.04em;text-transform:uppercase;}
+.cx-H{background:rgba(47,114,196,.2);color:var(--blue-h);}
+.cx-M{background:rgba(90,159,214,.15);color:var(--blue-m);}
+.cx-L{background:rgba(141,195,232,.12);color:var(--blue-l);}
+.cx-done{background:rgba(224,155,69,.15);color:var(--complete);}
+.cx-prog{background:rgba(74,143,214,.15);color:var(--accent2);}
+.cx-proj{background:rgba(255,255,255,.07);color:var(--muted);}
+.bar-wrap{position:relative;height:28px;}
+.today-line{position:absolute;top:2px;bottom:2px;width:2px;background:var(--red);z-index:10;border-radius:1px;}
+.winter-line{position:absolute;top:0;bottom:0;width:1px;background:rgba(141,195,232,.3);z-index:5;}
+.g-bar{position:absolute;height:13px;top:50%;transform:translateY(-50%);border-radius:3px;}
+.g-bar:hover{opacity:.8;cursor:default;}
+.bar-complete{background:var(--complete);}
+.bar-inprog{background:var(--accent2);}
 .bar-high{background:var(--blue-h);}
 .bar-med{background:var(--blue-m);}
 .bar-low{background:var(--blue-l);}
-.bar-delayed{background:var(--amber);}
-.bar-permit{
-  background:transparent;
-  border:1.5px solid var(--amber);
-  border-radius:3px;
-}
-
-/* dot */
-.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
-.dot-done{background:var(--green);}
-.dot-delayed{background:var(--amber);}
+.bar-projected{background:rgba(255,255,255,.1);border:1px dashed rgba(255,255,255,.25);}
+.dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.dot-complete{background:var(--complete);}
+.dot-inprog{background:var(--accent2);}
+.dot-projected{background:rgba(90,159,214,.6);}
 .dot-upcoming{background:rgba(255,255,255,.2);}
-
-/* save btn */
-.save-btn{
-  background:transparent;
-  border:1px solid var(--border);
-  color:var(--muted);
-  padding:6px 14px;border-radius:4px;
-  font-size:11px;cursor:pointer;
-  display:flex;align-items:center;gap:6px;
-  transition:border-color .15s,color .15s;
-}
-.save-btn:hover{border-color:var(--accent2);color:var(--accent2);}
-
-/* ── FOOTER ── */
-.footer{
-  padding:20px 40px;
-  border-top:1px solid var(--border);
-  display:flex;justify-content:space-between;
-  color:var(--muted);font-size:11px;
-  margin-top:8px;
-}
-
+.month-ruler-inner{position:relative;height:16px;}
+.month-label{position:absolute;font-size:9px;color:var(--muted2);text-transform:uppercase;letter-spacing:.05em;transform:translateX(-50%);}
+.footer{padding:18px 40px;border-top:1px solid var(--border);display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:8px;}
 @media print{
   .no-print{display:none!important;}
+  .gs-body.collapsed{display:block!important;}
   body{background:#fff;color:#111;}
   .header,.stat-strip{background:#0d1929!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-  .gantt-section,.contract-card,.site-card{background:#f5f7fa;border-color:#ddd;}
-  .gs-body.collapsed{display:block!important;}
 }
 </style>
 </head>
 <body>
-
-<!-- HEADER -->
 <div class="header">
   <div class="header-left">
     <div class="logo">GG</div>
@@ -321,336 +140,267 @@ body{
   <div class="header-right">
     <div class="header-tag">Project Schedule Report</div>
     <div class="header-project">Kiwanis Homes</div>
-    <div class="header-meta">As of June 4, 2026 &middot; Confidential</div>
+    <div class="header-meta">As of June 8, 2026 &middot; Confidential</div>
   </div>
 </div>
-
-<!-- STAT STRIP -->
 <div class="stat-strip">
-  <div class="stat">
-    <div class="stat-val">3</div>
-    <div class="stat-label">Active Sites</div>
-  </div>
+  <div class="stat"><div class="stat-val">3</div><div class="stat-label">Active Sites</div></div>
   <div class="stat-divider"></div>
-  <div class="stat">
-    <div class="stat-val">12</div>
-    <div class="stat-label">Total Units</div>
-  </div>
+  <div class="stat"><div class="stat-val">12</div><div class="stat-label">Total Units</div></div>
   <div class="stat-divider"></div>
-  <div class="stat">
-    <div class="stat-val">~$2.5M</div>
-    <div class="stat-label">Project Value</div>
-  </div>
+  <div class="stat"><div class="stat-val">~$2.5M</div><div class="stat-label">Project Value</div></div>
   <div class="stat-divider"></div>
-  <div class="stat">
-    <div class="stat-val">Oct '26</div>
-    <div class="stat-label">First Completion</div>
-  </div>
+  <div class="stat"><div class="stat-val">Nov 7</div><div class="stat-label">First Completion</div></div>
   <div class="stat-divider"></div>
-  <div class="stat-desc">
-    Three new fourplex builds (138 Paling Ave, 97 Garside Ave N, 53 Fraser Ave) for Hamilton East Kiwanis Non-Profit Homes Inc. New construction to OBC standards. All sites permit-gated; Paling demo complete Apr 17. Garside and Fraser awaiting permits.
-  </div>
+  <div class="stat"><div class="stat-val">Dec 15</div><div class="stat-label">Last Completion</div></div>
+  <div class="stat-divider"></div>
+  <div class="stat-desc">Three new fourplex builds for Hamilton East Kiwanis Non-Profit Homes Inc. at 138 Paling Ave, 97 Garside Ave N, and 53 Fraser Ave. New construction to OBC standards per SRM Architects Project No. 24044. Paling foundation pour underway Jun 8. Garside and Fraser permit-gated with late-season exterior work creating weather sensitivity.</div>
 </div>
-
-<!-- MAIN -->
 <div class="main">
-
-  <!-- CONTRACT CARD -->
   <div class="contract-card">
-    <div class="cc-field">
-      <div class="cc-label">Owner</div>
-      <div class="cc-value">Hamilton East Kiwanis Non-Profit Homes Inc.</div>
-    </div>
-    <div class="cc-field">
-      <div class="cc-label">Project No.</div>
-      <div class="cc-value">24044</div>
-    </div>
-    <div class="cc-field">
-      <div class="cc-label">Architect</div>
-      <div class="cc-value">SRM Architects + Urban Designers</div>
-    </div>
-    <div class="cc-field">
-      <div class="cc-label">Occupancy Target</div>
-      <div class="cc-value">Q4 2026</div>
-    </div>
-    <div class="cc-field">
-      <div class="cc-label">General Contractor</div>
-      <div class="cc-value">Gateway Investment Group Inc.</div>
-    </div>
+    <div><div class="cc-label">Owner</div><div class="cc-value">Hamilton East Kiwanis Non-Profit Homes Inc.</div></div>
+    <div><div class="cc-label">Project No.</div><div class="cc-value">24044</div></div>
+    <div><div class="cc-label">Architect</div><div class="cc-value">SRM Architects + Urban Designers</div></div>
+    <div><div class="cc-label">Occupancy Target</div><div class="cc-value">Q4 2026</div></div>
+    <div><div class="cc-label">General Contractor</div><div class="cc-value">Gateway Investment Group Inc.</div></div>
   </div>
 
-  <!-- SITE SUMMARY CARDS -->
+  <div class="winter-banner">
+    <div class="wb-icon">&#10052;</div>
+    <div class="wb-body"><strong>Winter weather note &mdash; Garside and Fraser.</strong> Both sites have site grading and exterior finishing scheduled for late November and December. Hamilton typically sees ground-freezing conditions below &minus;5&deg;C from late November onward. Garside site grading targets Dec 2 and Fraser targets Dec 15. A schedule slip of 2&ndash;3 weeks on Fraser pushes final completion into Q1 2027 over the trades shutdown period (Dec 22 &ndash; Jan 5). Framing trade confirmation is the critical near-term dependency for both sites.</div>
+  </div>
+
   <div class="site-cards" id="site-cards"></div>
-
-  <!-- LEGEND -->
   <div class="legend no-print">
-    <div class="legend-item"><div class="li-box li-done"></div> Confirmed complete</div>
-    <div class="legend-item"><div class="li-box li-active"></div> In progress now</div>
-    <div class="legend-item"><div class="li-box li-high"></div> Forecast &mdash; high complexity</div>
-    <div class="legend-item"><div class="li-box li-med"></div> Forecast &mdash; medium complexity</div>
-    <div class="legend-item"><div class="li-box li-low"></div> Forecast &mdash; low complexity</div>
-    <div class="legend-item"><div class="li-box li-permit"></div> Permit / inspection gate</div>
-    <div class="legend-item"><div class="li-today"></div> Today &mdash; Jun 4, 2026</div>
+    <div class="legend-item"><div class="li-box li-complete"></div>Complete</div>
+    <div class="legend-item"><div class="li-box li-inprog"></div>In progress</div>
+    <div class="legend-item"><div class="li-box li-high"></div>High complexity</div>
+    <div class="legend-item"><div class="li-box li-med"></div>Medium complexity</div>
+    <div class="legend-item"><div class="li-box li-low"></div>Low complexity</div>
+    <div class="legend-item"><div class="li-box li-projected"></div>Projected</div>
+    <div class="legend-item"><div class="li-today"></div>Today &mdash; Jun 8</div>
+    <div class="legend-item"><div class="li-winter"></div>Nov 15 winter threshold</div>
   </div>
-
-  <!-- GANTT SECTIONS -->
   <div id="gantt-container"></div>
-
 </div>
-
 <div class="footer">
-  <span>Gateway Investment Group &mdash; Internal use</span>
+  <span>Gateway Investment Group &mdash; Confidential</span>
   <span>Kiwanis Project No. 24044 &middot; SRM Architects</span>
 </div>
-
 <script>
-const TODAY = new Date('2026-06-04');
-const GANTT_START = new Date('2026-03-01');
-const GANTT_END   = new Date('2027-01-01');
-const TOTAL_DAYS  = (GANTT_END - GANTT_START) / 86400000;
-
-// Complexity classification for bar colouring
-const COMPLEXITY = {
-  'Servicing':'done', 'Demo':'done',
-  'Excavation':'high','Footing':'high','Foundation':'high','Backfill':'high',
-  'Framing':'high','Roof':'med',
-  'Brick veneer':'high',
-  'HVAC':'high','Plumbing':'high','Electrical':'high',
-  'Exterior metal':'med',
-  'Insulation':'med','Drywall':'med',
-  'Paint':'low','Flooring':'low','Kitchen':'med','Millwork':'low','Tile':'low'
-};
-
-const TRADES = {
+const TODAY=new Date('2026-06-08');
+const WINTER=new Date('2026-11-15');
+const GS=new Date('2026-03-01');
+const GE=new Date('2027-03-01');
+const TD=(GE-GS)/86400000;
+function pct(d){return Math.max(0,(new Date(d)-GS)/86400000/TD*100);}
+function tleft(){return pct(TODAY).toFixed(3)+'%';}
+function wleft(){return pct(WINTER).toFixed(3)+'%';}
+function fmt(iso){if(!iso)return'—';const d=new Date(iso);return d.toLocaleDateString('en-CA',{month:'short',day:'numeric'});}
+const TRADES={
   'Servicing':'Silverline','Demo':'Chad / Crew',
   'Excavation':'Silverline','Footing':'Silverline',
-  'Foundation':'Silverline','Backfill':'Silverline',
+  'Foundation':'Silverline','Back fill':'Silverline',
   'Framing':'Brian','Roof':'Fix My Roof',
-  'Brick veneer':'Mason (TBD)',
-  'HVAC':'Dynamic Heating','Plumbing':'Complete Plumbing',
-  'Electrical':'Amp Electrical','Exterior metal':'Med Siding',
-  'Insulation':'Maxum','Drywall':'Maxum',
-  'Paint':'—','Flooring':'—','Kitchen':'—','Millwork':'—','Tile':'—'
+  'Brick veneer':'Mason (TBD)','Exterior metal':'Med Siding',
+  'Windows & Doors':'Q-LINE',
+  'HVAC':'Dynamic Heating','Plumbing':'Complete Plumbing','Electrical':'Amp Electrical',
+  'Insulation':'Maxum','Air barrier':'Maxum','Drywall':'Maxum',
+  'Paint':'—','Flooring':'—','Tile':'—',
+  'Kitchen & millwork':'—','Trim & doors':'—','Site & grading':'—'
 };
-
-const SITES = [
+const SITES=[
   {
-    name:'138 Paling Ave', addr:'138 PALING AVE',
+    name:'138 Paling Ave',addr:'138 PALING AVE',
     type:'New fourplex &middot; 4 units',
-    updated:'May 26, 2026',
-    targetDate:'Oct 7, 2026',
-    targetISO:'2026-10-07',
-    badge:'permit',badgeText:'Permit Pending',
-    note:'<strong>Demo complete Apr 17.</strong> Excavation slipped ~6 weeks from original target (Apr 29 &rarr; May 13) due to city hall permit delay. Permits paid Apr 21; awaiting issuance. All civil and framing trades confirmed.',
-    pct:10,
+    updated:'Jun 8, 2026',target:'Nov 7, 2026',
+    badge:'active',badgeText:'Foundation Underway',
+    winterRisk:false,pct:22,
+    note:'<strong>Servicing, Demo, Excavation, Footing complete. Foundation pour underway Jun 8, est. complete Jun 19.</strong> No winter risk — all exterior work completes by early September, interior finishes wrap October. Site grading Nov 7.',
     milestones:[
-      {task:'Servicing',      date:'2026-03-24', done:true},
-      {task:'Demo',           date:'2026-04-17', done:true},
-      {task:'Excavation',     date:'2026-05-13', done:false},
-      {task:'Footing',        date:'2026-05-20', done:false},
-      {task:'Foundation',     date:'2026-06-02', done:false},
-      {task:'Backfill',       date:'2026-06-08', done:false},
-      {task:'Framing',        date:'2026-06-29', done:false},
-      {task:'Roof',           date:'2026-06-30', done:false},
-      {task:'Brick veneer',   date:'2026-07-06', done:false},
-      {task:'HVAC',           date:'2026-07-13', done:false},
-      {task:'Plumbing',       date:'2026-07-27', done:false},
-      {task:'Electrical',     date:'2026-08-03', done:false},
-      {task:'Exterior metal', date:'2026-08-03', done:false},
-      {task:'Insulation',     date:'2026-08-10', done:false},
-      {task:'Drywall',        date:'2026-08-24', done:false},
-      {task:'Paint',          date:'2026-09-07', done:false},
-      {task:'Flooring',       date:'2026-09-14', done:false},
-      {task:'Kitchen',        date:'2026-09-28', done:false},
-      {task:'Millwork',       date:'2026-10-07', done:false},
-      {task:'Tile',           date:null,         done:false},
+      {task:'Servicing',         start:'2026-03-17',end:'2026-03-24',cx:'done',  status:'complete'},
+      {task:'Demo',              start:'2026-04-11',end:'2026-04-17',cx:'done',  status:'complete'},
+      {task:'Excavation',        start:'2026-05-04',end:'2026-05-13',cx:'H',     status:'complete'},
+      {task:'Footing',           start:'2026-05-10',end:'2026-05-20',cx:'H',     status:'complete'},
+      {task:'Foundation',        start:'2026-06-02',end:'2026-06-19',cx:'H',     status:'inprog'},
+      {task:'Back fill',         start:'2026-06-19',end:'2026-06-25',cx:'H',     status:'high'},
+      {task:'Framing',           start:'2026-06-25',end:'2026-07-21',cx:'H',     status:'high'},
+      {task:'Roof',              start:'2026-07-21',end:'2026-08-02',cx:'M',     status:'med'},
+      {task:'Brick veneer',      start:'2026-08-02',end:'2026-08-19',cx:'H',     status:'high'},
+      {task:'Exterior metal',    start:'2026-08-19',end:'2026-08-28',cx:'M',     status:'med'},
+      {task:'Windows & Doors',   start:'2026-08-28',end:'2026-09-06',cx:'M',     status:'med'},
+      {task:'HVAC',              start:'2026-07-21',end:'2026-08-07',cx:'H',     status:'high'},
+      {task:'Plumbing',          start:'2026-07-21',end:'2026-08-07',cx:'H',     status:'high'},
+      {task:'Electrical',        start:'2026-07-21',end:'2026-08-07',cx:'H',     status:'high'},
+      {task:'Insulation',        start:'2026-08-07',end:'2026-08-16',cx:'M',     status:'med'},
+      {task:'Air barrier',       start:'2026-08-16',end:'2026-08-22',cx:'M',     status:'med'},
+      {task:'Drywall',           start:'2026-08-22',end:'2026-09-08',cx:'M',     status:'med'},
+      {task:'Paint',             start:'2026-09-08',end:'2026-09-20',cx:'L',     status:'low'},
+      {task:'Flooring',          start:'2026-09-20',end:'2026-09-29',cx:'L',     status:'low'},
+      {task:'Tile',              start:'2026-09-29',end:'2026-10-08',cx:'M',     status:'med'},
+      {task:'Kitchen & millwork',start:'2026-10-08',end:'2026-10-20',cx:'M',     status:'med'},
+      {task:'Trim & doors',      start:'2026-10-20',end:'2026-10-29',cx:'L',     status:'low'},
+      {task:'Site & grading',    start:'2026-10-29',end:'2026-11-07',cx:'L',     status:'low'},
     ]
   },
   {
-    name:'97 Garside Ave N', addr:'97 GARSIDE AVE N',
+    name:'97 Garside Ave N',addr:'97 GARSIDE AVE N',
     type:'New fourplex &middot; 4 units',
-    updated:'Apr 28, 2026',
-    targetDate:'Sep 4, 2026',
-    targetISO:'2026-09-04',
+    updated:'Jun 8, 2026',target:'Dec 2, 2026',
     badge:'permit',badgeText:'Permit Pending',
-    note:'<strong>Servicing complete Mar 27.</strong> Demo scheduled Jun 2, pending permit issuance. Excavation and footing targets (May 20/21) are already past &mdash; schedule will need to be refreshed once permit is received. Last full schedule update Apr 28.',
-    pct:5,
+    winterRisk:true,pct:4,
+    note:'warn|<strong>Servicing complete Mar 27. Demo targeted Jun 2.</strong> Trim and site grading run Nov 14 &ndash; Dec 2, crossing the winter threshold. A slip of 2&ndash;3 weeks on framing or MEP pushes site grading into late December. Framing trade confirmation is the critical near-term dependency.',
     milestones:[
-      {task:'Servicing',      date:'2026-03-27', done:true},
-      {task:'Demo',           date:'2026-06-02', done:false},
-      {task:'Excavation',     date:'2026-05-20', done:false},
-      {task:'Footing',        date:'2026-05-21', done:false},
-      {task:'Foundation',     date:'2026-06-01', done:false},
-      {task:'Backfill',       date:null,         done:false},
-      {task:'Framing',        date:'2026-06-15', done:false},
-      {task:'Roof',           date:'2026-06-26', done:false},
-      {task:'Brick veneer',   date:'2026-06-19', done:false},
-      {task:'HVAC',           date:'2026-07-03', done:false},
-      {task:'Plumbing',       date:'2026-07-17', done:false},
-      {task:'Electrical',     date:'2026-06-22', done:false},
-      {task:'Exterior metal', date:'2026-07-24', done:false},
-      {task:'Insulation',     date:'2026-07-31', done:false},
-      {task:'Drywall',        date:'2026-08-21', done:false},
-      {task:'Paint',          date:'2026-08-14', done:false},
-      {task:'Flooring',       date:'2026-08-21', done:false},
-      {task:'Kitchen',        date:'2026-09-04', done:false},
-      {task:'Millwork',       date:'2026-09-04', done:false},
-      {task:'Tile',           date:'2026-07-27', done:false},
+      {task:'Servicing',         start:'2026-03-20',end:'2026-03-27',cx:'done',  status:'complete'},
+      {task:'Demo',              start:'2026-06-02',end:'2026-06-08',cx:'H',     status:'high'},
+      {task:'Excavation',        start:'2026-06-08',end:'2026-06-17',cx:'H',     status:'high'},
+      {task:'Footing',           start:'2026-06-17',end:'2026-06-27',cx:'H',     status:'high'},
+      {task:'Foundation',        start:'2026-06-27',end:'2026-07-14',cx:'H',     status:'high'},
+      {task:'Back fill',         start:'2026-07-14',end:'2026-07-20',cx:'H',     status:'high'},
+      {task:'Framing',           start:'2026-07-20',end:'2026-08-15',cx:'H',     status:'high'},
+      {task:'Roof',              start:'2026-08-15',end:'2026-08-27',cx:'M',     status:'med'},
+      {task:'Brick veneer',      start:'2026-08-27',end:'2026-09-13',cx:'H',     status:'high'},
+      {task:'Exterior metal',    start:'2026-09-13',end:'2026-09-22',cx:'M',     status:'med'},
+      {task:'Windows & Doors',   start:'2026-09-22',end:'2026-10-01',cx:'M',     status:'med'},
+      {task:'HVAC',              start:'2026-08-15',end:'2026-09-01',cx:'H',     status:'high'},
+      {task:'Plumbing',          start:'2026-08-15',end:'2026-09-01',cx:'H',     status:'high'},
+      {task:'Electrical',        start:'2026-08-15',end:'2026-09-01',cx:'H',     status:'high'},
+      {task:'Insulation',        start:'2026-09-01',end:'2026-09-10',cx:'M',     status:'med'},
+      {task:'Air barrier',       start:'2026-09-10',end:'2026-09-16',cx:'M',     status:'med'},
+      {task:'Drywall',           start:'2026-09-16',end:'2026-10-03',cx:'M',     status:'med'},
+      {task:'Paint',             start:'2026-10-03',end:'2026-10-15',cx:'L',     status:'low'},
+      {task:'Flooring',          start:'2026-10-15',end:'2026-10-24',cx:'L',     status:'low'},
+      {task:'Tile',              start:'2026-10-24',end:'2026-11-02',cx:'M',     status:'med'},
+      {task:'Kitchen & millwork',start:'2026-11-02',end:'2026-11-14',cx:'M',     status:'med'},
+      {task:'Trim & doors',      start:'2026-11-14',end:'2026-11-23',cx:'L',     status:'low'},
+      {task:'Site & grading',    start:'2026-11-23',end:'2026-12-02',cx:'L',     status:'low'},
     ]
   },
   {
-    name:'53 Fraser Ave', addr:'53 FRASER AVE',
+    name:'53 Fraser Ave',addr:'53 FRASER AVE',
     type:'New fourplex &middot; 4 units',
-    updated:'Apr 28, 2026',
-    targetDate:'Sep 11, 2026',
-    targetISO:'2026-09-11',
-    badge:'permit',badgeText:'Permit Pending',
-    note:'<strong>Servicing complete Mar 31.</strong> Demo targeted May 21, permit-gated. Runs approximately 1 week behind Garside. Excavation and footing targets already past &mdash; schedule requires refresh after permit. Last full update Apr 28.',
-    pct:5,
+    updated:'Jun 8, 2026',target:'Dec 15, 2026',
+    badge:'projected',badgeText:'Permit Jun 15',
+    winterRisk:true,pct:4,
+    note:'warn|<strong>Servicing complete Mar 31. Permit releasing Jun 15</strong> per Cory (Jun 9 update). Kitchen, trim, and site grading run Nov 15 &ndash; Dec 15. A slip of 2&ndash;3 weeks pushes final completion over the Dec 22 trades shutdown into <strong>Q1 2027.</strong> Fraser carries the highest weather risk of the three sites. Framing trade confirmation is critical.',
     milestones:[
-      {task:'Servicing',      date:'2026-03-31', done:true},
-      {task:'Demo',           date:'2026-05-21', done:false},
-      {task:'Excavation',     date:'2026-05-27', done:false},
-      {task:'Footing',        date:'2026-05-28', done:false},
-      {task:'Foundation',     date:'2026-06-08', done:false},
-      {task:'Backfill',       date:null,         done:false},
-      {task:'Framing',        date:'2026-06-22', done:false},
-      {task:'Roof',           date:'2026-07-03', done:false},
-      {task:'Brick veneer',   date:'2026-06-26', done:false},
-      {task:'HVAC',           date:'2026-07-10', done:false},
-      {task:'Plumbing',       date:'2026-07-24', done:false},
-      {task:'Electrical',     date:'2026-06-29', done:false},
-      {task:'Exterior metal', date:'2026-07-31', done:false},
-      {task:'Insulation',     date:'2026-08-07', done:false},
-      {task:'Drywall',        date:'2026-08-28', done:false},
-      {task:'Paint',          date:'2026-08-21', done:false},
-      {task:'Flooring',       date:'2026-08-28', done:false},
-      {task:'Kitchen',        date:'2026-09-11', done:false},
-      {task:'Millwork',       date:'2026-09-11', done:false},
-      {task:'Tile',           date:'2026-08-03', done:false},
+      {task:'Servicing',         start:'2026-03-24',end:'2026-03-31',cx:'done',  status:'complete'},
+      {task:'Demo',              start:'2026-06-15',end:'2026-06-21',cx:'H',     status:'projected'},
+      {task:'Excavation',        start:'2026-06-21',end:'2026-06-30',cx:'H',     status:'projected'},
+      {task:'Footing',           start:'2026-06-30',end:'2026-07-10',cx:'H',     status:'projected'},
+      {task:'Foundation',        start:'2026-07-10',end:'2026-07-27',cx:'H',     status:'projected'},
+      {task:'Back fill',         start:'2026-07-27',end:'2026-08-02',cx:'H',     status:'projected'},
+      {task:'Framing',           start:'2026-08-02',end:'2026-08-28',cx:'H',     status:'projected'},
+      {task:'Roof',              start:'2026-08-28',end:'2026-09-09',cx:'M',     status:'projected'},
+      {task:'Brick veneer',      start:'2026-09-09',end:'2026-09-26',cx:'H',     status:'projected'},
+      {task:'Exterior metal',    start:'2026-09-26',end:'2026-10-05',cx:'M',     status:'projected'},
+      {task:'Windows & Doors',   start:'2026-10-05',end:'2026-10-14',cx:'M',     status:'projected'},
+      {task:'HVAC',              start:'2026-08-28',end:'2026-09-14',cx:'H',     status:'projected'},
+      {task:'Plumbing',          start:'2026-08-28',end:'2026-09-14',cx:'H',     status:'projected'},
+      {task:'Electrical',        start:'2026-08-28',end:'2026-09-14',cx:'H',     status:'projected'},
+      {task:'Insulation',        start:'2026-09-14',end:'2026-09-23',cx:'M',     status:'projected'},
+      {task:'Air barrier',       start:'2026-09-23',end:'2026-09-29',cx:'M',     status:'projected'},
+      {task:'Drywall',           start:'2026-09-29',end:'2026-10-16',cx:'M',     status:'projected'},
+      {task:'Paint',             start:'2026-10-16',end:'2026-10-28',cx:'L',     status:'projected'},
+      {task:'Flooring',          start:'2026-10-28',end:'2026-11-06',cx:'L',     status:'projected'},
+      {task:'Tile',              start:'2026-11-06',end:'2026-11-15',cx:'M',     status:'projected'},
+      {task:'Kitchen & millwork',start:'2026-11-15',end:'2026-11-27',cx:'M',     status:'projected'},
+      {task:'Trim & doors',      start:'2026-11-27',end:'2026-12-06',cx:'L',     status:'projected'},
+      {task:'Site & grading',    start:'2026-12-06',end:'2026-12-15',cx:'L',     status:'projected'},
     ]
   }
 ];
 
-// ── HELPERS ──────────────────────────────────────────────────────────────
-function dayOff(d){ return Math.max(0,(d - GANTT_START)/86400000); }
-function toPct(d){ return (dayOff(d)/TOTAL_DAYS*100).toFixed(3)+'%'; }
-function todayLeft(){ return (dayOff(TODAY)/TOTAL_DAYS*100).toFixed(3)+'%'; }
-function fmtDate(iso){
-  if(!iso) return '—';
-  const d = new Date(iso);
-  return d.toLocaleDateString('en-CA',{month:'short',day:'numeric'});
+function barCls(s){return{complete:'bar-complete',inprog:'bar-inprog',high:'bar-high',med:'bar-med',low:'bar-low',projected:'bar-projected'}[s]||'bar-low';}
+function dotCls(s){return{complete:'dot-complete',inprog:'dot-inprog',projected:'dot-projected'}[s]||'dot-upcoming';}
+function cxBadge(cx,status){
+  if(status==='complete')  return`<span class="cx-badge cx-done">Complete</span>`;
+  if(status==='inprog')    return`<span class="cx-badge cx-prog">In Progress</span>`;
+  if(status==='projected') return`<span class="cx-badge cx-proj">Projected</span>`;
+  return`<span class="cx-badge cx-${cx}">${{H:'High',M:'Medium',L:'Low'}[cx]||cx}</span>`;
 }
-function barCls(m){
-  if(m.done) return 'bar-done';
-  if(!m.date) return 'bar-low';
-  const d = new Date(m.date);
-  if(d < TODAY) return 'bar-delayed';
-  const c = COMPLEXITY[m.task] || 'med';
-  if(c==='done') return 'bar-active';
-  return 'bar-'+c;
-}
-function dotCls(m){
-  if(m.done) return 'dot-done';
-  if(m.date && new Date(m.date) < TODAY) return 'dot-delayed';
-  return 'dot-upcoming';
-}
-
-// ── MONTH RULER ──────────────────────────────────────────────────────────
-function buildRuler(){
-  let html = '<div class="month-ruler">';
-  let cur = new Date(GANTT_START);
-  while(cur < GANTT_END){
-    const label = cur.toLocaleDateString('en-CA',{month:'short',year:'2-digit'})
-                     .replace(', ',"'").toUpperCase();
-    html += `<div class="month-cell">${label}</div>`;
-    cur = new Date(cur.getFullYear(), cur.getMonth()+1, 1);
+function monthRuler(){
+  let h='';let cur=new Date(GS);
+  while(cur<GE){
+    const p=pct(cur).toFixed(2)+'%';
+    const label=cur.toLocaleDateString('en-CA',{month:'short',year:'2-digit'}).replace(', ',"'").toUpperCase();
+    h+=`<span class="month-label" style="left:${p}">${label}</span>`;
+    cur=new Date(cur.getFullYear(),cur.getMonth()+1,1);
   }
-  return html + '</div>';
+  return h;
 }
-
-// ── SITE SUMMARY CARDS ────────────────────────────────────────────────────
 function buildCards(){
-  return SITES.map(s => {
-    const done = s.milestones.filter(m=>m.done).length;
-    const pct  = Math.round(done/s.milestones.length*100);
-    return `
-    <div class="site-card">
+  return SITES.map(s=>{
+    const done=s.milestones.filter(m=>m.status==='complete').length;
+    const p=Math.round(done/s.milestones.length*100);
+    return`<div class="site-card${s.winterRisk?' winter-risk':''}">
       <div class="sc-addr">${s.addr}</div>
       <div class="sc-type">${s.type}</div>
-      <div class="sc-target">Target: ${s.targetDate}</div>
-      <div class="sc-bar-track"><div class="sc-bar-fill" style="width:${pct}%"></div></div>
-      <div class="sc-pct">${pct}% complete (confirmed milestones)</div>
+      <div class="sc-target">Target completion: ${s.target}</div>
+      <div class="sc-bar-track"><div class="sc-bar-fill" style="width:${p}%"></div></div>
+      <div class="sc-pct">${p}% complete</div>
+      ${s.winterRisk?`<div class="sc-winter">&#10052; Weather risk &mdash; late exterior work</div>`:''}
     </div>`;
   }).join('');
 }
-
-// ── GANTT SECTIONS ────────────────────────────────────────────────────────
 function buildGantt(){
-  return SITES.map((s,i) => {
-    const badgeHtml = s.badge === 'permit'
-      ? `<span class="gs-badge badge-permit">${s.badgeText}</span>`
-      : `<span class="gs-badge badge-active">${s.badgeText}</span>`;
-
-    // rows
-    const rows = s.milestones.map(m => {
-      let barHtml = '';
-      if(m.date){
-        const endD   = new Date(m.date);
-        const startD = new Date(endD - 14*86400000);
-        const left   = (dayOff(startD)/TOTAL_DAYS*100).toFixed(3)+'%';
-        const width  = (14/TOTAL_DAYS*100).toFixed(3)+'%';
-        const cls    = barCls(m);
-        barHtml = `<div class="gr-bar ${cls}" style="left:${left};width:${width};" title="${m.task} &mdash; ${fmtDate(m.date)}"></div>`;
-      }
-      return `
-      <div class="gantt-row">
-        <div class="gr-label">
-          <div class="dot ${dotCls(m)}"></div>
-          ${m.task}
-        </div>
-        <div class="gr-trade">${TRADES[m.task]||'—'}</div>
-        <div class="gr-bar-wrap">
-          <div class="gr-today" style="left:${todayLeft()}"></div>
-          ${barHtml}
-        </div>
-      </div>`;
+  return SITES.map((s,i)=>{
+    const noteWarn=s.note.startsWith('warn|');
+    const noteText=noteWarn?s.note.slice(5):s.note;
+    const rows=s.milestones.map(m=>{
+      const l=pct(m.start).toFixed(3)+'%';
+      const w=Math.max(0.5,pct(m.end)-pct(m.start)).toFixed(3)+'%';
+      return`<tr>
+        <td><div class="td-task"><div class="dot ${dotCls(m.status)}"></div>${m.task}</div></td>
+        <td class="td-trade">${TRADES[m.task]||'—'}</td>
+        <td class="td-cx">${cxBadge(m.cx,m.status)}</td>
+        <td class="td-date ${m.status==='complete'?'done':''}">${fmt(m.start)}</td>
+        <td class="td-date ${m.status==='complete'?'done':''}">${fmt(m.end)}</td>
+        <td><div class="bar-wrap">
+          <div class="today-line" style="left:${tleft()}"></div>
+          ${s.winterRisk?`<div class="winter-line" style="left:${wleft()}" title="Nov 15 — winter threshold"></div>`:''}
+          <div class="g-bar ${barCls(m.status)}" style="left:${l};width:${w}" title="${m.task}: ${fmt(m.start)} — ${fmt(m.end)}"></div>
+        </div></td>
+      </tr>`;
     }).join('');
-
-    return `
-    <div class="gantt-section">
+    return`<div class="gantt-section${s.winterRisk?' winter-risk':''}">
       <div class="gs-header" onclick="toggle(this)">
         <div class="gs-num">${i+1}</div>
         <div class="gs-title-wrap">
           <div class="gs-name">${s.name}</div>
-          <div class="gs-sub">${s.type}</div>
+          <div class="gs-sub">${s.type} &middot; Updated: ${s.updated}</div>
         </div>
         <div class="gs-right">
-          <span class="gs-target">Target completion: ${s.targetDate}</span>
-          ${badgeHtml}
+          <span class="gs-target">Target: ${s.target}</span>
+          <span class="gs-badge badge-${s.badge}">${s.badgeText}</span>
+          ${s.winterRisk?'<span class="gs-badge badge-winter">&#10052; Weather Risk</span>':''}
           <span class="chevron open">&#9660;</span>
         </div>
       </div>
       <div class="gs-body">
-        <div class="gs-note">${s.note}</div>
-        ${buildRuler()}
-        ${rows}
+        <div class="gs-note${noteWarn?' warn':''}">${noteText}</div>
+        <table class="gantt-table">
+          <thead><tr>
+            <th class="th-task">Milestone</th>
+            <th class="th-trade">Trade</th>
+            <th class="th-cx">Complexity</th>
+            <th class="th-date">Start</th>
+            <th class="th-date">Complete</th>
+            <th><div class="month-ruler-inner">${monthRuler()}</div></th>
+          </tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
       </div>
     </div>`;
   }).join('');
 }
-
-// ── RENDER ────────────────────────────────────────────────────────────────
-document.getElementById('site-cards').innerHTML   = buildCards();
-document.getElementById('gantt-container').innerHTML = buildGantt();
-
-function toggle(header){
-  const body    = header.nextElementSibling;
-  const chevron = header.querySelector('.chevron');
-  const isOpen  = !body.classList.contains('collapsed');
-  body.classList.toggle('collapsed', isOpen);
-  chevron.classList.toggle('open', !isOpen);
-  header.style.borderBottom = isOpen ? 'none' : '';
+document.getElementById('site-cards').innerHTML=buildCards();
+document.getElementById('gantt-container').innerHTML=buildGantt();
+function toggle(h){
+  const b=h.nextElementSibling,c=h.querySelector('.chevron');
+  const open=!b.classList.contains('collapsed');
+  b.classList.toggle('collapsed',open);c.classList.toggle('open',!open);
+  h.style.borderBottom=open?'none':'';
 }
 </script>
 </body>
