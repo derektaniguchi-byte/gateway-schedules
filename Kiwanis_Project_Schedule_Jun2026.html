@@ -16,7 +16,9 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);font-size:13px;line-height:1.5;min-height:100vh;}
-.header{background:var(--navy2);border-bottom:1px solid var(--border);padding:18px 40px;display:flex;align-items:center;justify-content:space-between;}
+
+/* ── HEADER ── */
+.header{background:var(--navy2);border-bottom:1px solid var(--border);padding:18px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
 .header-left{display:flex;align-items:center;gap:14px;}
 .logo{width:44px;height:44px;background:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:18px;font-weight:700;color:var(--navy);flex-shrink:0;}
 .header-org{font-size:16px;font-weight:600;}
@@ -25,15 +27,23 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .header-tag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:4px;}
 .header-project{font-family:'DM Serif Display',serif;font-size:22px;}
 .header-meta{font-size:11px;color:var(--muted);margin-top:3px;}
+
+/* ── STAT STRIP ── */
 .stat-strip{background:var(--navy2);border-bottom:1px solid var(--border);padding:20px 40px;display:flex;align-items:center;gap:36px;flex-wrap:wrap;}
 .stat-val{font-size:26px;font-weight:600;color:var(--teal);line-height:1;}
 .stat-label{font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
-.stat-divider{width:1px;height:40px;background:var(--border);}
+.stat-divider{width:1px;height:40px;background:var(--border);flex-shrink:0;}
 .stat-desc{flex:1;min-width:200px;font-size:12px;color:var(--muted);line-height:1.7;border-left:3px solid var(--accent);padding-left:16px;}
+
+/* ── MAIN ── */
 .main{padding:28px 40px;max-width:1600px;margin:0 auto;}
+
+/* ── CONTRACT CARD ── */
 .contract-card{background:var(--navy2);border:1px solid var(--border);border-radius:var(--r);padding:18px 24px;margin-bottom:20px;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
 .cc-label{font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
 .cc-value{font-size:13px;font-weight:500;}
+
+/* ── SITE CARDS ── */
 .site-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
 .site-card{background:var(--navy2);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;}
 .site-card.winter-risk{border-color:rgba(224,155,69,.35);}
@@ -44,9 +54,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .sc-bar-fill{height:100%;border-radius:2px;background:var(--teal);}
 .sc-pct{font-size:11px;color:var(--muted);}
 .sc-winter{font-size:10px;color:var(--complete);margin-top:6px;display:flex;align-items:center;gap:5px;}
+
+/* ── WINTER BANNER ── */
 .winter-banner{background:rgba(224,155,69,.08);border:1px solid rgba(224,155,69,.25);border-radius:var(--r);padding:12px 18px;margin-bottom:20px;font-size:12px;color:rgba(255,255,255,.75);line-height:1.7;display:flex;gap:14px;align-items:flex-start;}
 .wb-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
 .wb-body strong{color:var(--white);}
+
+/* ── LEGEND ── */
 .legend{display:flex;gap:16px;align-items:center;margin-bottom:20px;flex-wrap:wrap;}
 .legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);}
 .li-box{width:11px;height:9px;border-radius:2px;flex-shrink:0;}
@@ -58,28 +72,35 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .li-projected{background:rgba(255,255,255,.12);border:1px dashed rgba(255,255,255,.3);}
 .li-today{width:2px;height:12px;border-radius:1px;background:var(--red);}
 .li-winter{width:2px;height:12px;border-radius:1px;background:rgba(141,195,232,.4);}
+
+/* ── GANTT SECTIONS ── */
 .gantt-section{background:var(--navy2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:16px;overflow:hidden;}
 .gantt-section.winter-risk{border-color:rgba(224,155,69,.3);}
 .gs-header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;border-bottom:1px solid var(--border);}
 .gs-header:hover{background:rgba(255,255,255,.02);}
 .gs-num{width:26px;height:26px;border-radius:50%;background:var(--navy4);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--teal);flex-shrink:0;margin-right:11px;}
-.gs-title-wrap{flex:1;}
+.gs-title-wrap{flex:1;min-width:0;}
 .gs-name{font-size:15px;font-weight:600;}
 .gs-sub{font-size:11px;color:var(--muted);margin-top:1px;}
 .gs-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
 .gs-target{font-size:12px;color:var(--teal);}
-.gs-badge{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:3px;}
+.gs-badge{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:3px;white-space:nowrap;}
 .badge-permit{background:rgba(224,155,69,.15);color:var(--complete);border:1px solid rgba(224,155,69,.3);}
 .badge-active{background:rgba(46,204,142,.1);color:#2ecc8e;border:1px solid rgba(46,204,142,.25);}
 .badge-projected{background:rgba(90,159,214,.12);color:var(--accent2);border:1px solid rgba(90,159,214,.3);}
 .badge-winter{background:rgba(141,195,232,.1);color:var(--blue-l);border:1px solid rgba(141,195,232,.25);}
 .chevron{font-size:12px;color:var(--muted);transition:transform .2s;margin-left:4px;}
 .chevron.open{transform:rotate(180deg);}
+
+/* ── GANTT BODY ── */
 .gs-note{margin:0 20px 14px;border-left:3px solid var(--accent);padding:7px 12px;font-size:11px;color:var(--muted);line-height:1.7;background:rgba(47,114,196,.06);border-radius:0 4px 4px 0;}
 .gs-note.warn{border-left-color:var(--complete);background:rgba(224,155,69,.06);}
 .gs-note strong{color:var(--white);}
 .gs-body.collapsed{display:none;}
-.gantt-table{width:100%;border-collapse:collapse;}
+
+/* Gantt scroll wrapper — key for mobile */
+.gantt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.gantt-table{width:100%;border-collapse:collapse;min-width:700px;}
 .gantt-table thead th{background:var(--navy3);padding:7px 10px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap;}
 .gantt-table thead th.th-task{text-align:left;width:160px;}
 .gantt-table thead th.th-trade{text-align:left;width:120px;}
@@ -119,7 +140,36 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .dot-upcoming{background:rgba(255,255,255,.2);}
 .month-ruler-inner{position:relative;height:16px;}
 .month-label{position:absolute;font-size:9px;color:var(--muted2);text-transform:uppercase;letter-spacing:.05em;transform:translateX(-50%);}
-.footer{padding:18px 40px;border-top:1px solid var(--border);display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:8px;}
+
+/* ── FOOTER ── */
+.footer{padding:18px 40px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:11px;margin-top:8px;}
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  .header{padding:14px 20px;}
+  .header-right{display:none;}
+  .stat-strip{padding:16px 20px;gap:20px;}
+  .stat-divider{display:none;}
+  .stat-desc{border-left:none;padding-left:0;border-top:1px solid var(--border);padding-top:12px;width:100%;flex-basis:100%;}
+  .main{padding:16px 14px;}
+  .contract-card{grid-template-columns:1fr 1fr;gap:12px;padding:14px 16px;}
+  .site-cards{grid-template-columns:1fr;}
+  .gs-header{padding:12px 14px;flex-wrap:wrap;gap:8px;}
+  .gs-right{flex-wrap:wrap;gap:6px;}
+  .gs-target{font-size:11px;}
+  .gs-note{margin:0 14px 12px;font-size:11px;}
+  .footer{padding:14px 20px;}
+}
+
+@media (max-width: 600px) {
+  .header-org{font-size:14px;}
+  .stat{flex:1 1 40%;}
+  .stat-val{font-size:22px;}
+  .contract-card{grid-template-columns:1fr;}
+  .gs-badge.hide-mobile{display:none;}
+  .gs-name{font-size:14px;}
+}
+
 @media print{
   .no-print{display:none!important;}
   .gs-body.collapsed{display:block!important;}
@@ -373,23 +423,25 @@ function buildGantt(){
         <div class="gs-right">
           <span class="gs-target">Target: ${s.target}</span>
           <span class="gs-badge badge-${s.badge}">${s.badgeText}</span>
-          ${s.winterRisk?'<span class="gs-badge badge-winter">&#10052; Weather Risk</span>':''}
+          ${s.winterRisk?'<span class="gs-badge badge-winter hide-mobile">&#10052; Weather Risk</span>':''}
           <span class="chevron open">&#9660;</span>
         </div>
       </div>
       <div class="gs-body">
         <div class="gs-note${noteWarn?' warn':''}">${noteText}</div>
-        <table class="gantt-table">
-          <thead><tr>
-            <th class="th-task">Milestone</th>
-            <th class="th-trade">Trade</th>
-            <th class="th-cx">Complexity</th>
-            <th class="th-date">Start</th>
-            <th class="th-date">Complete</th>
-            <th><div class="month-ruler-inner">${monthRuler()}</div></th>
-          </tr></thead>
-          <tbody>${rows}</tbody>
-        </table>
+        <div class="gantt-scroll">
+          <table class="gantt-table">
+            <thead><tr>
+              <th class="th-task">Milestone</th>
+              <th class="th-trade">Trade</th>
+              <th class="th-cx">Complexity</th>
+              <th class="th-date">Start</th>
+              <th class="th-date">Complete</th>
+              <th><div class="month-ruler-inner">${monthRuler()}</div></th>
+            </tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
       </div>
     </div>`;
   }).join('');
