@@ -16,7 +16,6 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);font-size:13px;line-height:1.5;min-height:100vh;}
-
 .header{background:var(--navy2);border-bottom:1px solid var(--border);padding:18px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
 .header-left{display:flex;align-items:center;gap:14px;}
 .logo{width:44px;height:44px;background:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:18px;font-weight:700;color:var(--navy);flex-shrink:0;}
@@ -26,18 +25,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .header-tag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:4px;}
 .header-project{font-family:'DM Serif Display',serif;font-size:22px;}
 .header-meta{font-size:11px;color:var(--muted);margin-top:3px;}
-
 .stat-strip{background:var(--navy2);border-bottom:1px solid var(--border);padding:20px 40px;display:flex;align-items:center;gap:36px;flex-wrap:wrap;}
 .stat-val{font-size:26px;font-weight:600;color:var(--teal);line-height:1;}
 .stat-label{font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
 .stat-divider{width:1px;height:40px;background:var(--border);flex-shrink:0;}
 .stat-desc{flex:1;min-width:200px;font-size:12px;color:var(--muted);line-height:1.7;border-left:3px solid var(--accent);padding-left:16px;}
-
 .main{padding:28px 40px;max-width:1600px;margin:0 auto;}
 .contract-card{background:var(--navy2);border:1px solid var(--border);border-radius:var(--r);padding:18px 24px;margin-bottom:20px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:16px;}
 .cc-label{font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
 .cc-value{font-size:13px;font-weight:500;}
-
 .site-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
 .site-card{background:var(--navy2);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;}
 .site-card.winter-risk{border-color:rgba(224,155,69,.35);}
@@ -48,11 +44,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .sc-bar-fill{height:100%;border-radius:2px;background:var(--teal);}
 .sc-pct{font-size:11px;color:var(--muted);}
 .sc-winter{font-size:10px;color:var(--amber);margin-top:6px;display:flex;align-items:center;gap:5px;}
-
 .winter-banner{background:rgba(224,155,69,.08);border:1px solid rgba(224,155,69,.25);border-radius:var(--r);padding:12px 18px;margin-bottom:20px;font-size:12px;color:rgba(255,255,255,.75);line-height:1.7;display:flex;gap:14px;align-items:flex-start;}
 .wb-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
 .wb-body strong{color:var(--white);}
-
 .legend{display:flex;gap:16px;align-items:center;margin-bottom:20px;flex-wrap:wrap;}
 .legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);}
 .li-box{width:11px;height:9px;border-radius:2px;flex-shrink:0;}
@@ -63,7 +57,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .li-low{background:var(--blue-l);}
 .li-today{width:2px;height:12px;border-radius:1px;background:var(--red);}
 .li-winter{width:2px;height:12px;border-radius:1px;background:rgba(141,195,232,.5);}
-
 .gantt-section{background:var(--navy2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:16px;overflow:hidden;}
 .gantt-section.winter-risk{border-color:rgba(224,155,69,.3);}
 .gs-header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;border-bottom:1px solid var(--border);}
@@ -79,12 +72,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .badge-winter{background:rgba(141,195,232,.1);color:var(--blue-l);border:1px solid rgba(141,195,232,.25);}
 .chevron{font-size:12px;color:var(--muted);transition:transform .2s;margin-left:4px;}
 .chevron.open{transform:rotate(180deg);}
-
 .gs-note{margin:0 20px 14px;border-left:3px solid var(--accent);padding:7px 12px;font-size:11px;color:var(--muted);line-height:1.7;background:rgba(47,114,196,.06);border-radius:0 4px 4px 0;}
 .gs-note.warn{border-left-color:var(--amber);background:rgba(224,155,69,.06);}
 .gs-note strong{color:var(--white);}
 .gs-body.collapsed{display:none;}
-
 .gantt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
 .gantt-table{width:100%;border-collapse:collapse;min-width:700px;}
 .gantt-table thead th{background:var(--navy3);padding:7px 10px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap;}
@@ -123,38 +114,22 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .dot-upcoming{background:rgba(255,255,255,.2);}
 .month-ruler-inner{position:relative;height:16px;}
 .month-label{position:absolute;font-size:9px;color:var(--muted2);text-transform:uppercase;letter-spacing:.05em;transform:translateX(-50%);}
-
 .footer{padding:18px 40px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:11px;margin-top:8px;}
-
-/* ── MOBILE ── */
 @media (max-width: 900px) {
-  .header{padding:14px 20px;}
-  .header-right{display:none;}
-  .stat-strip{padding:16px 20px;gap:20px;}
-  .stat-divider{display:none;}
+  .header{padding:14px 20px;}.header-right{display:none;}
+  .stat-strip{padding:16px 20px;gap:20px;}.stat-divider{display:none;}
   .stat-desc{border-left:none;padding-left:0;border-top:1px solid var(--border);padding-top:12px;width:100%;flex-basis:100%;}
-  .main{padding:16px 14px;}
-  .contract-card{grid-template-columns:1fr 1fr;gap:12px;padding:14px 16px;}
-  .site-cards{grid-template-columns:1fr;}
-  .gs-header{padding:12px 14px;flex-wrap:wrap;gap:8px;}
-  .gs-right{flex-wrap:wrap;gap:6px;}
-  .gs-target{font-size:11px;}
-  .gs-note{margin:0 14px 12px;font-size:11px;}
+  .main{padding:16px 14px;}.contract-card{grid-template-columns:1fr 1fr;gap:12px;padding:14px 16px;}
+  .site-cards{grid-template-columns:1fr;}.gs-header{padding:12px 14px;flex-wrap:wrap;gap:8px;}
+  .gs-right{flex-wrap:wrap;gap:6px;}.gs-target{font-size:11px;}.gs-note{margin:0 14px 12px;font-size:11px;}
   .footer{padding:14px 20px;}
 }
-
 @media (max-width: 600px) {
-  .header-org{font-size:14px;}
-  .stat{flex:1 1 40%;}
-  .stat-val{font-size:22px;}
-  .contract-card{grid-template-columns:1fr;}
-  .gs-badge.hide-mobile{display:none;}
-  .gs-name{font-size:14px;}
+  .header-org{font-size:14px;}.stat{flex:1 1 40%;}.stat-val{font-size:22px;}
+  .contract-card{grid-template-columns:1fr;}.gs-badge.hide-mobile{display:none;}.gs-name{font-size:14px;}
 }
-
 @media print{
-  .no-print{display:none!important;}
-  .gs-body.collapsed{display:block!important;}
+  .no-print{display:none!important;}.gs-body.collapsed{display:block!important;}
   body{background:#fff;color:#111;}
   .header,.stat-strip{background:#0d1929!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 }
@@ -172,7 +147,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <div class="header-right">
     <div class="header-tag">Project Schedule Report</div>
     <div class="header-project">McGivney Community Homes</div>
-    <div class="header-meta">As of June 8, 2026 &middot; Confidential</div>
+    <div class="header-meta">As of June 10, 2026 &middot; Confidential</div>
   </div>
 </div>
 <div class="stat-strip">
@@ -186,7 +161,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <div class="stat-divider"></div>
   <div class="stat"><div class="stat-val">Dec 26</div><div class="stat-label">Last Completion</div></div>
   <div class="stat-divider"></div>
-  <div class="stat-desc">Three pre-1940s single-family homes converting to legal multi-unit dwellings under HP 25-17 design-build contract. Full scope includes structural, envelope, MEP, and finishes to OBC multi-unit standards. Confirmed progress anchored to Jun 8 milestone data. Forward schedule from HP 25-17 spec-based durations with schedule contingency applied per phase.</div>
+  <div class="stat-desc">Three pre-1940s single-family homes converting to legal multi-unit dwellings under HP 25-17 design-build contract. Full scope includes structural, envelope, MEP, and finishes to OBC multi-unit standards. Myrtle framing in progress. Emerald and Fairleigh permit-pending. All three sites have demo and exterior envelope complete.</div>
 </div>
 <div class="main">
   <div class="contract-card">
@@ -196,14 +171,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
     <div><div class="cc-label">Occupancy Target</div><div class="cc-value">Q4 2026</div></div>
     <div><div class="cc-label">Supplier</div><div class="cc-value">Gateway Investment Group Inc.</div></div>
   </div>
-
   <div class="winter-banner">
     <div class="wb-icon">&#10052;</div>
     <div class="wb-body">
       <strong>56 Fairleigh Ave N &mdash; Q1 2027 completion likely.</strong> Stone foundation requires extended waterproofing cure time under Div 07 13 26. With framing starting July 13 and kitchens and bathrooms running late November into December, Fairleigh's target of Dec 26 falls directly over the Hamilton trades shutdown period (typically Dec 22 &ndash; Jan 5). Practical completion is Q1 2027. Myrtle and Emerald are not affected &mdash; all exterior and structural work completes well before November.
     </div>
   </div>
-
   <div class="site-cards" id="site-cards"></div>
   <div class="legend no-print">
     <div class="legend-item"><div class="li-box li-complete"></div>Complete</div>
@@ -211,7 +184,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
     <div class="legend-item"><div class="li-box li-high"></div>High complexity</div>
     <div class="legend-item"><div class="li-box li-med"></div>Medium complexity</div>
     <div class="legend-item"><div class="li-box li-low"></div>Low complexity</div>
-    <div class="legend-item"><div class="li-today"></div>Today &mdash; Jun 8</div>
+    <div class="legend-item"><div class="li-today"></div>Today &mdash; Jun 10</div>
     <div class="legend-item"><div class="li-winter"></div>Nov 15 winter threshold</div>
   </div>
   <div id="gantt-container"></div>
@@ -221,7 +194,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <span>McGivney MCHI &middot; HP 25-17</span>
 </div>
 <script>
-const TODAY=new Date('2026-06-08');
+const TODAY=new Date('2026-06-10');
 const WINTER=new Date('2026-11-15');
 const GS=new Date('2026-03-01');
 const GE=new Date('2027-03-01');
@@ -250,13 +223,13 @@ const SITES=[
   {
     name:'29 Myrtle Ave',addr:'29 MYRTLE AVE',
     type:'Duplex/triplex conversion &middot; 2&ndash;3 units',
-    updated:'Jun 3, 2026',target:'Nov 13, 2026',
-    winterRisk:false,pct:20,
-    note:'<strong>Demo complete Apr 17. Exterior envelope complete May 19.</strong> Framing in progress, est. complete Jun 22. Waterproofing and MEP pending permit release. All exterior work completes well before November &mdash; no weather risk on this site.',
+    updated:'Jun 10, 2026',target:'Nov 13, 2026',
+    winterRisk:false,
+    note:'<strong>Demo complete Apr 17. Exterior envelope complete May 19. Framing complete May 27.</strong> Waterproofing and MEP pending permit release. All exterior work completes well before November &mdash; no weather risk on this site.',
     milestones:[
       {task:'Demo / site prep',       start:'2026-04-08',end:'2026-04-17',cx:'done',status:'complete'},
       {task:'Exterior envelope',      start:'2026-04-28',end:'2026-05-19',cx:'done',status:'complete'},
-      {task:'Structural & framing',   start:'2026-06-01',end:'2026-06-22',cx:'H',   status:'inprog'},
+      {task:'Structural & framing',   start:'2026-06-01',end:'2026-05-27',cx:'done',status:'complete'},
       {task:'Waterproofing',          start:'2026-06-22',end:'2026-07-09',cx:'H',   status:'high'},
       {task:'Windows & ext. doors',   start:'2026-06-22',end:'2026-07-01',cx:'M',   status:'med'},
       {task:'MEP rough-ins',          start:'2026-07-09',end:'2026-08-04',cx:'H',   status:'high'},
@@ -275,8 +248,8 @@ const SITES=[
   {
     name:'132 Emerald St N',addr:'132 EMERALD ST N',
     type:'Duplex/triplex conversion &middot; 2&ndash;3 units',
-    updated:'Jun 8, 2026',target:'Nov 20, 2026',
-    winterRisk:false,pct:15,
+    updated:'Jun 10, 2026',target:'Nov 20, 2026',
+    winterRisk:false,
     note:'<strong>Demo complete May 8. Exterior envelope complete May 1.</strong> One week behind Myrtle. Framing commences on permit release. All exterior and structural work completes before November &mdash; no weather risk on this site.',
     milestones:[
       {task:'Demo / site prep',       start:'2026-04-29',end:'2026-05-08',cx:'done',status:'complete'},
@@ -300,14 +273,14 @@ const SITES=[
   {
     name:'56 Fairleigh Ave N',addr:'56 FAIRLEIGH AVE N',
     type:'Duplex/triplex conversion &middot; 2&ndash;3 units',
-    updated:'Jun 8, 2026',target:'Dec 26, 2026',
-    winterRisk:true,pct:15,
-    note:'warn|<strong>Demo complete May 22. Exterior envelope complete May 5.</strong> Stone foundation requires extended waterproofing scope under Div 07 13 26 with 7-day minimum cure. Permit expected early July. Framing starts Jul 13. Kitchens and bathrooms run late November into December. Target completion of Dec 26 falls over the Hamilton trades shutdown (Dec 22 &ndash; Jan 5) &mdash; <strong>practical completion is Q1 2027.</strong>',
+    updated:'Jun 10, 2026',target:'Dec 26, 2026',
+    winterRisk:true,
+    note:'warn|<strong>Demo complete May 22. Exterior envelope complete May 5. Waterproofing complete.</strong> Stone foundation requires extended waterproofing scope under Div 07 13 26 with 7-day minimum cure. Permit expected early July. Framing starts Jul 13. Kitchens and bathrooms run late November into December. Target completion of Dec 26 falls over the Hamilton trades shutdown (Dec 22 &ndash; Jan 5) &mdash; <strong>practical completion is Q1 2027.</strong>',
     milestones:[
       {task:'Demo / site prep',       start:'2026-05-13',end:'2026-05-22',cx:'done',status:'complete'},
       {task:'Exterior envelope',      start:'2026-04-14',end:'2026-05-05',cx:'done',status:'complete'},
+      {task:'Waterproofing',          start:'2026-05-05',end:'2026-05-22',cx:'done',status:'complete'},
       {task:'Structural & framing',   start:'2026-07-13',end:'2026-08-04',cx:'H',   status:'high'},
-      {task:'Waterproofing',          start:'2026-08-04',end:'2026-08-21',cx:'H',   status:'high'},
       {task:'Windows & ext. doors',   start:'2026-08-04',end:'2026-08-13',cx:'M',   status:'med'},
       {task:'MEP rough-ins',          start:'2026-08-21',end:'2026-09-16',cx:'H',   status:'high'},
       {task:'Rough-in inspections',   start:'2026-09-16',end:'2026-09-25',cx:'H',   status:'high'},
@@ -323,7 +296,6 @@ const SITES=[
     ]
   }
 ];
-
 function barCls(s){return{complete:'bar-complete',inprog:'bar-inprog',high:'bar-high',med:'bar-med',low:'bar-low'}[s]||'bar-med';}
 function dotCls(s){return{complete:'dot-complete',inprog:'dot-inprog'}[s]||'dot-upcoming';}
 function cxBadge(cx,status){
@@ -332,8 +304,7 @@ function cxBadge(cx,status){
   return`<span class="cx-badge cx-${cx}">${{H:'High',M:'Medium',L:'Low'}[cx]||cx}</span>`;
 }
 function monthRuler(){
-  let h='';
-  let cur=new Date(GS);
+  let h='';let cur=new Date(GS);
   while(cur<GE){
     const p=pct(cur).toFixed(2)+'%';
     const label=cur.toLocaleDateString('en-CA',{month:'short',year:'2-digit'}).replace(', ',"'").toUpperCase();
@@ -369,13 +340,11 @@ function buildGantt(){
         <td class="td-cx">${cxBadge(m.cx,m.status)}</td>
         <td class="td-date ${m.status==='complete'?'done':''}">${fmt(m.start)}</td>
         <td class="td-date ${m.status==='complete'?'done':''}">${fmt(m.end)}</td>
-        <td>
-          <div class="bar-wrap">
-            <div class="today-line" style="left:${tleft()}"></div>
-            ${s.winterRisk?`<div class="winter-line" style="left:${wleft()}" title="Nov 15 — winter threshold"></div>`:''}
-            <div class="g-bar ${barCls(m.status)}" style="left:${l};width:${w}" title="${m.task}: ${fmt(m.start)} — ${fmt(m.end)}"></div>
-          </div>
-        </td>
+        <td><div class="bar-wrap">
+          <div class="today-line" style="left:${tleft()}"></div>
+          ${s.winterRisk?`<div class="winter-line" style="left:${wleft()}" title="Nov 15 — winter threshold"></div>`:''}
+          <div class="g-bar ${barCls(m.status)}" style="left:${l};width:${w}" title="${m.task}: ${fmt(m.start)} — ${fmt(m.end)}"></div>
+        </div></td>
       </tr>`;
     }).join('');
     return`<div class="gantt-section${s.winterRisk?' winter-risk':''}">
@@ -396,16 +365,14 @@ function buildGantt(){
         <div class="gs-note${noteWarn?' warn':''}">${noteText}</div>
         <div class="gantt-scroll">
           <table class="gantt-table">
-            <thead>
-              <tr>
-                <th class="th-task">Phase</th>
-                <th class="th-trade">Trade</th>
-                <th class="th-cx">Complexity</th>
-                <th class="th-date">Start</th>
-                <th class="th-date">Complete</th>
-                <th><div class="month-ruler-inner">${monthRuler()}</div></th>
-              </tr>
-            </thead>
+            <thead><tr>
+              <th class="th-task">Phase</th>
+              <th class="th-trade">Trade</th>
+              <th class="th-cx">Complexity</th>
+              <th class="th-date">Start</th>
+              <th class="th-date">Complete</th>
+              <th><div class="month-ruler-inner">${monthRuler()}</div></th>
+            </tr></thead>
             <tbody>${rows}</tbody>
           </table>
         </div>
