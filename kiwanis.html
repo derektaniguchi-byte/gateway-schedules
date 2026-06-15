@@ -186,10 +186,10 @@ const WINTER=new Date('2026-11-15');
 const GS=new Date('2026-03-01');
 const GE=new Date('2027-03-01');
 const TD=(GE-GS)/86400000;
-function pct(d){return Math.max(0,(new Date(d)-GS)/86400000/TD*100);}
+function pct(d){const dt=typeof d==='string'?(([y,m,dd])=>new Date(y,m-1,dd))(d.split('-').map(Number)):d;return Math.max(0,(dt-GS)/86400000/TD*100);}
 function tleft(){return pct(TODAY).toFixed(3)+'%';}
 function wleft(){return pct(WINTER).toFixed(3)+'%';}
-function fmt(iso){if(!iso)return'—';const d=new Date(iso);return d.toLocaleDateString('en-CA',{month:'short',day:'numeric'});}
+function fmt(iso){if(!iso)return'—';const[y,m,d]=iso.split('-').map(Number);return new Date(y,m-1,d).toLocaleDateString('en-CA',{month:'short',day:'numeric'});}
 
 const SITES=[
   {
@@ -267,7 +267,7 @@ const SITES=[
     note:'warn|<strong>Servicing complete Mar 31. Permit expected Jun 19.</strong> Demo targeted Jun 22 (permit in hand before start). All forward dates cascade from Jun 22 demo start. Site grading Dec 14&ndash;22 falls directly on the trades shutdown (Dec 22&ndash;Jan 5). <strong>Any slip pushes final completion into Q1 2027.</strong> Fraser carries the highest weather risk of the three sites.',
     milestones:[
       {task:'Servicing',         start:'2026-03-24',end:'2026-03-31',cx:'done',status:'complete'},
-      {task:'Demo',              start:'2026-06-22',end:'2026-06-26',cx:'H',   status:'projected'},
+      {task:'Demo',              start:'2026-06-22',end:'2026-06-27',cx:'H',   status:'projected'},
       {task:'Excavation',        start:'2026-06-29',end:'2026-07-07',cx:'H',   status:'projected'},
       {task:'Footing',           start:'2026-07-07',end:'2026-07-17',cx:'H',   status:'projected'},
       {task:'Foundation',        start:'2026-07-17',end:'2026-08-03',cx:'H',   status:'projected'},
