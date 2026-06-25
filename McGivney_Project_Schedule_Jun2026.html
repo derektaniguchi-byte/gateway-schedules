@@ -45,6 +45,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .sc-pct{font-size:11px;color:var(--muted);}
 .sc-winter{font-size:10px;color:var(--amber);margin-top:6px;display:flex;align-items:center;gap:5px;}
 .winter-banner{background:rgba(224,155,69,.08);border:1px solid rgba(224,155,69,.25);border-radius:var(--r);padding:12px 18px;margin-bottom:20px;font-size:12px;color:rgba(255,255,255,.75);line-height:1.7;display:flex;gap:14px;align-items:flex-start;}
+.info-banner{background:rgba(47,114,196,.08);border:1px solid rgba(47,114,196,.28);border-radius:var(--r);padding:12px 18px;margin-bottom:20px;font-size:12px;color:rgba(255,255,255,.78);line-height:1.7;display:flex;gap:14px;align-items:flex-start;}
+.info-banner .wb-icon{color:var(--accent2);}
+.info-banner strong{color:var(--white);}
 .wb-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
 .wb-body strong{color:var(--white);}
 .legend{display:flex;gap:16px;align-items:center;margin-bottom:20px;flex-wrap:wrap;}
@@ -56,6 +59,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .li-med{background:var(--blue-m);}
 .li-low{background:var(--blue-l);}
 .li-today{width:2px;height:12px;border-radius:1px;background:var(--red);}
+.li-holiday{width:0;height:12px;border-left:1px dashed rgba(201,168,76,.8);}
 .li-winter{width:2px;height:12px;border-radius:1px;background:rgba(141,195,232,.5);}
 .gantt-section{background:var(--navy2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:16px;overflow:hidden;}
 .gantt-section.winter-risk{border-color:rgba(224,155,69,.3);}
@@ -101,6 +105,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .bar-wrap{position:relative;height:28px;}
 .today-line{position:absolute;top:2px;bottom:2px;width:2px;background:var(--red);z-index:10;border-radius:1px;}
 .winter-line{position:absolute;top:0;bottom:0;width:1px;background:rgba(141,195,232,.3);z-index:5;}
+.holiday-line{position:absolute;top:0;bottom:0;width:0;border-left:1px dashed rgba(201,168,76,.55);z-index:4;}
 .g-bar{position:absolute;height:13px;top:50%;transform:translateY(-50%);border-radius:3px;}
 .g-bar:hover{opacity:.8;cursor:default;}
 .bar-complete{background:var(--complete);}
@@ -147,7 +152,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <div class="header-right">
     <div class="header-tag">Project Schedule Report</div>
     <div class="header-project">McGivney Community Homes</div>
-    <div class="header-meta">As of June 10, 2026 &middot; Confidential</div>
+    <div class="header-meta">As of June 24, 2026 &middot; Confidential</div>
   </div>
 </div>
 <div class="stat-strip">
@@ -159,9 +164,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <div class="stat-divider"></div>
   <div class="stat"><div class="stat-val">Nov 13</div><div class="stat-label">First Completion</div></div>
   <div class="stat-divider"></div>
-  <div class="stat"><div class="stat-val">Dec 26</div><div class="stat-label">Last Completion</div></div>
+  <div class="stat"><div class="stat-val">Jan 2027</div><div class="stat-label">Last Completion</div></div>
   <div class="stat-divider"></div>
-  <div class="stat-desc">Three pre-1940s single-family homes converting to legal multi-unit dwellings under HP 25-17 design-build contract. Full scope includes structural, envelope, MEP, and finishes to OBC multi-unit standards. Myrtle framing in progress. Emerald and Fairleigh permit-pending. All three sites have demo and exterior envelope complete.</div>
+  <div class="stat-desc">Three pre-1940s single-family homes converting to legal multi-unit dwellings under HP 25-17 design-build contract. Demo and exterior envelope complete across all three sites; Myrtle framing complete. All three permit-pending with release expected July 3. Completion targets are set conservatively to confirmed-milestone anchors, with Fairleigh interior work landing ahead of the December trades shutdown.</div>
 </div>
 <div class="main">
   <div class="contract-card">
@@ -171,10 +176,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
     <div><div class="cc-label">Occupancy Target</div><div class="cc-value">Q4 2026</div></div>
     <div><div class="cc-label">Supplier</div><div class="cc-value">Gateway Investment Group Inc.</div></div>
   </div>
+  <div class="info-banner">
+    <div class="wb-icon">&#9776;</div>
+    <div class="wb-body">
+      <strong>Sequenced by construction dependency.</strong> Phase dates are targets anchored to confirmed milestones: completed work, the July 3 permit release, and the framing starts. Completion targets are set conservatively; intermediate phase durations are indicative and pending per-trade effort confirmation. As-of dates noted per site.
+    </div>
+  </div>
   <div class="winter-banner">
     <div class="wb-icon">&#10052;</div>
     <div class="wb-body">
-      <strong>56 Fairleigh Ave N &mdash; Q1 2027 completion likely.</strong> Stone foundation requires extended waterproofing cure time under Div 07 13 26. With framing starting July 13 and kitchens and bathrooms running late November into December, Fairleigh's target of Dec 26 falls directly over the Hamilton trades shutdown period (typically Dec 22 &ndash; Jan 5). Practical completion is Q1 2027. Myrtle and Emerald are not affected &mdash; all exterior and structural work completes well before November.
+      <strong>56 Fairleigh Ave N &mdash; January 2027 completion.</strong> Stone-foundation site and the longest of the three schedules. Interior trades are sequenced to finish ahead of the Hamilton trades shutdown (Dec 22 to Jan 5). Exterior grading and walkway fall after the winter pause, so practical completion is targeted for January 2027. Myrtle and Emerald complete in November and are unaffected.
     </div>
   </div>
   <div class="site-cards" id="site-cards"></div>
@@ -184,8 +195,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
     <div class="legend-item"><div class="li-box li-high"></div>High complexity</div>
     <div class="legend-item"><div class="li-box li-med"></div>Medium complexity</div>
     <div class="legend-item"><div class="li-box li-low"></div>Low complexity</div>
-    <div class="legend-item"><div class="li-today"></div>Today &mdash; Jun 10</div>
-    <div class="legend-item"><div class="li-winter"></div>Nov 15 winter threshold</div>
+    <div class="legend-item"><div class="li-today"></div>Today &mdash; Jun 23</div>
+    <div class="legend-item"><div class="li-holiday"></div>Statutory holiday</div>
+    <div class="legend-item"><div class="li-winter"></div>Dec 22 trades shutdown</div>
   </div>
   <div id="gantt-container"></div>
 </div>
@@ -194,15 +206,18 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <span>McGivney MCHI &middot; HP 25-17</span>
 </div>
 <script>
-const TODAY=new Date('2026-06-10');
-const WINTER=new Date('2026-11-15');
+const TODAY=new Date('2026-06-23');
+const WINTER=new Date('2026-12-22');
 const GS=new Date('2026-03-01');
 const GE=new Date('2027-03-01');
 const TD=(GE-GS)/86400000;
-function pct(d){return Math.max(0,(new Date(d)-GS)/86400000/TD*100);}
+function toDate(d){if(typeof d!=='string')return d;const[y,m,dd]=d.split('-').map(Number);return new Date(y,m-1,dd);}
+function pct(d){return Math.max(0,(toDate(d)-GS)/86400000/TD*100);}
 function tleft(){return pct(TODAY).toFixed(3)+'%';}
+const HOLIDAYS=[{d:'2026-07-01',n:'Canada Day'},{d:'2026-08-03',n:'Civic Holiday'},{d:'2026-09-07',n:'Labour Day'},{d:'2026-10-12',n:'Thanksgiving'}];
+function holidayLines(){return HOLIDAYS.map(h=>`<div class="holiday-line" style="left:${pct(h.d).toFixed(3)}%" title="${h.n}"></div>`).join('');}
 function wleft(){return pct(WINTER).toFixed(3)+'%';}
-function fmt(iso){if(!iso)return'—';const d=new Date(iso);return d.toLocaleDateString('en-CA',{month:'short',day:'numeric'});}
+function fmt(iso){if(!iso)return'—';const d=toDate(iso);return d.toLocaleDateString('en-CA',{month:'short',day:'numeric'});}
 const TRADES={
   'Demo / site prep':'Chad / Crew',
   'Exterior envelope':'Med Siding',
@@ -223,76 +238,70 @@ const SITES=[
   {
     name:'29 Myrtle Ave',addr:'29 MYRTLE AVE',
     type:'Duplex/triplex conversion &middot; 2&ndash;3 units',
-    updated:'Jun 10, 2026',target:'Nov 13, 2026',
+    updated:'Jun 21, 2026',target:'Nov 13, 2026',
     winterRisk:false,
-    note:'<strong>Demo complete Apr 17. Exterior envelope complete May 19. Framing complete May 27.</strong> Waterproofing and MEP pending permit release. All exterior work completes well before November &mdash; no weather risk on this site.',
+    note:'<strong>Demo complete Apr 17. Exterior envelope complete May 19. Framing complete May 27.</strong> Permit pending, release expected July 3. Interior trades sequence on permit release. Completion target Nov 13.',
     milestones:[
-      {task:'Demo / site prep',       start:'2026-04-08',end:'2026-04-17',cx:'done',status:'complete'},
-      {task:'Exterior envelope',      start:'2026-04-28',end:'2026-05-19',cx:'done',status:'complete'},
-      {task:'Structural & framing',   start:'2026-06-01',end:'2026-05-27',cx:'done',status:'complete'},
-      {task:'Waterproofing',          start:'2026-06-22',end:'2026-07-09',cx:'H',   status:'high'},
-      {task:'Windows & ext. doors',   start:'2026-06-22',end:'2026-07-01',cx:'M',   status:'med'},
-      {task:'MEP rough-ins',          start:'2026-07-09',end:'2026-08-04',cx:'H',   status:'high'},
-      {task:'Rough-in inspections',   start:'2026-08-04',end:'2026-08-13',cx:'H',   status:'high'},
-      {task:'Insulation',             start:'2026-08-13',end:'2026-08-22',cx:'M',   status:'med'},
-      {task:'Air barrier / vapour',   start:'2026-08-22',end:'2026-08-28',cx:'M',   status:'med'},
-      {task:'Drywall & mud',          start:'2026-08-28',end:'2026-09-14',cx:'H',   status:'high'},
-      {task:'Paint',                  start:'2026-09-14',end:'2026-09-23',cx:'L',   status:'low'},
-      {task:'Flooring',               start:'2026-09-23',end:'2026-10-02',cx:'M',   status:'med'},
-      {task:'Kitchens',               start:'2026-10-02',end:'2026-10-14',cx:'H',   status:'high'},
-      {task:'Bathrooms',              start:'2026-10-14',end:'2026-10-26',cx:'H',   status:'high'},
-      {task:'Trim, doors & hardware', start:'2026-10-26',end:'2026-11-04',cx:'M',   status:'med'},
-      {task:'Fence / walkway / grade',start:'2026-11-04',end:'2026-11-13',cx:'L',   status:'low'},
+      {task:'Demo / site prep',start:'2026-04-08',end:'2026-04-17',cx:'done',status:'complete'},
+      {task:'Exterior envelope',start:'2026-04-28',end:'2026-05-19',cx:'done',status:'complete'},
+      {task:'Structural & framing',start:'2026-05-17',end:'2026-05-27',cx:'done',status:'complete'},
+      {task:'Waterproofing',start:'2026-07-03',end:'2026-07-19',cx:'H',status:'high'},
+      {task:'Windows & ext. doors',start:'2026-07-19',end:'2026-07-27',cx:'M',status:'med'},
+      {task:'MEP rough-ins',start:'2026-07-27',end:'2026-08-21',cx:'H',status:'high'},
+      {task:'Insulation',start:'2026-08-21',end:'2026-09-01',cx:'M',status:'med'},
+      {task:'Drywall & mud',start:'2026-09-01',end:'2026-09-17',cx:'H',status:'high'},
+      {task:'Paint',start:'2026-09-17',end:'2026-09-25',cx:'L',status:'low'},
+      {task:'Flooring',start:'2026-09-25',end:'2026-10-03',cx:'M',status:'med'},
+      {task:'Kitchens',start:'2026-10-03',end:'2026-10-14',cx:'H',status:'high'},
+      {task:'Bathrooms',start:'2026-10-14',end:'2026-10-25',cx:'H',status:'high'},
+      {task:'Trim, doors & hardware',start:'2026-10-25',end:'2026-11-02',cx:'M',status:'med'},
+      {task:'Fence / walkway / grade',start:'2026-11-02',end:'2026-11-13',cx:'L',status:'low'}
     ]
   },
   {
     name:'132 Emerald St N',addr:'132 EMERALD ST N',
     type:'Duplex/triplex conversion &middot; 2&ndash;3 units',
-    updated:'Jun 10, 2026',target:'Nov 20, 2026',
+    updated:'Jun 15, 2026',target:'Nov 20, 2026',
     winterRisk:false,
-    note:'<strong>Demo complete May 8. Exterior envelope complete May 1.</strong> One week behind Myrtle. Framing commences on permit release. All exterior and structural work completes before November &mdash; no weather risk on this site.',
+    note:'<strong>Demo complete May 8. Exterior metal and brick complete May 1.</strong> Permit pending, release expected July 3. Framing begins July 6, waterproofing July 24. Completion target Nov 20.',
     milestones:[
-      {task:'Demo / site prep',       start:'2026-04-29',end:'2026-05-08',cx:'done',status:'complete'},
-      {task:'Exterior envelope',      start:'2026-04-10',end:'2026-05-01',cx:'done',status:'complete'},
-      {task:'Structural & framing',   start:'2026-06-08',end:'2026-06-29',cx:'H',   status:'inprog'},
-      {task:'Waterproofing',          start:'2026-06-29',end:'2026-07-16',cx:'H',   status:'high'},
-      {task:'Windows & ext. doors',   start:'2026-06-29',end:'2026-07-08',cx:'M',   status:'med'},
-      {task:'MEP rough-ins',          start:'2026-07-16',end:'2026-08-11',cx:'H',   status:'high'},
-      {task:'Rough-in inspections',   start:'2026-08-11',end:'2026-08-20',cx:'H',   status:'high'},
-      {task:'Insulation',             start:'2026-08-20',end:'2026-08-29',cx:'M',   status:'med'},
-      {task:'Air barrier / vapour',   start:'2026-08-29',end:'2026-09-04',cx:'M',   status:'med'},
-      {task:'Drywall & mud',          start:'2026-09-04',end:'2026-09-21',cx:'H',   status:'high'},
-      {task:'Paint',                  start:'2026-09-21',end:'2026-09-30',cx:'L',   status:'low'},
-      {task:'Flooring',               start:'2026-09-30',end:'2026-10-09',cx:'M',   status:'med'},
-      {task:'Kitchens',               start:'2026-10-09',end:'2026-10-21',cx:'H',   status:'high'},
-      {task:'Bathrooms',              start:'2026-10-21',end:'2026-11-02',cx:'H',   status:'high'},
-      {task:'Trim, doors & hardware', start:'2026-11-02',end:'2026-11-11',cx:'M',   status:'med'},
-      {task:'Fence / walkway / grade',start:'2026-11-11',end:'2026-11-20',cx:'L',   status:'low'},
+      {task:'Demo / site prep',start:'2026-04-28',end:'2026-05-08',cx:'done',status:'complete'},
+      {task:'Exterior envelope',start:'2026-04-10',end:'2026-05-01',cx:'done',status:'complete'},
+      {task:'Structural & framing',start:'2026-07-06',end:'2026-07-24',cx:'H',status:'high'},
+      {task:'Waterproofing',start:'2026-07-24',end:'2026-08-07',cx:'H',status:'high'},
+      {task:'Windows & ext. doors',start:'2026-08-07',end:'2026-08-15',cx:'M',status:'med'},
+      {task:'MEP rough-ins',start:'2026-08-15',end:'2026-09-06',cx:'H',status:'high'},
+      {task:'Insulation',start:'2026-09-06',end:'2026-09-16',cx:'M',status:'med'},
+      {task:'Drywall & mud',start:'2026-09-16',end:'2026-09-30',cx:'H',status:'high'},
+      {task:'Paint',start:'2026-09-30',end:'2026-10-08',cx:'L',status:'low'},
+      {task:'Flooring',start:'2026-10-08',end:'2026-10-16',cx:'M',status:'med'},
+      {task:'Kitchens',start:'2026-10-16',end:'2026-10-26',cx:'H',status:'high'},
+      {task:'Bathrooms',start:'2026-10-26',end:'2026-11-05',cx:'H',status:'high'},
+      {task:'Trim, doors & hardware',start:'2026-11-05',end:'2026-11-13',cx:'M',status:'med'},
+      {task:'Fence / walkway / grade',start:'2026-11-13',end:'2026-11-20',cx:'L',status:'low'}
     ]
   },
   {
     name:'56 Fairleigh Ave N',addr:'56 FAIRLEIGH AVE N',
     type:'Duplex/triplex conversion &middot; 2&ndash;3 units',
-    updated:'Jun 10, 2026',target:'Dec 26, 2026',
+    updated:'Jun 22, 2026',target:'Jan 16, 2027',
     winterRisk:true,
-    note:'warn|<strong>Demo complete May 22. Exterior envelope complete May 5. Waterproofing complete.</strong> Stone foundation requires extended waterproofing scope under Div 07 13 26 with 7-day minimum cure. Permit expected early July. Framing starts Jul 13. Kitchens and bathrooms run late November into December. Target completion of Dec 26 falls over the Hamilton trades shutdown (Dec 22 &ndash; Jan 5) &mdash; <strong>practical completion is Q1 2027.</strong>',
+    note:'warn|<strong>Demo complete May 22. Exterior metal and brick complete May 5.</strong> Permit pending, release expected July 3. Framing begins July 22. Interior trades complete ahead of the December trades shutdown; exterior grading and walkway follow in January after the winter pause. Completion targeted for January 2027.',
     milestones:[
-      {task:'Demo / site prep',       start:'2026-05-13',end:'2026-05-22',cx:'done',status:'complete'},
-      {task:'Exterior envelope',      start:'2026-04-14',end:'2026-05-05',cx:'done',status:'complete'},
-      {task:'Waterproofing',          start:'2026-05-05',end:'2026-05-22',cx:'done',status:'complete'},
-      {task:'Structural & framing',   start:'2026-07-13',end:'2026-08-04',cx:'H',   status:'high'},
-      {task:'Windows & ext. doors',   start:'2026-08-04',end:'2026-08-13',cx:'M',   status:'med'},
-      {task:'MEP rough-ins',          start:'2026-08-21',end:'2026-09-16',cx:'H',   status:'high'},
-      {task:'Rough-in inspections',   start:'2026-09-16',end:'2026-09-25',cx:'H',   status:'high'},
-      {task:'Insulation',             start:'2026-09-25',end:'2026-10-04',cx:'M',   status:'med'},
-      {task:'Air barrier / vapour',   start:'2026-10-04',end:'2026-10-10',cx:'M',   status:'med'},
-      {task:'Drywall & mud',          start:'2026-10-10',end:'2026-10-27',cx:'H',   status:'high'},
-      {task:'Paint',                  start:'2026-10-27',end:'2026-11-05',cx:'L',   status:'low'},
-      {task:'Flooring',               start:'2026-11-05',end:'2026-11-14',cx:'M',   status:'med'},
-      {task:'Kitchens',               start:'2026-11-14',end:'2026-11-26',cx:'H',   status:'high'},
-      {task:'Bathrooms',              start:'2026-11-26',end:'2026-12-08',cx:'H',   status:'high'},
-      {task:'Trim, doors & hardware', start:'2026-12-08',end:'2026-12-17',cx:'M',   status:'med'},
-      {task:'Fence / walkway / grade',start:'2026-12-17',end:'2026-12-26',cx:'L',   status:'low'},
+      {task:'Demo / site prep',start:'2026-05-12',end:'2026-05-22',cx:'done',status:'complete'},
+      {task:'Exterior envelope',start:'2026-04-14',end:'2026-05-05',cx:'done',status:'complete'},
+      {task:'Structural & framing',start:'2026-07-22',end:'2026-08-09',cx:'H',status:'high'},
+      {task:'Waterproofing',start:'2026-08-09',end:'2026-08-26',cx:'H',status:'high'},
+      {task:'Windows & ext. doors',start:'2026-08-26',end:'2026-09-04',cx:'M',status:'med'},
+      {task:'MEP rough-ins',start:'2026-09-04',end:'2026-09-30',cx:'H',status:'high'},
+      {task:'Insulation',start:'2026-09-30',end:'2026-10-12',cx:'M',status:'med'},
+      {task:'Drywall & mud',start:'2026-10-12',end:'2026-10-29',cx:'H',status:'high'},
+      {task:'Paint',start:'2026-10-29',end:'2026-11-07',cx:'L',status:'low'},
+      {task:'Flooring',start:'2026-11-07',end:'2026-11-16',cx:'M',status:'med'},
+      {task:'Kitchens',start:'2026-11-16',end:'2026-11-28',cx:'H',status:'high'},
+      {task:'Bathrooms',start:'2026-11-28',end:'2026-12-10',cx:'H',status:'high'},
+      {task:'Trim, doors & hardware',start:'2026-12-10',end:'2026-12-18',cx:'M',status:'med'},
+      {task:'Fence / walkway / grade',start:'2026-12-18',end:'2027-01-16',cx:'L',status:'low'}
     ]
   }
 ];
@@ -323,7 +332,7 @@ function buildCards(){
       <div class="sc-target">Target completion: ${s.target}</div>
       <div class="sc-bar-track"><div class="sc-bar-fill" style="width:${p}%"></div></div>
       <div class="sc-pct">${p}% complete</div>
-      ${s.winterRisk?'<div class="sc-winter">&#10052; Q1 2027 practical completion</div>':''}
+      ${s.winterRisk?'<div class="sc-winter">&#10052; Jan 2027 completion</div>':''}
     </div>`;
   }).join('');
 }
@@ -342,7 +351,8 @@ function buildGantt(){
         <td class="td-date ${m.status==='complete'?'done':''}">${fmt(m.end)}</td>
         <td><div class="bar-wrap">
           <div class="today-line" style="left:${tleft()}"></div>
-          ${s.winterRisk?`<div class="winter-line" style="left:${wleft()}" title="Nov 15 — winter threshold"></div>`:''}
+          ${holidayLines()}
+          ${s.winterRisk?`<div class="winter-line" style="left:${wleft()}" title="Dec 22 — trades shutdown"></div>`:''}
           <div class="g-bar ${barCls(m.status)}" style="left:${l};width:${w}" title="${m.task}: ${fmt(m.start)} — ${fmt(m.end)}"></div>
         </div></td>
       </tr>`;
@@ -357,7 +367,7 @@ function buildGantt(){
         <div class="gs-right">
           <span class="gs-target">Target: ${s.target}</span>
           <span class="gs-badge badge-permit">Permit Pending</span>
-          ${s.winterRisk?'<span class="gs-badge badge-winter hide-mobile">&#10052; Q1 2027 Risk</span>':''}
+          ${s.winterRisk?'<span class="gs-badge badge-winter hide-mobile">&#10052; Jan 2027</span>':''}
           <span class="chevron open">&#9660;</span>
         </div>
       </div>
