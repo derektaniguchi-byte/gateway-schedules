@@ -150,7 +150,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <div class="header-right">
     <div class="header-tag">Project Schedule Report</div>
     <div class="header-project">McGivney Community Homes</div>
-    <div class="header-meta">As of July 3, 2026 &middot; Confidential</div>
+    <div class="header-meta">As of July 7, 2026 &middot; Confidential</div>
   </div>
 </div>
 <div class="stat-strip">
@@ -158,11 +158,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <div class="stat-divider"></div>
   <div class="stat"><div class="stat-val">6&ndash;9</div><div class="stat-label">Total Units</div></div>
   <div class="stat-divider"></div>
-  <div class="stat"><div class="stat-val">Dec 14</div><div class="stat-label">First Completion</div></div>
+  <div class="stat"><div class="stat-val">Dec 5</div><div class="stat-label">First Completion</div></div>
   <div class="stat-divider"></div>
   <div class="stat"><div class="stat-val">Jan 2027</div><div class="stat-label">Last Completion</div></div>
   <div class="stat-divider"></div>
-  <div class="stat-desc">Three pre-1940s single-family homes converting to legal multi-unit dwellings under HP 25-17 design-build contract. Completion targets reflect the latest field milestone snapshot for each site, scheduled around Ontario statutory holidays and the December to January trades shutdown. Emerald and Myrtle land in December 2026; Fairleigh completes mid-January 2027.</div>
+  <div class="stat-desc">Three pre-1940s single-family homes converting to legal multi-unit dwellings under HP 25-17 design-build contract. Completion targets reflect the July 6 field milestone update with a 20% schedule buffer applied on top of the team's field targets, plus Ontario statutory holidays and the December to January trades shutdown. Myrtle and Emerald both land December 5, 2026; Fairleigh completes mid-January 2027 after the shutdown.</div>
 </div>
 <div class="main">
   <div class="contract-card">
@@ -174,13 +174,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <div class="info-banner">
     <div class="wb-icon">&#9776;</div>
     <div class="wb-body">
-      <strong>Schedule reflects the latest field snapshot.</strong> Completed phases (Demo, Brick, Exterior Metal, plus Framing and Exterior Paint on Myrtle) carry the actual completion date. Remaining phases build off the current field targets (Myrtle updated Jun 29, Emerald Jun 15, Fairleigh Jun 29) and account for Ontario statutory holidays through the sequence. Permit release is pending on all three sites, targeted for July 22.
+      <strong>Schedule reflects the July 6, 2026 field snapshot with 20% buffer applied.</strong> Completed phases (Demo, Brick, Exterior Metal, plus Framing and Exterior Paint on Myrtle) carry the actual completion dates. Remaining phases build off the trade start dates in the field snapshot, with 20% padding applied over the days remaining to soften the timeline. Permit release is pending on all three sites; the field target for permit release is July 17 on Myrtle and Emerald, July 29 on Fairleigh.
     </div>
   </div>
   <div class="winter-banner">
     <div class="wb-icon">&#10052;</div>
     <div class="wb-body">
-      <strong>56 Fairleigh Ave N &mdash; January 19, 2027 completion.</strong> Stone-foundation site and the longest of the three schedules. Interior finishes carry into December; fence and walkway/grading land in the Ontario trades shutdown window (Dec 22 to Jan 5) and are pushed to the far side. Practical completion is targeted for mid-January 2027. Myrtle and Emerald finish in December and are unaffected.
+      <strong>56 Fairleigh Ave N &mdash; January 14, 2027 completion.</strong> Stone-foundation site and the longest of the three schedules. Interior finishes wrap in November; fence completes mid-December. Walkway and grading land in the Ontario trades shutdown window (Dec 22 to Jan 5) and are pushed to the far side. Practical completion is targeted for mid-January 2027. Myrtle and Emerald finish December 5 and are unaffected.
     </div>
   </div>
   <div class="site-cards" id="site-cards"></div>
@@ -190,7 +190,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
     <div class="legend-item"><div class="li-box li-high"></div>High complexity</div>
     <div class="legend-item"><div class="li-box li-med"></div>Medium complexity</div>
     <div class="legend-item"><div class="li-box li-low"></div>Low complexity</div>
-    <div class="legend-item"><div class="li-today"></div>Today &mdash; Jul 3</div>
+    <div class="legend-item"><div class="li-today"></div>Today &mdash; Jul 7</div>
     <div class="legend-item"><div class="li-holiday"></div>Statutory holiday</div>
     <div class="legend-item"><div class="li-winter"></div>Dec 22 trades shutdown</div>
   </div>
@@ -201,7 +201,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <span>McGivney MCHI &middot; HP 25-17</span>
 </div>
 <script>
-const TODAY=new Date(2026,6,3);
+const TODAY=new Date(2026,6,7);
 const WINTER=new Date(2026,11,22);
 const GS=new Date(2026,2,1);
 const GE=new Date(2027,2,1);
@@ -217,85 +217,85 @@ const SITES=[
   {
     name:'29 Myrtle Ave',addr:'29 MYRTLE AVE',
     type:'Duplex/triplex conversion &middot; 2&ndash;3 units',
-    updated:'Jun 29, 2026',target:'Dec 16, 2026',
+    updated:'Jul 6, 2026',target:'Dec 5, 2026',
     winterRisk:false,
-    note:'<strong>Furthest along of the three sites.</strong> Demo, brick, exterior metal, exterior paint, and framing all complete. Permit release targeted July 22; interior trades sequence on release. Completion projected December 16.',
+    note:'<strong>Furthest along of the three sites.</strong> Demo, brick, exterior metal, exterior paint, and framing all complete. Permit target July 17. HVAC and plumbing rough-in kick off mid-July running in parallel. Windows and waterproofing follow early August. Completion projected December 5 after 20% buffer applied to the field target of November 10.',
     milestones:[
-      {task:'Demo',              start:'2026-04-08', end:'2026-04-17', cx:'done', status:'complete'},
-      {task:'Brick work',        start:'2026-04-13', end:'2026-04-20', cx:'done', status:'complete'},
-      {task:'Exterior Metal',    start:'2026-05-10', end:'2026-05-19', cx:'done', status:'complete'},
-      {task:'Exterior Paint',    start:'2026-05-20', end:'2026-05-25', cx:'done', status:'complete'},
-      {task:'Framing',           start:'2026-05-20', end:'2026-05-27', cx:'done', status:'complete'},
-      {task:'HVAC',              start:'2026-05-27', end:'2026-07-14', cx:'H',    status:'high'},
-      {task:'Windows',           start:'2026-07-14', end:'2026-07-19', cx:'M',    status:'med'},
-      {task:'Water Proofing',    start:'2026-07-19', end:'2026-07-25', cx:'H',    status:'high'},
-      {task:'Plumbing',          start:'2026-07-25', end:'2026-08-18', cx:'H',    status:'high'},
-      {task:'Electrical',        start:'2026-08-18', end:'2026-08-30', cx:'H',    status:'high'},
-      {task:'Insulation',        start:'2026-08-30', end:'2026-09-08', cx:'M',    status:'med'},
-      {task:'Drywall/Mud',       start:'2026-09-08', end:'2026-10-03', cx:'H',    status:'high'},
-      {task:'Flooring',          start:'2026-10-03', end:'2026-10-18', cx:'M',    status:'med'},
-      {task:'Trim & Doors',      start:'2026-10-18', end:'2026-11-04', cx:'M',    status:'med'},
-      {task:'Kitchens',          start:'2026-11-04', end:'2026-11-13', cx:'H',    status:'high'},
-      {task:'Complete painting', start:'2026-11-13', end:'2026-11-15', cx:'L',    status:'low'},
-      {task:'Bathrooms',         start:'2026-11-15', end:'2026-11-21', cx:'H',    status:'high'},
-      {task:'Fence',             start:'2026-11-21', end:'2026-11-29', cx:'L',    status:'low'},
-      {task:'Walkway & Grading', start:'2026-11-29', end:'2026-12-16', cx:'L',    status:'low'}
+      {task:'Demo', start:'2026-04-08', end:'2026-04-17', cx:'done', status:'complete'},
+      {task:'Brick work', start:'2026-04-13', end:'2026-04-20', cx:'done', status:'complete'},
+      {task:'Exterior Metal', start:'2026-05-10', end:'2026-05-19', cx:'done', status:'complete'},
+      {task:'Exterior Paint', start:'2026-05-20', end:'2026-05-25', cx:'done', status:'complete'},
+      {task:'Framing', start:'2026-05-20', end:'2026-05-27', cx:'done', status:'complete'},
+      {task:'HVAC', start:'2026-07-17', end:'2026-08-12', cx:'H', status:'high'},
+      {task:'Plumbing', start:'2026-07-17', end:'2026-08-12', cx:'H', status:'high'},
+      {task:'Windows', start:'2026-08-12', end:'2026-08-20', cx:'M', status:'med'},
+      {task:'Water Proofing', start:'2026-08-12', end:'2026-08-20', cx:'H', status:'high'},
+      {task:'Electrical', start:'2026-08-20', end:'2026-08-29', cx:'H', status:'high'},
+      {task:'Insulation', start:'2026-08-29', end:'2026-09-23', cx:'M', status:'med'},
+      {task:'Drywall/Mud', start:'2026-09-23', end:'2026-10-07', cx:'H', status:'high'},
+      {task:'Flooring', start:'2026-10-07', end:'2026-10-24', cx:'M', status:'med'},
+      {task:'Trim & Doors', start:'2026-10-24', end:'2026-11-02', cx:'M', status:'med'},
+      {task:'Kitchens', start:'2026-11-02', end:'2026-11-04', cx:'H', status:'high'},
+      {task:'Complete painting', start:'2026-11-04', end:'2026-11-10', cx:'L', status:'low'},
+      {task:'Bathrooms', start:'2026-11-10', end:'2026-11-18', cx:'H', status:'high'},
+      {task:'Fence', start:'2026-11-18', end:'2026-12-05', cx:'L', status:'low'},
+      {task:'Walkway & Grading', start:'2026-11-30', end:'2026-12-05', cx:'L', status:'low'}
     ]
   },
   {
     name:'132 Emerald St N',addr:'132 EMERALD ST N',
     type:'Duplex/triplex conversion &middot; 2&ndash;3 units',
-    updated:'Jun 15, 2026',target:'Dec 14, 2026',
+    updated:'Jul 6, 2026',target:'Dec 5, 2026',
     winterRisk:false,
-    note:'<strong>Demo, brick, and exterior metal complete.</strong> Windows install scheduled July 4 to 9 following delivery lead time; downstream phases follow from there. Permit release targeted July 22. Completion projected December 14.',
+    note:'<strong>Windows install running now.</strong> Demo, brick, and exterior metal complete. Windows started late June and were still on site as of the July 6 update. Framing and exterior paint kick off late July following windows. Permit target July 17. Completion projected December 5 after 20% buffer applied to the field target of November 10.',
     milestones:[
-      {task:'Brick work',        start:'2026-04-17', end:'2026-04-24', cx:'done', status:'complete'},
-      {task:'Exterior Metal',    start:'2026-04-22', end:'2026-05-01', cx:'done', status:'complete'},
-      {task:'Demo',              start:'2026-04-28', end:'2026-05-08', cx:'done', status:'complete'},
-      {task:'Windows',           start:'2026-07-04', end:'2026-07-09', cx:'M',    status:'med'},
-      {task:'HVAC',              start:'2026-07-09', end:'2026-08-01', cx:'H',    status:'high'},
-      {task:'Exterior Paint',    start:'2026-08-01', end:'2026-08-04', cx:'L',    status:'low'},
-      {task:'Water Proofing',    start:'2026-08-04', end:'2026-08-12', cx:'H',    status:'high'},
-      {task:'Framing',           start:'2026-08-12', end:'2026-08-13', cx:'H',    status:'high'},
-      {task:'Plumbing',          start:'2026-08-13', end:'2026-08-25', cx:'H',    status:'high'},
-      {task:'Electrical',        start:'2026-08-25', end:'2026-09-06', cx:'H',    status:'high'},
-      {task:'Insulation',        start:'2026-09-06', end:'2026-09-15', cx:'M',    status:'med'},
-      {task:'Drywall/Mud',       start:'2026-09-15', end:'2026-10-10', cx:'H',    status:'high'},
-      {task:'Flooring',          start:'2026-10-10', end:'2026-10-25', cx:'M',    status:'med'},
-      {task:'Trim & Doors',      start:'2026-10-25', end:'2026-11-12', cx:'M',    status:'med'},
-      {task:'Kitchens',          start:'2026-11-12', end:'2026-11-20', cx:'H',    status:'high'},
-      {task:'Complete painting', start:'2026-11-20', end:'2026-11-22', cx:'L',    status:'low'},
-      {task:'Bathrooms',         start:'2026-11-22', end:'2026-11-28', cx:'H',    status:'high'},
-      {task:'Fence',             start:'2026-11-28', end:'2026-12-06', cx:'L',    status:'low'},
-      {task:'Walkway & Grading', start:'2026-12-06', end:'2026-12-14', cx:'L',    status:'low'}
+      {task:'Brick work', start:'2026-04-17', end:'2026-04-24', cx:'done', status:'complete'},
+      {task:'Exterior Metal', start:'2026-04-22', end:'2026-05-01', cx:'done', status:'complete'},
+      {task:'Demo', start:'2026-04-28', end:'2026-05-08', cx:'done', status:'complete'},
+      {task:'Windows', start:'2026-06-30', end:'2026-07-27', cx:'prog', status:'inprog'},
+      {task:'Exterior Paint', start:'2026-07-27', end:'2026-08-13', cx:'L', status:'low'},
+      {task:'Framing', start:'2026-07-27', end:'2026-08-13', cx:'H', status:'high'},
+      {task:'HVAC', start:'2026-08-13', end:'2026-08-22', cx:'H', status:'high'},
+      {task:'Plumbing', start:'2026-08-22', end:'2026-08-30', cx:'H', status:'high'},
+      {task:'Electrical', start:'2026-08-30', end:'2026-09-03', cx:'H', status:'high'},
+      {task:'Water Proofing', start:'2026-09-03', end:'2026-09-07', cx:'H', status:'high'},
+      {task:'Insulation', start:'2026-09-07', end:'2026-09-24', cx:'M', status:'med'},
+      {task:'Drywall/Mud', start:'2026-09-24', end:'2026-10-03', cx:'H', status:'high'},
+      {task:'Flooring', start:'2026-10-03', end:'2026-10-11', cx:'M', status:'med'},
+      {task:'Trim & Doors', start:'2026-10-11', end:'2026-10-19', cx:'M', status:'med'},
+      {task:'Kitchens', start:'2026-10-11', end:'2026-10-19', cx:'H', status:'high'},
+      {task:'Bathrooms', start:'2026-10-19', end:'2026-11-18', cx:'H', status:'high'},
+      {task:'Complete painting', start:'2026-10-19', end:'2026-11-18', cx:'L', status:'low'},
+      {task:'Fence', start:'2026-11-18', end:'2026-11-27', cx:'L', status:'low'},
+      {task:'Walkway & Grading', start:'2026-11-27', end:'2026-12-05', cx:'L', status:'low'}
     ]
   },
   {
     name:'56 Fairleigh Ave N',addr:'56 FAIRLEIGH AVE N',
     type:'Duplex/triplex conversion &middot; 2&ndash;3 units',
-    updated:'Jun 29, 2026',target:'Jan 19, 2027',
+    updated:'Jul 6, 2026',target:'Jan 14, 2027',
     winterRisk:true,
-    note:'warn|<strong>Longest of the three schedules &mdash; stone foundation adds complexity to waterproofing and interior sequencing.</strong> Demo, brick, and exterior metal complete. Permit release targeted July 22. Interior trades run through December; fence and walkway/grading land after the December 22 to January 5 Ontario trades shutdown. Completion projected January 19, 2027.',
+    note:'warn|<strong>Longest of the three schedules &mdash; stone foundation adds complexity to waterproofing and interior sequencing.</strong> Demo, brick, and exterior metal complete. Permit target July 29 (later than the other two sites). Framing kicks off late August; interior trades run through November; fence completes mid-December. Walkway and grading are pushed past the December 22 to January 5 Ontario trades shutdown. Completion projected January 14, 2027 after 20% buffer applied to the field target of December 1.',
     milestones:[
-      {task:'Brick work',        start:'2026-04-10', end:'2026-04-17', cx:'done', status:'complete'},
-      {task:'Exterior Metal',    start:'2026-04-27', end:'2026-05-05', cx:'done', status:'complete'},
-      {task:'Demo',              start:'2026-05-12', end:'2026-05-22', cx:'done', status:'complete'},
-      {task:'Windows',           start:'2026-07-23', end:'2026-07-28', cx:'M',    status:'med'},
-      {task:'Framing',           start:'2026-07-28', end:'2026-08-04', cx:'H',    status:'high'},
-      {task:'Exterior Paint',    start:'2026-08-04', end:'2026-08-09', cx:'L',    status:'low'},
-      {task:'Water Proofing',    start:'2026-08-09', end:'2026-08-10', cx:'H',    status:'high'},
-      {task:'HVAC',              start:'2026-08-10', end:'2026-08-21', cx:'H',    status:'high'},
-      {task:'Plumbing',          start:'2026-08-21', end:'2026-09-14', cx:'H',    status:'high'},
-      {task:'Electrical',        start:'2026-09-14', end:'2026-09-26', cx:'H',    status:'high'},
-      {task:'Insulation',        start:'2026-09-26', end:'2026-09-27', cx:'M',    status:'med'},
-      {task:'Drywall/Mud',       start:'2026-09-27', end:'2026-11-01', cx:'H',    status:'high'},
-      {task:'Flooring',          start:'2026-11-01', end:'2026-11-16', cx:'M',    status:'med'},
-      {task:'Trim & Doors',      start:'2026-11-16', end:'2026-12-03', cx:'M',    status:'med'},
-      {task:'Kitchens',          start:'2026-12-03', end:'2026-12-11', cx:'H',    status:'high'},
-      {task:'Complete painting', start:'2026-12-11', end:'2026-12-13', cx:'L',    status:'low'},
-      {task:'Bathrooms',         start:'2026-12-13', end:'2026-12-19', cx:'H',    status:'high'},
-      {task:'Fence',             start:'2026-12-19', end:'2027-01-11', cx:'L',    status:'low'},
-      {task:'Walkway & Grading', start:'2027-01-11', end:'2027-01-19', cx:'L',    status:'low'}
+      {task:'Brick work', start:'2026-04-10', end:'2026-04-17', cx:'done', status:'complete'},
+      {task:'Exterior Metal', start:'2026-04-27', end:'2026-05-05', cx:'done', status:'complete'},
+      {task:'Demo', start:'2026-05-12', end:'2026-05-22', cx:'done', status:'complete'},
+      {task:'Framing', start:'2026-08-30', end:'2026-09-05', cx:'H', status:'high'},
+      {task:'Exterior Paint', start:'2026-09-05', end:'2026-09-06', cx:'L', status:'low'},
+      {task:'Water Proofing', start:'2026-09-06', end:'2026-09-16', cx:'H', status:'high'},
+      {task:'HVAC', start:'2026-09-16', end:'2026-09-24', cx:'H', status:'high'},
+      {task:'Windows', start:'2026-09-16', end:'2026-09-24', cx:'M', status:'med'},
+      {task:'Plumbing', start:'2026-09-24', end:'2026-10-03', cx:'H', status:'high'},
+      {task:'Electrical', start:'2026-10-03', end:'2026-10-11', cx:'H', status:'high'},
+      {task:'Insulation', start:'2026-10-11', end:'2026-10-28', cx:'M', status:'med'},
+      {task:'Drywall/Mud', start:'2026-10-28', end:'2026-11-02', cx:'H', status:'high'},
+      {task:'Flooring', start:'2026-11-02', end:'2026-11-09', cx:'M', status:'med'},
+      {task:'Trim & Doors', start:'2026-11-09', end:'2026-11-14', cx:'M', status:'med'},
+      {task:'Kitchens', start:'2026-11-14', end:'2026-11-22', cx:'H', status:'high'},
+      {task:'Bathrooms', start:'2026-11-22', end:'2026-12-14', cx:'H', status:'high'},
+      {task:'Complete painting', start:'2026-11-22', end:'2026-12-14', cx:'L', status:'low'},
+      {task:'Fence', start:'2026-12-14', end:'2027-01-06', cx:'L', status:'low'},
+      {task:'Walkway & Grading', start:'2027-01-06', end:'2027-01-14', cx:'L', status:'low'}
     ]
   }
 ];
