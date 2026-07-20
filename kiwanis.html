@@ -152,7 +152,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <div class="stat-divider"></div>
   <div class="stat"><div class="stat-val">Feb 2027</div><div class="stat-label">Last Completion</div></div>
   <div class="stat-divider"></div>
-  <div class="stat-desc">Three new fourplex builds for Hamilton East Kiwanis Non-Profit Homes Inc. at 138 Paling Ave, 97 Garside Ave N, and 53 Fraser Ave. New construction to OBC standards per SRM Architects Project No. 24044. Paling backfill complete, framing kicks off mid-August. Garside excavation starting Jul 22 with footing to follow. Fraser has no active field baseline in the latest snapshot &mdash; Cory to reset. Completions in build order: Paling Nov 19, 2026; Garside pushes into Feb 2027 as finishing work crosses the Dec 22 to Jan 5 trades shutdown; Fraser TBD.</div>
+  <div class="stat-desc">Three new fourplex builds for Hamilton East Kiwanis Non-Profit Homes Inc. at 138 Paling Ave, 97 Garside Ave N, and 53 Fraser Ave. New construction to OBC standards per SRM Architects Project No. 24044. Paling backfill complete, framing kicks off mid-August. Garside excavation starting Jul 22 with footing to follow. Fraser excavation started Jul 10; sequence follows the previous baseline shifted for the 4-day slip. Completions in build order: Paling Nov 19, 2026; Fraser Jan 15, 2027; Garside Feb 17, 2027. Both Garside and Fraser finishing work crosses the Dec 22 to Jan 5 trades shutdown.</div>
 </div>
 <div class="main">
   <div class="contract-card">
@@ -164,7 +164,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   </div>
   <div class="winter-banner">
     <div class="wb-icon">&#10052;</div>
-    <div class="wb-body"><strong>Garside finishing work crosses the Dec 22 to Jan 5 Ontario trades shutdown.</strong> Paling completes Nov 19, 2026 and clears the shutdown window. Garside's drywall, paint, kitchen, millwork, and tile land on either side of the shutdown and drive completion into February 2027. Fraser has no field baseline in the latest snapshot; the site card is held until Cory re-baselines.</div>
+    <div class="wb-body"><strong>Garside and Fraser finishing work crosses the Dec 22 to Jan 5 Ontario trades shutdown.</strong> Paling completes Nov 19, 2026 and clears the shutdown. Fraser's site grading pauses Dec 22 and resumes Jan 6, projecting completion Jan 15, 2027. Garside's drywall, paint, kitchen, millwork, and tile land on either side of the shutdown and drive completion into February 2027.</div>
   </div>
   <div class="site-cards" id="site-cards"></div>
   <div class="legend no-print">
@@ -259,13 +259,33 @@ const SITES=[
   {
     name:'53 Fraser Ave',addr:'53 FRASER AVE',
     type:'New fourplex &middot; 4 units',
-    updated:'Jul 20, 2026',target:'TBD',
-    badge:'hold',badgeText:'Awaiting Field Baseline',
-    winterRisk:false,
-    hold:true,
-    note:'warn|<strong>Servicing complete Mar 31. No downstream field baseline in the Jul 20 snapshot.</strong> The Jul 6 row briefly showed an excavation date of Jul 10 but the Jul 20 row leaves all trades blank. Follow up with Cory to re-baseline the sequence &mdash; the prior projected completion of Jan 11, 2027 is no longer supported by field data.',
+    updated:'Jul 20, 2026',target:'Jan 15, 2027',
+    badge:'permit',badgeText:'Excavation Underway',
+    winterRisk:true,
+    hold:false,
+    note:'warn|<strong>Servicing complete Mar 31.</strong> Demo ran late June through early July. Excavation started Jul 10 per Cory\'s Jul 6 field entry (four days later than the previous baseline); downstream sequence shifted +4 days to reflect that slip. Site grading crosses the Dec 22 to Jan 5 Ontario trades shutdown, pausing and resuming Jan 6. Completion projected <strong>Jan 15, 2027</strong>. Fraser field data has been sparse since May &mdash; follow up with Cory to confirm the sequence is still tracking.',
     milestones:[
-      {task:'Servicing', start:'2026-03-24', end:'2026-03-31', cx:'done', status:'complete'}
+      {task:'Servicing',         start:'2026-03-24',end:'2026-03-31',cx:'done',status:'complete'},
+      {task:'Demo',              start:'2026-06-29',end:'2026-07-04',cx:'H',   status:'complete'},
+      {task:'Excavation',        start:'2026-07-10',end:'2026-07-18',cx:'H',   status:'complete'},
+      {task:'Footing',           start:'2026-07-18',end:'2026-07-28',cx:'H',   status:'inprog'},
+      {task:'Foundation',        start:'2026-07-28',end:'2026-08-14',cx:'H',   status:'high'},
+      {task:'Back fill',         start:'2026-08-14',end:'2026-08-18',cx:'H',   status:'high'},
+      {task:'Framing',           start:'2026-08-21',end:'2026-09-15',cx:'H',   status:'high'},
+      {task:'Roof',              start:'2026-09-15',end:'2026-09-27',cx:'M',   status:'med'},
+      {task:'Brick veneer',      start:'2026-09-27',end:'2026-10-13',cx:'H',   status:'high'},
+      {task:'HVAC',              start:'2026-09-15',end:'2026-10-02',cx:'H',   status:'high'},
+      {task:'Plumbing',          start:'2026-09-15',end:'2026-10-02',cx:'H',   status:'high'},
+      {task:'Electrical',        start:'2026-09-15',end:'2026-10-02',cx:'H',   status:'high'},
+      {task:'Exterior metal',    start:'2026-10-16',end:'2026-10-23',cx:'M',   status:'med'},
+      {task:'Insulation',        start:'2026-10-02',end:'2026-10-11',cx:'M',   status:'med'},
+      {task:'Drywall',           start:'2026-10-17',end:'2026-11-03',cx:'M',   status:'med'},
+      {task:'Paint',             start:'2026-11-03',end:'2026-11-15',cx:'L',   status:'low'},
+      {task:'Flooring',          start:'2026-11-15',end:'2026-11-24',cx:'L',   status:'low'},
+      {task:'Kitchen',           start:'2026-12-04',end:'2026-12-15',cx:'M',   status:'med'},
+      {task:'Millwork',          start:'2026-12-15',end:'2026-12-21',cx:'M',   status:'med'},
+      {task:'Tile',              start:'2026-11-24',end:'2026-12-01',cx:'M',   status:'med'},
+      {task:'Site & grading',    start:'2027-01-06',end:'2027-01-15',cx:'L',   status:'low'}
     ]
   }
 ];
