@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+  McGivney Community Homes — Project Schedule
+  Version 2 — Rebuilt August 4, 2026
+
+  Changes from v1 (Jul 20 snapshot):
+  - Header "As of" date updated to August 3, 2026
+  - TODAY marker moved to August 4, 2026
+  - Per-site "Updated" fields moved to Aug 3, 2026
+  - Info banner rewritten to reflect current field status
+  - Myrtle: Permit, HVAC, Windows, Plumbing statuses set to complete; Electrical set to in progress
+  - Emerald: Framing set to complete (finished Jul 24); HVAC shifted +7 days per Jul 27 raw update (7/30-8/11 to 8/6-8/18); Exterior Paint set to complete; Plumbing set to in progress
+  - Fairleigh: Framing set to in progress (started Jul 28); no date changes
+  - Stat strip completion targets unchanged (Myrtle Dec 15, Emerald Jan 22 2027, Fairleigh Feb 2 2027)
+-->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -151,7 +165,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <div class="header-right">
     <div class="header-tag">Project Schedule Report</div>
     <div class="header-project">McGivney Community Homes</div>
-    <div class="header-meta">As of July 20, 2026 &middot; Confidential</div>
+    <div class="header-meta">As of August 3, 2026 &middot; Confidential</div>
   </div>
 </div>
 <div class="stat-strip">
@@ -163,7 +177,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <div class="stat-divider"></div>
   <div class="stat"><div class="stat-val">Feb 2027</div><div class="stat-label">Last Completion</div></div>
   <div class="stat-divider"></div>
-  <div class="stat-desc">Three pre-1940s single-family homes converting to legal multi-unit dwellings under HP 25-17 design-build contract. Completion targets reflect the July 20 field snapshot with 20% padding applied on remaining days, scheduled around Ontario statutory holidays and the December to January trades shutdown. Myrtle lands first (Dec 15), Emerald in late January 2027, Fairleigh completes early February 2027 with finishing work carrying across the shutdown.</div>
+  <div class="stat-desc">Three pre-1940s single-family homes converting to legal multi-unit dwellings under HP 25-17 design-build contract. Completion targets reflect the August 3 field snapshot with 20% padding applied on remaining days, scheduled around Ontario statutory holidays and the December to January trades shutdown. Myrtle lands first (Dec 15), Emerald in late January 2027, Fairleigh completes early February 2027 with finishing work carrying across the shutdown.</div>
 </div>
 <div class="main">
   <div class="contract-card">
@@ -175,7 +189,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <div class="info-banner">
     <div class="wb-icon">&#9776;</div>
     <div class="wb-body">
-      <strong>Schedule reflects the July 20, 2026 field snapshot with 20% padding on trade-LOE phases.</strong> Paint and other scheduling-bandwidth phases use raw Daenna/Cory dates directly. Completed phases carry actual dates. Emerald framing is in progress; Myrtle plumbing wrapped mid-July. Permits released on Emerald and Fairleigh; Myrtle target July 25.
+      <strong>Schedule reflects the August 3, 2026 field snapshot with 20% padding on trade-LOE phases.</strong> Paint and other scheduling-bandwidth phases use raw Cory dates directly. Completed phases carry actual dates. Myrtle plumbing, HVAC, and windows are complete; electrical is in progress. Emerald framing completed July 24, and HVAC has shifted one week later per the July 27 update. Fairleigh framing kicked off July 28. All permits released.
     </div>
   </div>
   <div class="winter-banner">
@@ -191,7 +205,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
     <div class="legend-item"><div class="li-box li-high"></div>High complexity</div>
     <div class="legend-item"><div class="li-box li-med"></div>Medium complexity</div>
     <div class="legend-item"><div class="li-box li-low"></div>Low complexity</div>
-    <div class="legend-item"><div class="li-today"></div>Today &mdash; Jul 20</div>
+    <div class="legend-item"><div class="li-today"></div>Today &mdash; Aug 4</div>
     <div class="legend-item"><div class="li-holiday"></div>Statutory holiday</div>
     <div class="legend-item"><div class="li-winter"></div>Dec 22 trades shutdown</div>
   </div>
@@ -202,7 +216,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <span>McGivney MCHI &middot; HP 25-17</span>
 </div>
 <script>
-const TODAY=new Date(2026,6,20);
+const TODAY=new Date(2026,7,4);
 const WINTER=new Date(2026,11,22);
 const GS=new Date(2026,2,1);
 const GE=new Date(2027,2,15);
@@ -218,9 +232,9 @@ const SITES=[
   {
     name:'29 Myrtle Ave',addr:'29 MYRTLE AVE',
     type:'Duplex/triplex conversion &middot; 2&ndash;3 units',
-    updated:'Jul 20, 2026',target:'Dec 15, 2026',
+    updated:'Aug 3, 2026',target:'Dec 15, 2026',
     winterRisk:false,
-    note:'<strong>Furthest along of the three sites.</strong> Demo, brick, exterior metal, exterior paint, and framing all complete. Plumbing rough-in wrapped mid-July. Permit target July 25. HVAC and electrical rough-ins running late July into early August, followed by insulation and drywall through August. Interior finishes and inspection run September through November; occupancy mid-December. Completion projected December 15, 2026.',
+    note:'<strong>Furthest along of the three sites.</strong> Demo, brick, exterior metal, exterior paint, framing, permit, plumbing, HVAC, and windows all complete. Electrical rough-in is in progress through mid-August, followed by insulation and drywall through August. Interior finishes and inspection run September through November; occupancy mid-December. Completion projected December 15, 2026.',
     milestones:[
       {task:'Demo', start:'2026-04-07', end:'2026-04-17', cx:'done', status:'complete'},
       {task:'Brick work', start:'2026-04-13', end:'2026-04-20', cx:'done', status:'complete'},
@@ -228,10 +242,10 @@ const SITES=[
       {task:'Framing', start:'2026-05-17', end:'2026-05-27', cx:'done', status:'complete'},
       {task:'Exterior Paint', start:'2026-05-20', end:'2026-05-25', cx:'done', status:'complete'},
       {task:'Plumbing', start:'2026-07-05', end:'2026-07-15', cx:'done', status:'complete'},
-      {task:'Permit', start:'2026-07-21', end:'2026-07-25', cx:'M', status:'med'},
-      {task:'HVAC', start:'2026-07-21', end:'2026-07-30', cx:'H', status:'high'},
-      {task:'Windows', start:'2026-07-28', end:'2026-08-02', cx:'M', status:'med'},
-      {task:'Electrical', start:'2026-07-30', end:'2026-08-11', cx:'H', status:'high'},
+      {task:'Permit', start:'2026-07-21', end:'2026-07-27', cx:'done', status:'complete'},
+      {task:'HVAC', start:'2026-07-21', end:'2026-07-30', cx:'done', status:'complete'},
+      {task:'Windows', start:'2026-07-28', end:'2026-08-02', cx:'done', status:'complete'},
+      {task:'Electrical', start:'2026-07-30', end:'2026-08-11', cx:'H', status:'inprog'},
       {task:'Insulation', start:'2026-08-12', end:'2026-08-14', cx:'M', status:'med'},
       {task:'Drywall/Mud', start:'2026-08-14', end:'2026-08-27', cx:'M', status:'med'},
       {task:'Painting', start:'2026-08-24', end:'2026-09-18', cx:'L', status:'low'},
@@ -251,18 +265,18 @@ const SITES=[
   {
     name:'132 Emerald St N',addr:'132 EMERALD ST N',
     type:'Duplex/triplex conversion &middot; 2&ndash;3 units',
-    updated:'Jul 20, 2026',target:'Jan 22, 2027',
+    updated:'Aug 3, 2026',target:'Jan 22, 2027',
     winterRisk:true,
-    note:'warn|<strong>Framing in progress</strong> &mdash; started July 1, finish targeted late July. Permit released early July. Plumbing rough-in starts late July. Kitchens run through November. Final finishing and inspection carry across the Dec 22 to Jan 5 trades shutdown, with occupancy targeted January 22, 2027.',
+    note:'warn|<strong>Framing complete July 24; permit released early July.</strong> Plumbing rough-in is in progress. HVAC has shifted one week later per the July 27 update and now runs early to mid-August. Exterior paint complete. Kitchens run through November. Final finishing and inspection carry across the Dec 22 to Jan 5 trades shutdown, with occupancy targeted January 22, 2027.',
     milestones:[
       {task:'Brick work', start:'2026-04-17', end:'2026-04-24', cx:'done', status:'complete'},
       {task:'Exterior Metal', start:'2026-04-24', end:'2026-05-01', cx:'done', status:'complete'},
       {task:'Demo', start:'2026-04-28', end:'2026-05-08', cx:'done', status:'complete'},
-      {task:'Framing', start:'2026-07-01', end:'2026-07-25', cx:'H', status:'inprog'},
+      {task:'Framing', start:'2026-07-01', end:'2026-07-25', cx:'done', status:'complete'},
       {task:'Permit', start:'2026-07-05', end:'2026-07-08', cx:'done', status:'complete'},
-      {task:'Plumbing', start:'2026-07-22', end:'2026-08-19', cx:'H', status:'high'},
-      {task:'Exterior Paint', start:'2026-07-28', end:'2026-08-02', cx:'L', status:'low'},
-      {task:'HVAC', start:'2026-07-30', end:'2026-08-11', cx:'H', status:'high'},
+      {task:'Plumbing', start:'2026-07-22', end:'2026-08-19', cx:'H', status:'inprog'},
+      {task:'Exterior Paint', start:'2026-07-28', end:'2026-08-02', cx:'done', status:'complete'},
+      {task:'HVAC', start:'2026-08-06', end:'2026-08-18', cx:'H', status:'high'},
       {task:'Deck / Porch', start:'2026-08-11', end:'2026-08-27', cx:'M', status:'med'},
       {task:'Electrical', start:'2026-08-23', end:'2026-08-27', cx:'H', status:'high'},
       {task:'Insulation', start:'2026-08-31', end:'2026-09-05', cx:'M', status:'med'},
@@ -283,15 +297,15 @@ const SITES=[
   {
     name:'56 Fairleigh Ave N',addr:'56 FAIRLEIGH AVE N',
     type:'Duplex/triplex conversion &middot; 2&ndash;3 units',
-    updated:'Jul 20, 2026',target:'Feb 2, 2027',
+    updated:'Aug 3, 2026',target:'Feb 2, 2027',
     winterRisk:true,
-    note:'warn|<strong>Longest of the three schedules &mdash; stone foundation adds complexity to waterproofing and interior sequencing.</strong> Demo, brick, and exterior metal complete. Permit released mid-July. Framing kicks off late July; interior trades run August through November. Finishing work and inspection carry across the trades shutdown. Completion projected February 2, 2027.',
+    note:'warn|<strong>Longest of the three schedules &mdash; stone foundation adds complexity to waterproofing and interior sequencing.</strong> Demo, brick, exterior metal, and permit complete. Framing kicked off July 28 and is in progress; interior trades run August through November. Finishing work and inspection carry across the trades shutdown. Completion projected February 2, 2027.',
     milestones:[
       {task:'Brick work', start:'2026-04-10', end:'2026-04-17', cx:'done', status:'complete'},
       {task:'Exterior Metal', start:'2026-04-28', end:'2026-05-05', cx:'done', status:'complete'},
       {task:'Demo', start:'2026-05-12', end:'2026-05-22', cx:'done', status:'complete'},
       {task:'Permit', start:'2026-07-07', end:'2026-07-10', cx:'done', status:'complete'},
-      {task:'Framing', start:'2026-07-28', end:'2026-08-19', cx:'H', status:'high'},
+      {task:'Framing', start:'2026-07-28', end:'2026-08-19', cx:'H', status:'inprog'},
       {task:'Exterior Paint', start:'2026-08-08', end:'2026-09-02', cx:'L', status:'low'},
       {task:'HVAC', start:'2026-08-23', end:'2026-09-13', cx:'H', status:'high'},
       {task:'Plumbing', start:'2026-09-08', end:'2026-09-22', cx:'H', status:'high'},
