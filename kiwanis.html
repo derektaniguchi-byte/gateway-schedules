@@ -2,17 +2,17 @@
 <html lang="en">
 <!--
   Kiwanis Homes — Project Schedule
-  Version 2 — Rebuilt August 4, 2026
+  Version 3 — Rebuilt August 12, 2026
 
-  Changes from v1 (Jul 20 snapshot):
-  - Header "As of" date updated to August 3, 2026
-  - TODAY marker moved to August 4, 2026
-  - Per-site "Updated" fields moved to Aug 3, 2026
+  Changes from v2 (Aug 3 snapshot):
+  - Header "As of" date updated to August 10, 2026
+  - TODAY marker moved to August 12, 2026
+  - Per-site "Updated" fields moved to Aug 10, 2026
   - Winter banner refreshed with current field status
-  - Paling: no date changes; framing continues in progress
-  - Garside: Excavation set to complete (raw end 7/29); Footing shifted 3 days earlier and set to in progress; badge changed to Footing Underway
-  - Fraser: dates HELD per Cory recovery-plan pending; note updated with Demo Complete confirmation; badge unchanged
-  - Stat strip HELD at Mar 2027 last completion per direction
+  - Paling: no date changes; framing nearing completion
+  - Garside: Footing set to complete (raw end 8/7); Foundation set to in progress (raw start 8/10); badge changed to Foundation Underway
+  - Fraser: no changes; dates and status HELD per prior direction pending Cory recovery plan; note flags Garside sequencing question
+  - Stat strip HELD at Mar 2027 last completion per prior direction
 -->
 <head>
 <meta charset="UTF-8">
@@ -145,7 +145,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <div class="header-right">
     <div class="header-tag">Project Schedule Report</div>
     <div class="header-project">Kiwanis Homes</div>
-    <div class="header-meta">As of August 3, 2026 &middot; Confidential</div>
+    <div class="header-meta">As of August 10, 2026 &middot; Confidential</div>
   </div>
 </div>
 <div class="stat-strip">
@@ -157,7 +157,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <div class="stat-divider"></div>
   <div class="stat"><div class="stat-val">Mar 2027</div><div class="stat-label">Last Completion</div></div>
   <div class="stat-divider"></div>
-  <div class="stat-desc">Three new fourplex builds for Hamilton East Kiwanis Non-Profit Homes Inc. at 138 Paling Ave, 97 Garside Ave N, and 53 Fraser Ave. New construction to OBC standards per SRM Architects Project No. 24044. Completion targets reflect the August 3 field snapshot with 20% padding on trade-LOE phases; Paint, Tile, and Exterior metal use Cory's raw dates directly since those durations already represent scheduling bandwidth windows. Paling framing underway, completion Jan 6, 2027. Garside excavation complete and footing underway, completion Mar 10. Fraser demo complete, completion Mar 25. All three sites cross the Dec 22 to Jan 5 trades shutdown.</div>
+  <div class="stat-desc">Three new fourplex builds for Hamilton East Kiwanis Non-Profit Homes Inc. at 138 Paling Ave, 97 Garside Ave N, and 53 Fraser Ave. New construction to OBC standards per SRM Architects Project No. 24044. Completion targets reflect the August 10 field snapshot with 20% padding on trade-LOE phases; Paint, Tile, and Exterior metal use Cory's raw dates directly since those durations already represent scheduling bandwidth windows. Paling framing nearing completion, completion Jan 6, 2027. Garside footing complete and foundation in progress, completion Mar 10. Fraser demo complete, completion Mar 25. All three sites cross the Dec 22 to Jan 5 trades shutdown.</div>
 </div>
 <div class="main">
   <div class="contract-card">
@@ -169,7 +169,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   </div>
   <div class="winter-banner">
     <div class="wb-icon">&#10052;</div>
-    <div class="wb-body"><strong>All three sites cross the Dec 22 to Jan 5 Ontario trades shutdown.</strong> Paling framing in progress; kitchen and millwork land just past the shutdown, projecting Jan 6, 2027. Garside excavation complete with footing underway; interior work runs into March 10. Fraser demo complete; starts 12 weeks after Paling on Cory's identical-duration template, with all winter compounding hitting hardest and completion projected March 25. Worth reviewing whether Fraser's template durations still apply given the timing.</div>
+    <div class="wb-body"><strong>All three sites cross the Dec 22 to Jan 5 Ontario trades shutdown.</strong> Paling framing nearing completion; kitchen and millwork land just past the shutdown, projecting Jan 6, 2027. Garside footing complete; foundation in progress with interior work running into March 10. Fraser demo complete; starts 12 weeks after Paling on Cory's identical-duration template, projecting March 25 completion. Garside is approaching Cory's stated 5-week window before Fraser can start using Garside backfill soil &mdash; Fraser sequencing worth confirming at next L10.</div>
   </div>
   <div class="site-cards" id="site-cards"></div>
   <div class="legend no-print">
@@ -178,7 +178,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
     <div class="legend-item"><div class="li-box li-high"></div>High complexity</div>
     <div class="legend-item"><div class="li-box li-med"></div>Medium complexity</div>
     <div class="legend-item"><div class="li-box li-low"></div>Low complexity</div>
-    <div class="legend-item"><div class="li-today"></div>Today &mdash; Aug 4</div>
+    <div class="legend-item"><div class="li-today"></div>Today &mdash; Aug 12</div>
     <div class="legend-item"><div class="li-winter"></div>Dec 22 trades shutdown</div>
   </div>
   <div id="gantt-container"></div>
@@ -188,7 +188,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <span>Kiwanis Project No. 24044 &middot; SRM Architects</span>
 </div>
 <script>
-const TODAY=new Date(2026,7,4);
+const TODAY=new Date(2026,7,12);
 const WINTER=new Date(2026,11,22);
 const GS=new Date(2026,2,1);
 const GE=new Date(2027,3,15);
@@ -202,10 +202,10 @@ const SITES=[
   {
     name:'138 Paling Ave',addr:'138 PALING AVE',
     type:'New fourplex &middot; 4 units',
-    updated:'Aug 3, 2026',target:'Jan 6, 2027',
+    updated:'Aug 10, 2026',target:'Jan 6, 2027',
     badge:'active',badgeText:'Framing Underway',
     winterRisk:true,
-    note:'warn|<strong>Servicing, Demo, Excavation, Footing, Foundation, and Back fill complete. Framing in progress through mid-August.</strong> Roof and brick veneer follow in late August; mechanical rough-ins August into September. Interior finishes run October through December. Kitchen and millwork land just past the Dec 22 to Jan 5 trades shutdown. Completion projected <strong>Jan 6, 2027</strong>.',
+    note:'warn|<strong>Servicing, Demo, Excavation, Footing, Foundation, and Back fill complete. Framing nearing completion mid-August.</strong> Roof and brick veneer follow in late August; mechanical rough-ins August into September. Interior finishes run October through December. Kitchen and millwork land just past the Dec 22 to Jan 5 trades shutdown. Completion projected <strong>Jan 6, 2027</strong>.',
     milestones:[
       {task:'Servicing', start:'2026-03-17', end:'2026-03-24', cx:'done', status:'complete'},
       {task:'Demo', start:'2026-04-07', end:'2026-04-17', cx:'done', status:'complete'},
@@ -232,16 +232,16 @@ const SITES=[
   {
     name:'97 Garside Ave N',addr:'97 GARSIDE AVE N',
     type:'New fourplex &middot; 4 units',
-    updated:'Aug 3, 2026',target:'Mar 10, 2027',
-    badge:'active',badgeText:'Footing Underway',
+    updated:'Aug 10, 2026',target:'Mar 10, 2027',
+    badge:'active',badgeText:'Foundation Underway',
     winterRisk:true,
-    note:'warn|<strong>Servicing (Mar 27) and Demo (Jun 2) complete. Excavation complete July 29; footing in progress.</strong> Framing targeted mid-September; interior trades and rough-ins run October and November. Insulation, drywall, and finishes cross the Dec 22 to Jan 5 trades shutdown. Kitchen and millwork complete Q1 2027. Completion projected <strong>March 10, 2027</strong>.',
+    note:'warn|<strong>Servicing (Mar 27) and Demo (Jun 2) complete. Excavation complete July 29; footing complete August 7; foundation in progress.</strong> Framing targeted mid-September; interior trades and rough-ins run October and November. Insulation, drywall, and finishes cross the Dec 22 to Jan 5 trades shutdown. Kitchen and millwork complete Q1 2027. Completion projected <strong>March 10, 2027</strong>.',
     milestones:[
       {task:'Servicing', start:'2026-03-20', end:'2026-03-27', cx:'done', status:'complete'},
       {task:'Demo', start:'2026-05-23', end:'2026-06-02', cx:'done', status:'complete'},
       {task:'Excavation', start:'2026-07-21', end:'2026-07-31', cx:'done', status:'complete'},
-      {task:'Footing', start:'2026-08-03', end:'2026-08-11', cx:'H', status:'inprog'},
-      {task:'Foundation', start:'2026-08-14', end:'2026-09-05', cx:'H', status:'high'},
+      {task:'Footing', start:'2026-08-03', end:'2026-08-11', cx:'done', status:'complete'},
+      {task:'Foundation', start:'2026-08-14', end:'2026-09-05', cx:'H', status:'inprog'},
       {task:'Back fill', start:'2026-09-08', end:'2026-09-10', cx:'H', status:'high'},
       {task:'Framing', start:'2026-09-18', end:'2026-10-23', cx:'H', status:'high'},
       {task:'Roof', start:'2026-10-24', end:'2026-10-28', cx:'M', status:'med'},
@@ -262,10 +262,10 @@ const SITES=[
   {
     name:'53 Fraser Ave',addr:'53 FRASER AVE',
     type:'New fourplex &middot; 4 units',
-    updated:'Aug 3, 2026',target:'Mar 25, 2027',
+    updated:'Aug 10, 2026',target:'Mar 25, 2027',
     badge:'active',badgeText:'Demo Complete',
     winterRisk:true,
-    note:'warn|<strong>Servicing complete Mar 31. Demo complete July 17.</strong> Excavation early August, framing early October, mechanical rough-ins November. Interior trades run into Q1 2027. Fraser starts 12 weeks after Paling on the same Cory template, so all winter compounding lands hardest here. Millwork closes the sequence in late March. Completion projected <strong>March 25, 2027</strong>.',
+    note:'warn|<strong>Servicing complete Mar 31. Demo complete July 17.</strong> Excavation early August, framing early October, mechanical rough-ins November. Interior trades run into Q1 2027. Fraser starts 12 weeks after Paling on the same Cory template, so all winter compounding lands hardest here. Millwork closes the sequence in late March. Completion projected <strong>March 25, 2027</strong>. Sequencing dependent on Garside backfill soil transfer &mdash; Cory recovery plan pending.',
     milestones:[
       {task:'Servicing', start:'2026-03-24', end:'2026-03-31', cx:'done', status:'complete'},
       {task:'Demo', start:'2026-07-07', end:'2026-07-17', cx:'done', status:'complete'},
