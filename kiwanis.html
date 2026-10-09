@@ -2,17 +2,22 @@
 <html lang="en">
 <!--
   Kiwanis Homes — Project Schedule
-  Version 3 — Rebuilt August 12, 2026
+  Version 4 — Rebuilt October 8, 2026
 
-  Changes from v2 (Aug 3 snapshot):
-  - Header "As of" date updated to August 10, 2026
-  - TODAY marker moved to August 12, 2026
-  - Per-site "Updated" fields moved to Aug 10, 2026
-  - Winter banner refreshed with current field status
-  - Paling: no date changes; framing nearing completion
-  - Garside: Footing set to complete (raw end 8/7); Foundation set to in progress (raw start 8/10); badge changed to Foundation Underway
-  - Fraser: no changes; dates and status HELD per prior direction pending Cory recovery plan; note flags Garside sequencing question
-  - Stat strip HELD at Mar 2027 last completion per prior direction
+  Changes from v3 (Aug 12):
+  - Paling rebuilt on Cory Sheppard's Oct 8 high-level schedule (phase level), incl. siding correction to Nov 27
+  - New interior phases: Phase 3 fire separation, firestopping, primer/ceilings split from final paint, final installs/completion
+  - Rough-ins now overlap by unit (HVAC, plumbing, electrical) per Cory
+  - 10% padding per line item, cascaded through successors (internal only, not shown on page)
+  - Holiday closure: Dec 24, Dec 25, Dec 28 (Boxing Day observed), Jan 1. Replaces Dec 22 - Jan 5 shutdown
+  - Garside and Fraser carry Paling sequencing and durations per Cory; 5.5-week close-in allowance after framing
+  - Garside/Fraser front end from Project Milestone Schedule workbook site tabs (last updated Aug 17)
+  - Paling framing (end Aug 14) and roof (Aug 27-28) set to workbook actuals
+  - Garside/Fraser framing uses Paling's actual framing duration
+  - New 'To confirm' status for items past their planned dates with no recorded completion
+  - Garside/Fraser foundation, backfill and framing dates need Daenna's actuals to confirm
+  - Removed padding language from stat strip (client-facing)
+  - TODAY marker Oct 8; chart range extended to Jun 2027
 -->
 <head>
 <meta charset="UTF-8">
@@ -121,6 +126,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .bar-high{background:var(--blue-h);}
 .bar-med{background:var(--blue-m);}
 .bar-low{background:var(--blue-l);}
+.bar-unconf{background:repeating-linear-gradient(45deg,rgba(224,155,69,.55) 0 4px,rgba(224,155,69,.2) 4px 8px);}
+.cx-unconf{background:rgba(224,155,69,.08);color:var(--complete);border:1px dashed rgba(224,155,69,.45);}
+.li-unconf{background:repeating-linear-gradient(45deg,rgba(224,155,69,.55) 0 3px,rgba(224,155,69,.2) 3px 6px);}
 .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
 .dot-complete{background:var(--complete);}
 .dot-inprog{background:var(--accent2);}
@@ -145,7 +153,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <div class="header-right">
     <div class="header-tag">Project Schedule Report</div>
     <div class="header-project">Kiwanis Homes</div>
-    <div class="header-meta">As of August 10, 2026 &middot; Confidential</div>
+    <div class="header-meta">As of October 8, 2026 &middot; Confidential</div>
   </div>
 </div>
 <div class="stat-strip">
@@ -153,11 +161,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <div class="stat-divider"></div>
   <div class="stat"><div class="stat-val">12</div><div class="stat-label">Total Units</div></div>
   <div class="stat-divider"></div>
-  <div class="stat"><div class="stat-val">Jan 6</div><div class="stat-label">First Completion</div></div>
+  <div class="stat"><div class="stat-val">Feb 12</div><div class="stat-label">First Completion</div></div>
   <div class="stat-divider"></div>
-  <div class="stat"><div class="stat-val">Mar 2027</div><div class="stat-label">Last Completion</div></div>
+  <div class="stat"><div class="stat-val">May 2027</div><div class="stat-label">Last Completion</div></div>
   <div class="stat-divider"></div>
-  <div class="stat-desc">Three new fourplex builds for Hamilton East Kiwanis Non-Profit Homes Inc. at 138 Paling Ave, 97 Garside Ave N, and 53 Fraser Ave. New construction to OBC standards per SRM Architects Project No. 24044. Completion targets reflect the August 10 field snapshot with 20% padding on trade-LOE phases; Paint, Tile, and Exterior metal use Cory's raw dates directly since those durations already represent scheduling bandwidth windows. Paling framing nearing completion, completion Jan 6, 2027. Garside footing complete and foundation in progress, completion Mar 10. Fraser demo complete, completion Mar 25. All three sites cross the Dec 22 to Jan 5 trades shutdown.</div>
+  <div class="stat-desc">Three new fourplex builds for Hamilton East Kiwanis Non-Profit Homes Inc. at 138 Paling Ave, 97 Garside Ave N, and 53 Fraser Ave. New construction to OBC standards per SRM Architects Project No. 24044. Schedule reflects the October 8 site review: Paling exterior finishing and interior fire separation underway, with rough-ins, drywall and finishes sequenced unit by unit; completion Feb 12, 2027. Garside and Fraser follow the same sequence and durations, completing Apr 28, 2027 and May 31, 2027. Final grading and landscaping to be scheduled after the October 14 site meeting.</div>
 </div>
 <div class="main">
   <div class="contract-card">
@@ -169,17 +177,18 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   </div>
   <div class="winter-banner">
     <div class="wb-icon">&#10052;</div>
-    <div class="wb-body"><strong>All three sites cross the Dec 22 to Jan 5 Ontario trades shutdown.</strong> Paling framing nearing completion; kitchen and millwork land just past the shutdown, projecting Jan 6, 2027. Garside footing complete; foundation in progress with interior work running into March 10. Fraser demo complete; starts 12 weeks after Paling on Cory's identical-duration template, projecting March 25 completion. Garside is approaching Cory's stated 5-week window before Fraser can start using Garside backfill soil &mdash; Fraser sequencing worth confirming at next L10.</div>
+    <div class="wb-body"><strong>All three sites work through the winter, with site closures Dec 24, Dec 25, Dec 28 and Jan 1.</strong> Paling is closed in and moving into interior work; finishes carry into January and February. Garside and Fraser frame through November and December, so their exterior masonry and siding run in cold weather and will need heat and protection, and interior drywall will need temporary heat until permanent HVAC is running. Garside and Fraser dates will be confirmed against recorded site progress.</div>
   </div>
   <div class="site-cards" id="site-cards"></div>
   <div class="legend no-print">
     <div class="legend-item"><div class="li-box li-complete"></div>Complete</div>
     <div class="legend-item"><div class="li-box li-inprog"></div>In progress</div>
+    <div class="legend-item"><div class="li-box li-unconf"></div>To confirm</div>
     <div class="legend-item"><div class="li-box li-high"></div>High complexity</div>
     <div class="legend-item"><div class="li-box li-med"></div>Medium complexity</div>
     <div class="legend-item"><div class="li-box li-low"></div>Low complexity</div>
-    <div class="legend-item"><div class="li-today"></div>Today &mdash; Aug 12</div>
-    <div class="legend-item"><div class="li-winter"></div>Dec 22 trades shutdown</div>
+    <div class="legend-item"><div class="li-today"></div>Today &mdash; Oct 8</div>
+    <div class="legend-item"><div class="li-winter"></div>Holiday closure (Dec 24 &ndash; Jan 1)</div>
   </div>
   <div id="gantt-container"></div>
 </div>
@@ -188,10 +197,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   <span>Kiwanis Project No. 24044 &middot; SRM Architects</span>
 </div>
 <script>
-const TODAY=new Date(2026,7,12);
-const WINTER=new Date(2026,11,22);
+const TODAY=new Date(2026,9,8);
+const WINTER=new Date(2026,11,24);
 const GS=new Date(2026,2,1);
-const GE=new Date(2027,3,15);
+const GE=new Date(2027,5,15);
 const TD=(GE-GS)/86400000;
 function pct(d){const dt=typeof d==='string'?(([y,m,dd])=>new Date(y,m-1,dd))(d.split('-').map(Number)):d;return Math.max(0,(dt-GS)/86400000/TD*100);}
 function tleft(){return pct(TODAY).toFixed(3)+'%';}
@@ -202,10 +211,10 @@ const SITES=[
   {
     name:'138 Paling Ave',addr:'138 PALING AVE',
     type:'New fourplex &middot; 4 units',
-    updated:'Aug 10, 2026',target:'Jan 6, 2027',
-    badge:'active',badgeText:'Framing Underway',
+    updated:'Oct 8, 2026',target:'Feb 12, 2027',
+    badge:'active',badgeText:'Exterior + Fire Separation',
     winterRisk:true,
-    note:'warn|<strong>Servicing, Demo, Excavation, Footing, Foundation, and Back fill complete. Framing nearing completion mid-August.</strong> Roof and brick veneer follow in late August; mechanical rough-ins August into September. Interior finishes run October through December. Kitchen and millwork land just past the Dec 22 to Jan 5 trades shutdown. Completion projected <strong>Jan 6, 2027</strong>.',
+    note:'warn|<strong>Structure and roof complete. Brick veneer finishing late October; siding and exterior metal run through early December.</strong> Phase 3 fire separation starts Oct 9, followed by HVAC, plumbing and electrical rough-ins sequenced unit by unit. Drywall through November, finishes December into January. Work pauses for the Christmas and New Year holidays. Final grading and landscaping to be scheduled after the Oct 14 site meeting. Completion projected <strong>Feb 12, 2027</strong>.',
     milestones:[
       {task:'Servicing', start:'2026-03-17', end:'2026-03-24', cx:'done', status:'complete'},
       {task:'Demo', start:'2026-04-07', end:'2026-04-17', cx:'done', status:'complete'},
@@ -213,89 +222,102 @@ const SITES=[
       {task:'Footing', start:'2026-05-13', end:'2026-05-20', cx:'done', status:'complete'},
       {task:'Foundation', start:'2026-05-28', end:'2026-06-11', cx:'done', status:'complete'},
       {task:'Back fill', start:'2026-06-20', end:'2026-06-24', cx:'done', status:'complete'},
-      {task:'Framing', start:'2026-07-16', end:'2026-08-19', cx:'H', status:'inprog'},
-      {task:'Roof', start:'2026-08-20', end:'2026-08-24', cx:'M', status:'med'},
-      {task:'Brick veneer', start:'2026-08-20', end:'2026-08-31', cx:'H', status:'high'},
-      {task:'HVAC', start:'2026-08-25', end:'2026-09-08', cx:'H', status:'high'},
-      {task:'Plumbing', start:'2026-09-10', end:'2026-09-25', cx:'H', status:'high'},
-      {task:'Electrical', start:'2026-09-26', end:'2026-10-14', cx:'H', status:'high'},
-      {task:'Exterior metal', start:'2026-08-19', end:'2026-09-25', cx:'M', status:'med'},
-      {task:'Insulation', start:'2026-10-16', end:'2026-10-25', cx:'M', status:'med'},
-      {task:'Drywall', start:'2026-10-29', end:'2026-11-19', cx:'M', status:'med'},
-      {task:'Paint', start:'2026-11-02', end:'2026-11-30', cx:'L', status:'low'},
-      {task:'Flooring', start:'2026-12-01', end:'2026-12-18', cx:'M', status:'med'},
-      {task:'Kitchen', start:'2026-12-10', end:'2027-01-06', cx:'H', status:'high'},
-      {task:'Millwork', start:'2026-12-18', end:'2027-01-06', cx:'M', status:'med'},
-      {task:'Tile', start:'2026-11-16', end:'2026-12-14', cx:'M', status:'med'}
+      {task:'Framing', start:'2026-07-16', end:'2026-08-14', cx:'done', status:'complete'},
+      {task:'Roof', start:'2026-08-27', end:'2026-08-28', cx:'done', status:'complete'},
+      {task:'Brick veneer', start:'2026-09-25', end:'2026-10-27', cx:'H', status:'inprog'},
+      {task:'Exterior siding / metal', start:'2026-10-26', end:'2026-12-03', cx:'M', status:'med'},
+      {task:'Fire separation (Ph 3)', start:'2026-10-09', end:'2026-10-19', cx:'H', status:'high'},
+      {task:'HVAC rough-in', start:'2026-10-19', end:'2026-11-04', cx:'H', status:'high'},
+      {task:'Plumbing rough-in', start:'2026-10-19', end:'2026-11-04', cx:'H', status:'high'},
+      {task:'Electrical rough-in', start:'2026-10-20', end:'2026-11-03', cx:'H', status:'high'},
+      {task:'Firestopping', start:'2026-10-27', end:'2026-11-10', cx:'M', status:'med'},
+      {task:'Insulation &amp; air sealing', start:'2026-11-03', end:'2026-11-11', cx:'M', status:'med'},
+      {task:'Drywall', start:'2026-11-11', end:'2026-12-03', cx:'M', status:'med'},
+      {task:'Primer &amp; ceilings', start:'2026-12-04', end:'2026-12-11', cx:'L', status:'low'},
+      {task:'Flooring &amp; deficiencies', start:'2026-12-11', end:'2026-12-30', cx:'M', status:'med'},
+      {task:'Kitchens, bath waterproofing &amp; tile', start:'2026-12-16', end:'2026-12-31', cx:'H', status:'high'},
+      {task:'Millwork, doors &amp; trim', start:'2026-12-21', end:'2027-01-06', cx:'M', status:'med'},
+      {task:'Cabinets, countertops &amp; railings', start:'2027-01-06', end:'2027-01-28', cx:'H', status:'high'},
+      {task:'Final paint &amp; plumbing fixtures', start:'2027-01-21', end:'2027-02-04', cx:'M', status:'med'},
+      {task:'Final installs &amp; completion', start:'2027-01-29', end:'2027-02-12', cx:'M', status:'med'}
     ]
   },
   {
     name:'97 Garside Ave N',addr:'97 GARSIDE AVE N',
     type:'New fourplex &middot; 4 units',
-    updated:'Aug 10, 2026',target:'Mar 10, 2027',
-    badge:'active',badgeText:'Foundation Underway',
+    updated:'Oct 8, 2026',target:'Apr 28, 2027',
+    badge:'active',badgeText:'Framing Starting',
     winterRisk:true,
-    note:'warn|<strong>Servicing (Mar 27) and Demo (Jun 2) complete. Excavation complete July 29; footing complete August 7; foundation in progress.</strong> Framing targeted mid-September; interior trades and rough-ins run October and November. Insulation, drywall, and finishes cross the Dec 22 to Jan 5 trades shutdown. Kitchen and millwork complete Q1 2027. Completion projected <strong>March 10, 2027</strong>.',
+    note:'warn|<strong>Excavation and footing complete. Foundation and backfill to be confirmed; framing starts Oct 9.</strong> Follows the Paling sequence and durations. Roof and close-in in November, fire separation over the holidays, rough-ins and drywall in January. Brick veneer runs in cold weather and will need winter protection. Completion projected <strong>Apr 28, 2027</strong>.',
     milestones:[
       {task:'Servicing', start:'2026-03-20', end:'2026-03-27', cx:'done', status:'complete'},
       {task:'Demo', start:'2026-05-23', end:'2026-06-02', cx:'done', status:'complete'},
-      {task:'Excavation', start:'2026-07-21', end:'2026-07-31', cx:'done', status:'complete'},
-      {task:'Footing', start:'2026-08-03', end:'2026-08-11', cx:'done', status:'complete'},
-      {task:'Foundation', start:'2026-08-14', end:'2026-09-05', cx:'H', status:'inprog'},
-      {task:'Back fill', start:'2026-09-08', end:'2026-09-10', cx:'H', status:'high'},
-      {task:'Framing', start:'2026-09-18', end:'2026-10-23', cx:'H', status:'high'},
-      {task:'Roof', start:'2026-10-24', end:'2026-10-28', cx:'M', status:'med'},
-      {task:'Brick veneer', start:'2026-10-24', end:'2026-11-04', cx:'H', status:'high'},
-      {task:'HVAC', start:'2026-10-29', end:'2026-11-12', cx:'H', status:'high'},
-      {task:'Plumbing', start:'2026-11-13', end:'2026-11-29', cx:'H', status:'high'},
-      {task:'Electrical', start:'2026-11-30', end:'2026-12-18', cx:'H', status:'high'},
-      {task:'Exterior metal', start:'2026-10-12', end:'2026-11-18', cx:'M', status:'med'},
-      {task:'Insulation', start:'2026-12-19', end:'2027-01-06', cx:'M', status:'med'},
-      {task:'Drywall', start:'2027-01-06', end:'2027-01-23', cx:'M', status:'med'},
-      {task:'Paint', start:'2027-01-06', end:'2027-01-23', cx:'L', status:'low'},
-      {task:'Flooring', start:'2027-02-04', end:'2027-02-21', cx:'M', status:'med'},
-      {task:'Kitchen', start:'2027-02-13', end:'2027-03-01', cx:'H', status:'high'},
-      {task:'Millwork', start:'2027-02-21', end:'2027-03-10', cx:'M', status:'med'},
-      {task:'Tile', start:'2027-01-09', end:'2027-02-06', cx:'M', status:'med'}
+      {task:'Excavation', start:'2026-07-21', end:'2026-07-29', cx:'done', status:'complete'},
+      {task:'Footing', start:'2026-07-31', end:'2026-08-07', cx:'done', status:'complete'},
+      {task:'Foundation', start:'2026-08-10', end:'2026-09-04', cx:'unconf', status:'unconf'},
+      {task:'Back fill', start:'2026-09-30', end:'2026-10-07', cx:'unconf', status:'unconf'},
+      {task:'Framing', start:'2026-10-09', end:'2026-11-12', cx:'H', status:'high'},
+      {task:'Roof', start:'2026-11-13', end:'2026-11-18', cx:'M', status:'med'},
+      {task:'Brick veneer', start:'2026-11-20', end:'2027-01-04', cx:'H', status:'high'},
+      {task:'Exterior siding / metal', start:'2027-01-04', end:'2027-02-11', cx:'M', status:'med'},
+      {task:'Fire separation (Ph 3)', start:'2026-12-23', end:'2027-01-06', cx:'H', status:'high'},
+      {task:'HVAC rough-in', start:'2027-01-06', end:'2027-01-22', cx:'H', status:'high'},
+      {task:'Plumbing rough-in', start:'2027-01-06', end:'2027-01-22', cx:'H', status:'high'},
+      {task:'Electrical rough-in', start:'2027-01-07', end:'2027-01-21', cx:'H', status:'high'},
+      {task:'Firestopping', start:'2027-01-14', end:'2027-01-28', cx:'M', status:'med'},
+      {task:'Insulation &amp; air sealing', start:'2027-01-21', end:'2027-01-29', cx:'M', status:'med'},
+      {task:'Drywall', start:'2027-01-29', end:'2027-02-22', cx:'M', status:'med'},
+      {task:'Primer &amp; ceilings', start:'2027-02-23', end:'2027-03-02', cx:'L', status:'low'},
+      {task:'Flooring &amp; deficiencies', start:'2027-03-02', end:'2027-03-16', cx:'M', status:'med'},
+      {task:'Kitchens, bath waterproofing &amp; tile', start:'2027-03-05', end:'2027-03-17', cx:'H', status:'high'},
+      {task:'Millwork, doors &amp; trim', start:'2027-03-10', end:'2027-03-22', cx:'M', status:'med'},
+      {task:'Cabinets, countertops &amp; railings', start:'2027-03-22', end:'2027-04-13', cx:'H', status:'high'},
+      {task:'Final paint &amp; plumbing fixtures', start:'2027-04-06', end:'2027-04-20', cx:'M', status:'med'},
+      {task:'Final installs &amp; completion', start:'2027-04-14', end:'2027-04-28', cx:'M', status:'med'}
     ]
   },
   {
     name:'53 Fraser Ave',addr:'53 FRASER AVE',
     type:'New fourplex &middot; 4 units',
-    updated:'Aug 10, 2026',target:'Mar 25, 2027',
-    badge:'active',badgeText:'Demo Complete',
+    updated:'Oct 8, 2026',target:'May 31, 2027',
+    badge:'active',badgeText:'Excavation',
     winterRisk:true,
-    note:'warn|<strong>Servicing complete Mar 31. Demo complete July 17.</strong> Excavation early August, framing early October, mechanical rough-ins November. Interior trades run into Q1 2027. Fraser starts 12 weeks after Paling on the same Cory template, so all winter compounding lands hardest here. Millwork closes the sequence in late March. Completion projected <strong>March 25, 2027</strong>. Sequencing dependent on Garside backfill soil transfer &mdash; Cory recovery plan pending.',
+    note:'warn|<strong>Servicing and demo complete. Excavation to be confirmed; excavated soil is used for the Garside backfill.</strong> Footing and foundation in October, framing mid-November to mid-December, then roof and close-in. Follows the Paling sequence and durations, with interior work starting in late January. Brick veneer and siding run through the winter and will need protection. Completion projected <strong>May 31, 2027</strong>.',
     milestones:[
       {task:'Servicing', start:'2026-03-24', end:'2026-03-31', cx:'done', status:'complete'},
       {task:'Demo', start:'2026-07-07', end:'2026-07-17', cx:'done', status:'complete'},
-      {task:'Excavation', start:'2026-08-06', end:'2026-08-18', cx:'H', status:'high'},
-      {task:'Footing', start:'2026-08-21', end:'2026-08-26', cx:'H', status:'high'},
-      {task:'Foundation', start:'2026-08-30', end:'2026-09-20', cx:'H', status:'high'},
-      {task:'Back fill', start:'2026-09-24', end:'2026-09-25', cx:'H', status:'high'},
-      {task:'Framing', start:'2026-10-04', end:'2026-11-07', cx:'H', status:'high'},
-      {task:'Roof', start:'2026-11-09', end:'2026-11-12', cx:'M', status:'med'},
-      {task:'Brick veneer', start:'2026-11-09', end:'2026-11-19', cx:'H', status:'high'},
-      {task:'HVAC', start:'2026-11-13', end:'2026-11-28', cx:'H', status:'high'},
-      {task:'Plumbing', start:'2026-11-29', end:'2026-12-15', cx:'H', status:'high'},
-      {task:'Electrical', start:'2026-12-16', end:'2027-01-06', cx:'H', status:'high'},
-      {task:'Exterior metal', start:'2026-10-25', end:'2026-12-01', cx:'M', status:'med'},
-      {task:'Insulation', start:'2027-01-06', end:'2027-01-14', cx:'M', status:'med'},
-      {task:'Drywall', start:'2027-01-17', end:'2027-02-08', cx:'M', status:'med'},
-      {task:'Paint', start:'2027-01-08', end:'2027-02-05', cx:'L', status:'low'},
-      {task:'Flooring', start:'2027-02-20', end:'2027-03-09', cx:'M', status:'med'},
-      {task:'Kitchen', start:'2027-02-28', end:'2027-03-17', cx:'H', status:'high'},
-      {task:'Millwork', start:'2027-03-09', end:'2027-03-25', cx:'M', status:'med'},
-      {task:'Tile', start:'2027-01-22', end:'2027-02-19', cx:'M', status:'med'}
+      {task:'Excavation', start:'2026-09-30', end:'2026-10-07', cx:'unconf', status:'unconf'},
+      {task:'Footing', start:'2026-10-12', end:'2026-10-19', cx:'H', status:'high'},
+      {task:'Foundation', start:'2026-10-20', end:'2026-11-03', cx:'H', status:'high'},
+      {task:'Back fill', start:'2026-11-04', end:'2026-11-11', cx:'H', status:'high'},
+      {task:'Framing', start:'2026-11-11', end:'2026-12-15', cx:'H', status:'high'},
+      {task:'Roof', start:'2026-12-16', end:'2026-12-21', cx:'M', status:'med'},
+      {task:'Brick veneer', start:'2026-12-23', end:'2027-02-04', cx:'H', status:'high'},
+      {task:'Exterior siding / metal', start:'2027-02-04', end:'2027-03-16', cx:'M', status:'med'},
+      {task:'Fire separation (Ph 3)', start:'2027-01-29', end:'2027-02-08', cx:'H', status:'high'},
+      {task:'HVAC rough-in', start:'2027-02-08', end:'2027-02-24', cx:'H', status:'high'},
+      {task:'Plumbing rough-in', start:'2027-02-08', end:'2027-02-24', cx:'H', status:'high'},
+      {task:'Electrical rough-in', start:'2027-02-09', end:'2027-02-23', cx:'H', status:'high'},
+      {task:'Firestopping', start:'2027-02-16', end:'2027-03-02', cx:'M', status:'med'},
+      {task:'Insulation &amp; air sealing', start:'2027-02-23', end:'2027-03-03', cx:'M', status:'med'},
+      {task:'Drywall', start:'2027-03-03', end:'2027-03-25', cx:'M', status:'med'},
+      {task:'Primer &amp; ceilings', start:'2027-03-26', end:'2027-04-02', cx:'L', status:'low'},
+      {task:'Flooring &amp; deficiencies', start:'2027-04-02', end:'2027-04-16', cx:'M', status:'med'},
+      {task:'Kitchens, bath waterproofing &amp; tile', start:'2027-04-07', end:'2027-04-19', cx:'H', status:'high'},
+      {task:'Millwork, doors &amp; trim', start:'2027-04-12', end:'2027-04-22', cx:'M', status:'med'},
+      {task:'Cabinets, countertops &amp; railings', start:'2027-04-22', end:'2027-05-14', cx:'H', status:'high'},
+      {task:'Final paint &amp; plumbing fixtures', start:'2027-05-07', end:'2027-05-21', cx:'M', status:'med'},
+      {task:'Final installs &amp; completion', start:'2027-05-17', end:'2027-05-31', cx:'M', status:'med'}
     ]
   }
 ];
 
-function barCls(s){return{complete:'bar-complete',inprog:'bar-inprog',high:'bar-high',med:'bar-med',low:'bar-low'}[s]||'bar-low';}
+function barCls(s){return{complete:'bar-complete',inprog:'bar-inprog',high:'bar-high',med:'bar-med',low:'bar-low',unconf:'bar-unconf'}[s]||'bar-low';}
 function dotCls(s){return{complete:'dot-complete',inprog:'dot-inprog'}[s]||'dot-upcoming';}
 function cxBadge(cx,status){
   if(status==='complete')  return`<span class="cx-badge cx-done">Complete</span>`;
   if(status==='inprog')    return`<span class="cx-badge cx-prog">In Progress</span>`;
+  if(status==='unconf')    return`<span class="cx-badge cx-unconf">To confirm</span>`;
   return`<span class="cx-badge cx-${cx}">${ {H:'High',M:'Medium',L:'Low'}[cx]||cx}</span>`;
 }
 function monthRuler(){
@@ -318,7 +340,7 @@ function buildCards(){
       <div class="sc-target">Target completion: ${s.target}</div>
       <div class="sc-bar-track"><div class="sc-bar-fill" style="width:${p}%"></div></div>
       <div class="sc-pct">${p}% complete</div>
-      ${s.winterRisk?'<div class="sc-winter">&#10052; Crosses Dec 22 shutdown</div>':''}
+      ${s.winterRisk?'<div class="sc-winter">&#10052; Crosses holiday closure</div>':''}
     </div>`;
   }).join('');
 }
@@ -336,7 +358,7 @@ function buildGantt(){
         <td class="td-date ${m.status==='complete'?'done':''}">${fmt(m.end)}</td>
         <td><div class="bar-wrap">
           <div class="today-line" style="left:${tleft()}"></div>
-          ${s.winterRisk?`<div class="winter-line" style="left:${wleft()}" title="Dec 22 — trades shutdown"></div>`:''}
+          ${s.winterRisk?`<div class="winter-line" style="left:${wleft()}" title="Holiday closure Dec 24 – Jan 1"></div>`:''}
           <div class="g-bar ${barCls(m.status)}" style="left:${l};width:${w}" title="${m.task}: ${fmt(m.start)} — ${fmt(m.end)}"></div>
         </div></td>
       </tr>`;
@@ -351,7 +373,7 @@ function buildGantt(){
         <div class="gs-right">
           <span class="gs-target">Target: ${s.target}</span>
           <span class="gs-badge badge-${s.badge}">${s.badgeText}</span>
-          <span class="gs-badge badge-winter hide-mobile">&#10052; Shutdown</span>
+          <span class="gs-badge badge-winter hide-mobile">&#10052; Holidays</span>
           <span class="chevron open">&#9660;</span>
         </div>
       </div>
